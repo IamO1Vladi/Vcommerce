@@ -8,13 +8,14 @@ public class Clothes:Product
     public Clothes()
     {
         this.Id = new Guid();
+        this.Images = new HashSet<ProductImages>();
     }
 
     [Required]
-    public string Size { get; set; } = null!;
+    public string Material { get; set; } = null!;
 
     [Required]
-    public string Material { get; set; } = null!;
+    public ClothesSizes Size { get; set; }
 
     [Required]
     public Category Category { get; set; }
@@ -22,4 +23,5 @@ public class Clothes:Product
     [Required]
     public Gender Gender { get; set; }
 
+    public override ICollection<ProductImages> Images { get; set; }
 }

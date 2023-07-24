@@ -1,13 +1,15 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Vcommerce.Data;
+using Vcommerce.Data.Models.Users;
+using Vcommerce.Web.Infrastructures.Extensions;
 
 
 namespace Vcommerce
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
 
@@ -17,8 +19,25 @@ namespace Vcommerce
                 options.UseSqlServer(connectionString));
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-            builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
+                {
+                    options.SignIn.RequireConfirmedAccount =
+                        builder.Configuration.GetValue<bool>("Identity:SignIn:RequireConfirmedAccount");
+                    options.Password.RequireLowercase = 
+                        builder.Configuration.GetValue<bool>("Identity:Password:RequireLowercase");
+                    options.Password.RequireUppercase = 
+                        builder.Configuration.GetValue<bool>("Identity:Password:RequireUppercase");
+                    options.Password.RequireNonAlphanumeric = 
+                        builder.Configuration.GetValue<bool>("Identity:Password:RequireNonAlphanumeric");
+                    options.Password.RequireDigit =
+                        builder.Configuration.GetValue<bool>("Identity:Password:RequireDigit");
+                    options.Password.RequiredLength =
+                        builder.Configuration.GetValue<int>("Identity:Password:RequiredLength");
+                })
                 .AddEntityFrameworkStores<VcommerceDbContext>();
+
+            //builder.Services.AddApplicationServices(typeof("enter service here"));
+
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
@@ -27,6 +46,7 @@ namespace Vcommerce
             if (app.Environment.IsDevelopment())
             {
                 app.UseMigrationsEndPoint();
+                app.UseDeveloperExceptionPage();
             }
             else
             {
@@ -48,7 +68,7 @@ namespace Vcommerce
                 pattern: "{controller=Home}/{action=Index}/{id?}");
             app.MapRazorPages();
 
-            app.Run();
+            await app.RunAsync();
         }
     }
 }

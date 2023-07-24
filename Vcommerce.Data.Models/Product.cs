@@ -27,5 +27,5 @@ public abstract class Product
     [Required]
     public int Quantity { get; set; }
 
-
+    public abstract ICollection<ProductImages> Images { get; set; }
 }

@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Vcommerce.Data\Vcommerce.Data.csproj" />
+    <ProjectReference Include="..\Vcommerce.Web.Infrastructures\Vcommerce.Web.Infrastructures.csproj" />
   </ItemGroup>
 
 </Project>

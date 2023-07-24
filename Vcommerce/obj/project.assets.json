@@ -357,7 +357,7 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Extensions.DependencyInjection.Abstractions/6.0.0": {
+      "Microsoft.Extensions.DependencyInjection.Abstractions/7.0.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
@@ -370,7 +370,7 @@
           }
         },
         "build": {
-          "buildTransitive/netcoreapp3.1/_._": {}
+          "buildTransitive/net6.0/_._": {}
         }
       },
       "Microsoft.Extensions.FileProviders.Abstractions/6.0.0": {
@@ -958,6 +958,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "6.0.15",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.15",
+          "Microsoft.AspNetCore.Identity.UI": "6.0.15",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.15",
           "Vcommerce.Data.Models": "1.0.0"
         },
@@ -971,11 +972,27 @@
       "Vcommerce.Data.Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.UI": "6.0.15"
+        },
         "compile": {
           "bin/placeholder/Vcommerce.Data.Models.dll": {}
         },
         "runtime": {
           "bin/placeholder/Vcommerce.Data.Models.dll": {}
+        }
+      },
+      "Vcommerce.Web.Infrastructures/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Vcommerce.Web.Infrastructures.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Vcommerce.Web.Infrastructures.dll": {}
         }
       }
     }
@@ -1531,27 +1548,31 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Extensions.DependencyInjection.Abstractions/6.0.0": {
-      "sha512": "xlzi2IYREJH3/m6+lUrQlujzX8wDitm4QGnUu6kUXTQAWPuZY8i+ticFJbzfqaetLA6KR/rO6Ew/HuYD+bxifg==",
+    "Microsoft.Extensions.DependencyInjection.Abstractions/7.0.0": {
+      "sha512": "h3j/QfmFN4S0w4C2A6X7arXij/M/OVw3uQHSOFxnND4DyAzO1F9eMX7Eti7lU/OkSthEE0WzRsfT/Dmx86jzCw==",
       "type": "package",
-      "path": "microsoft.extensions.dependencyinjection.abstractions/6.0.0",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/7.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.DependencyInjection.Abstractions.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
         "buildTransitive/netcoreapp2.0/Microsoft.Extensions.DependencyInjection.Abstractions.targets",
-        "buildTransitive/netcoreapp3.1/_._",
-        "lib/net461/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
-        "lib/net461/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "lib/net462/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/net462/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
         "lib/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
         "lib/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "lib/net7.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/net7.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
         "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
         "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
         "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
         "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
-        "microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+        "microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
         "microsoft.extensions.dependencyinjection.abstractions.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -2478,6 +2499,11 @@
       "type": "project",
       "path": "../Vcommerce.Data.Models/Vcommerce.Data.Models.csproj",
       "msbuildProject": "../Vcommerce.Data.Models/Vcommerce.Data.Models.csproj"
+    },
+    "Vcommerce.Web.Infrastructures/1.0.0": {
+      "type": "project",
+      "path": "../Vcommerce.Web.Infrastructures/Vcommerce.Web.Infrastructures.csproj",
+      "msbuildProject": "../Vcommerce.Web.Infrastructures/Vcommerce.Web.Infrastructures.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2487,7 +2513,8 @@
       "Microsoft.AspNetCore.Identity.UI >= 6.0.15",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.15",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.15",
-      "Vcommerce.Data >= 1.0.0"
+      "Vcommerce.Data >= 1.0.0",
+      "Vcommerce.Web.Infrastructures >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2519,6 +2546,9 @@
           "projectReferences": {
             "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce.Data\\Vcommerce.Data.csproj": {
               "projectPath": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce.Data\\Vcommerce.Data.csproj"
+            },
+            "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce.Web.Infrastructures\\Vcommerce.Web.Infrastructures.csproj": {
+              "projectPath": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce.Web.Infrastructures\\Vcommerce.Web.Infrastructures.csproj"
             }
           }
         }
