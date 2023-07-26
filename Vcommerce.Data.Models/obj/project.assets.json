@@ -293,6 +293,16 @@
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
         }
+      },
+      "VCommerce.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/VCommerce.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/VCommerce.Common.dll": {}
+        }
       }
     }
   },
@@ -774,11 +784,17 @@
         "system.runtime.compilerservices.unsafe.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "VCommerce.Common/1.0.0": {
+      "type": "project",
+      "path": "../VCommerce.Common/VCommerce.Common.csproj",
+      "msbuildProject": "../VCommerce.Common/VCommerce.Common.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Microsoft.AspNetCore.Identity.UI >= 6.0.15"
+      "Microsoft.AspNetCore.Identity.UI >= 6.0.15",
+      "VCommerce.Common >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -807,7 +823,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\VCommerce.Common\\VCommerce.Common.csproj": {
+              "projectPath": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\VCommerce.Common\\VCommerce.Common.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

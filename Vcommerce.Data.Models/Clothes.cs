@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Vcommerce.Data.Models.Enums;
+using static VCommerce.Common.DataBaseValidations.ClothesValidations;
 
 namespace Vcommerce.Data.Models;
 
@@ -12,6 +13,7 @@ public class Clothes:Product
     }
 
     [Required]
+    [MaxLength(MaxMaterialNameLength)]
     public string Material { get; set; } = null!;
 
     [Required]

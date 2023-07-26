@@ -1,0 +1,12 @@
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Web.Infrastructures\bin\Debug\net6.0\Vcommerce.Web.Infrastructures.deps.json
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Web.Infrastructures\bin\Debug\net6.0\Vcommerce.Web.Infrastructures.dll
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Web.Infrastructures\bin\Debug\net6.0\Vcommerce.Web.Infrastructures.pdb
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Web.Infrastructures\obj\Debug\net6.0\Vcommerce.Web.Infrastructures.csproj.AssemblyReference.cache
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Web.Infrastructures\obj\Debug\net6.0\Vcommerce.Web.Infrastructures.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Web.Infrastructures\obj\Debug\net6.0\Vcommerce.Web.Infrastructures.AssemblyInfoInputs.cache
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Web.Infrastructures\obj\Debug\net6.0\Vcommerce.Web.Infrastructures.AssemblyInfo.cs
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Web.Infrastructures\obj\Debug\net6.0\Vcommerce.Web.Infrastructures.csproj.CoreCompileInputs.cache
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Web.Infrastructures\obj\Debug\net6.0\Vcommerce.Web.Infrastructures.dll
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Web.Infrastructures\obj\Debug\net6.0\refint\Vcommerce.Web.Infrastructures.dll
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Web.Infrastructures\obj\Debug\net6.0\Vcommerce.Web.Infrastructures.pdb
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Web.Infrastructures\obj\Debug\net6.0\ref\Vcommerce.Web.Infrastructures.dll

@@ -952,6 +952,16 @@
           }
         }
       },
+      "VCommerce.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/VCommerce.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/VCommerce.Common.dll": {}
+        }
+      },
       "Vcommerce.Data/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -973,7 +983,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "Microsoft.AspNetCore.Identity.UI": "6.0.15"
+          "Microsoft.AspNetCore.Identity.UI": "6.0.15",
+          "VCommerce.Common": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Vcommerce.Data.Models.dll": {}
@@ -2489,6 +2500,11 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "VCommerce.Common/1.0.0": {
+      "type": "project",
+      "path": "../VCommerce.Common/VCommerce.Common.csproj",
+      "msbuildProject": "../VCommerce.Common/VCommerce.Common.csproj"
     },
     "Vcommerce.Data/1.0.0": {
       "type": "project",

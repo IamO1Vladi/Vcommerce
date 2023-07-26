@@ -16,6 +16,7 @@ namespace VCommerce.Common.DataBaseValidations
         public const int MaxColorNameLength = 30;
         public const int MaxDescriptionLength = 500;
         public const int MaxQuantity = 1000;
+        public const int MinQuantity = 0;
 
     }
 }
