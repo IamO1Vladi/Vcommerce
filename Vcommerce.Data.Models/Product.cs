@@ -34,6 +34,19 @@ public abstract class Product
     [Range(minimum:MinQuantity,maximum:MaxQuantity)]
     public int Quantity { get; set; }
 
-    
-    public abstract ICollection<ProductImages> Images { get; set; }
+    [Required]
+    public DateTime DateCreated { get; set; }
+
+    [Required]
+    public bool IsNew { get; set; }
+
+    [Required]
+    public bool IsOnSale { get; set; }
+
+    [Required]
+    public decimal SalePercentage { get; set; }
+
+    [Required]
+    public int NumberOfSales { get; set; }
+    public ICollection<ProductImages> Images { get; set; } = null!;
 }

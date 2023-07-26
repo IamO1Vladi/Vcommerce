@@ -1,4 +1,4 @@
 Add custom data attribute for the decimal
 Use repository pattern
 Add Json file to overwrite the jquery validation for decimal numbers and add the script
-Add HomePage
+Add validations for new product properties
