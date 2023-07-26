@@ -10,6 +10,7 @@ public class Clothes:Product
     {
         this.Id = new Guid();
         this.Images = new HashSet<ProductImages>();
+        this.DateCreated= DateTime.UtcNow;
     }
 
     [Required]
@@ -25,5 +26,5 @@ public class Clothes:Product
     [Required]
     public Gender Gender { get; set; }
 
-    public override ICollection<ProductImages> Images { get; set; }
+    
 }
