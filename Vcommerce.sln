@@ -23,6 +23,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClothingRepository", "Cloth
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vcommerce.Web.ViewModels", "Vcommerce.Web.ViewModels\Vcommerce.Web.ViewModels.csproj", "{FC6C9A79-24BB-4F4A-9887-27C14A0FF38C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{457F684D-D7B3-4AB5-B81D-2E63DD83F83B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vcommerce.Services", "Vcommerce.Services\Vcommerce.Services.csproj", "{AAC39393-B801-4132-9AA3-9BA41702CFA7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +61,10 @@ Global
 		{FC6C9A79-24BB-4F4A-9887-27C14A0FF38C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC6C9A79-24BB-4F4A-9887-27C14A0FF38C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC6C9A79-24BB-4F4A-9887-27C14A0FF38C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAC39393-B801-4132-9AA3-9BA41702CFA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAC39393-B801-4132-9AA3-9BA41702CFA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAC39393-B801-4132-9AA3-9BA41702CFA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAC39393-B801-4132-9AA3-9BA41702CFA7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,6 +76,7 @@ Global
 		{6392CA85-D6E2-4581-810A-6330EB992540} = {260684CE-F71E-4EE5-825E-C63DDB0E7A4D}
 		{114E349F-BF99-4E81-9C6D-ADAD07787416} = {60406176-0A6E-4674-BA37-DC0C5C7D3AF8}
 		{FC6C9A79-24BB-4F4A-9887-27C14A0FF38C} = {260684CE-F71E-4EE5-825E-C63DDB0E7A4D}
+		{AAC39393-B801-4132-9AA3-9BA41702CFA7} = {457F684D-D7B3-4AB5-B81D-2E63DD83F83B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0518F679-EF56-4A9E-A8C5-95FDEE48985D}

@@ -15,7 +15,9 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.15",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.15",
           "Vcommerce.Data": "1.0.0",
-          "Vcommerce.Web.Infrastructures": "1.0.0"
+          "Vcommerce.Services": "1.0.0",
+          "Vcommerce.Web.Infrastructures": "1.0.0",
+          "Vcommerce.Web.ViewModels": "1.0.0"
         },
         "runtime": {
           "Vcommerce.Web.dll": {}
@@ -640,6 +642,17 @@
           "Vcommerce.Data.Models.dll": {}
         }
       },
+      "Vcommerce.Services/1.0.0": {
+        "dependencies": {
+          "ClothingRepository": "1.0.0",
+          "Vcommerce.Data": "1.0.0",
+          "Vcommerce.Data.Models": "1.0.0",
+          "Vcommerce.Web.ViewModels": "1.0.0"
+        },
+        "runtime": {
+          "Vcommerce.Services.dll": {}
+        }
+      },
       "Vcommerce.Web.Infrastructures/1.0.0": {
         "dependencies": {
           "Microsoft.AspNet.Mvc": "5.2.9",
@@ -647,6 +660,14 @@
         },
         "runtime": {
           "Vcommerce.Web.Infrastructures.dll": {}
+        }
+      },
+      "Vcommerce.Web.ViewModels/1.0.0": {
+        "dependencies": {
+          "VCommerce.Common": "1.0.0"
+        },
+        "runtime": {
+          "Vcommerce.Web.ViewModels.dll": {}
         }
       }
     }
@@ -1069,7 +1090,17 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Vcommerce.Services/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Vcommerce.Web.Infrastructures/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Vcommerce.Web.ViewModels/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

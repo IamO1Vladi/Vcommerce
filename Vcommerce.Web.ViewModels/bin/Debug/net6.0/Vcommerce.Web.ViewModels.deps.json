@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Vcommerce.Web.ViewModels/1.0.0": {
+        "dependencies": {
+          "VCommerce.Common": "1.0.0"
+        },
+        "runtime": {
+          "Vcommerce.Web.ViewModels.dll": {}
+        }
+      },
+      "VCommerce.Common/1.0.0": {
+        "runtime": {
+          "VCommerce.Common.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Vcommerce.Web.ViewModels/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "VCommerce.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

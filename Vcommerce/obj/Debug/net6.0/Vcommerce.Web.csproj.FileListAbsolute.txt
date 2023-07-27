@@ -94,3 +94,7 @@ C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net
 C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\System.Web.WebPages.Razor.dll
 C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\System.Web.WebPages.dll
 C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\Vcommerce.Web.ViewModels.dll
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\Vcommerce.Web.ViewModels.pdb
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\Vcommerce.Services.dll
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\Vcommerce.Services.pdb

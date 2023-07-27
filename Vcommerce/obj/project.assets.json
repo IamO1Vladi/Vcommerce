@@ -1081,6 +1081,22 @@
           "bin/placeholder/Vcommerce.Data.Models.dll": {}
         }
       },
+      "Vcommerce.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "ClothingRepository": "1.0.0",
+          "Vcommerce.Data": "1.0.0",
+          "Vcommerce.Data.Models": "1.0.0",
+          "Vcommerce.Web.ViewModels": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Vcommerce.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Vcommerce.Services.dll": {}
+        }
+      },
       "Vcommerce.Web.Infrastructures/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -1093,6 +1109,19 @@
         },
         "runtime": {
           "bin/placeholder/Vcommerce.Web.Infrastructures.dll": {}
+        }
+      },
+      "Vcommerce.Web.ViewModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "VCommerce.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Vcommerce.Web.ViewModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Vcommerce.Web.ViewModels.dll": {}
         }
       }
     }
@@ -2677,10 +2706,20 @@
       "path": "../Vcommerce.Data.Models/Vcommerce.Data.Models.csproj",
       "msbuildProject": "../Vcommerce.Data.Models/Vcommerce.Data.Models.csproj"
     },
+    "Vcommerce.Services/1.0.0": {
+      "type": "project",
+      "path": "../Vcommerce.Services/Vcommerce.Services.csproj",
+      "msbuildProject": "../Vcommerce.Services/Vcommerce.Services.csproj"
+    },
     "Vcommerce.Web.Infrastructures/1.0.0": {
       "type": "project",
       "path": "../Vcommerce.Web.Infrastructures/Vcommerce.Web.Infrastructures.csproj",
       "msbuildProject": "../Vcommerce.Web.Infrastructures/Vcommerce.Web.Infrastructures.csproj"
+    },
+    "Vcommerce.Web.ViewModels/1.0.0": {
+      "type": "project",
+      "path": "../Vcommerce.Web.ViewModels/Vcommerce.Web.ViewModels.csproj",
+      "msbuildProject": "../Vcommerce.Web.ViewModels/Vcommerce.Web.ViewModels.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2692,7 +2731,9 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.15",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.15",
       "Vcommerce.Data >= 1.0.0",
-      "Vcommerce.Web.Infrastructures >= 1.0.0"
+      "Vcommerce.Services >= 1.0.0",
+      "Vcommerce.Web.Infrastructures >= 1.0.0",
+      "Vcommerce.Web.ViewModels >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2728,8 +2769,14 @@
             "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce.Data\\Vcommerce.Data.csproj": {
               "projectPath": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce.Data\\Vcommerce.Data.csproj"
             },
+            "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce.Services\\Vcommerce.Services.csproj": {
+              "projectPath": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce.Services\\Vcommerce.Services.csproj"
+            },
             "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce.Web.Infrastructures\\Vcommerce.Web.Infrastructures.csproj": {
               "projectPath": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce.Web.Infrastructures\\Vcommerce.Web.Infrastructures.csproj"
+            },
+            "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce.Web.ViewModels\\Vcommerce.Web.ViewModels.csproj": {
+              "projectPath": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce.Web.ViewModels\\Vcommerce.Web.ViewModels.csproj"
             }
           }
         }

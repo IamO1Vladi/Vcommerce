@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="ProductServices\Interfaces\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ClothingRepository\ClothingRepository.csproj" />
+    <ProjectReference Include="..\Vcommerce.Data.Models\Vcommerce.Data.Models.csproj" />
+    <ProjectReference Include="..\Vcommerce.Data\Vcommerce.Data.csproj" />
+    <ProjectReference Include="..\Vcommerce.Web.ViewModels\Vcommerce.Web.ViewModels.csproj" />
+  </ItemGroup>
+
+</Project>

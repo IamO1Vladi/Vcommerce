@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Vcommerce.Data;
 using Vcommerce.Data.Models.Users;
+using Vcommerce.Services.ProductServices.Interfaces;
 using Vcommerce.Web.Infrastructures.Extensions;
 
 
@@ -38,7 +39,7 @@ namespace Vcommerce
                 })
                 .AddEntityFrameworkStores<VcommerceDbContext>();
 
-            //builder.Services.AddApplicationServices(typeof("enter service here"));
+            builder.Services.AddApplicationServices(typeof(IClothingService));
 
             builder.Services.AddScoped<IClothingRepo, ClothingRepo>(); //Delete later an implement correctly 
 

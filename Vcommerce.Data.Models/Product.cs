@@ -20,6 +20,7 @@ public abstract class Product
     public string Brand { get; set; } = null!;
 
     [Required]
+    [Range(minimum: MinPrice, maximum: MaxPrice)]
     public decimal Price { get; set; }
 
     [Required]

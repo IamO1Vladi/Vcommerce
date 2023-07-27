@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using ClothingRepository.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Vcommerce.Data;
+using Vcommerce.Data.Models;
 using Vcommerce.Data.Models.Enums;
 
 namespace ClothingRepository
@@ -28,6 +29,13 @@ namespace ClothingRepository
                 .ToArrayAsync();
 
             return avaiableCategories;
+        }
+
+        public async Task<Clothes[]> GetAllClothesByCategoryAndGender(Gender gender, Category category)
+        {
+            var clothes = await dbContext.Clothes.Where(c => c.Category == category && c.Gender == gender).ToArrayAsync();
+
+            return clothes;
         }
     }
 }
