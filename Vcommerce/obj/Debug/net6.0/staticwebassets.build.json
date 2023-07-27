@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "a/qNuttGp/q63B4FHaUE0VcGhl+V4IYKvjRDenJXIHo=",
+  "Hash": "HJsgK8hisSvOahyXpI8OiP6K49SbZgxNzv/5bxDW5J0=",
   "Source": "Vcommerce.Web",
   "BasePath": "_content/Vcommerce.Web",
   "Mode": "Default",
@@ -2380,6 +2380,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\banner9.jpg"
     },
     {
+      "Identity": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce\\wwwroot\\assets\\images\\beautiful-girls-fashinable-swimsuits.jpg",
+      "SourceId": "Vcommerce.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce\\wwwroot\\",
+      "BasePath": "_content/Vcommerce.Web",
+      "RelativePath": "assets/images/beautiful-girls-fashinable-swimsuits.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\beautiful-girls-fashinable-swimsuits.jpg"
+    },
+    {
       "Identity": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce\\wwwroot\\assets\\images\\blog_img1.jpg",
       "SourceId": "Vcommerce.Web",
       "SourceType": "Discovered",
@@ -2718,6 +2735,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\images\\blog_small_img8.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce\\wwwroot\\assets\\images\\Capture.PNG",
+      "SourceId": "Vcommerce.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce\\wwwroot\\",
+      "BasePath": "_content/Vcommerce.Web",
+      "RelativePath": "assets/images/Capture.PNG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\Capture.PNG"
     },
     {
       "Identity": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce\\wwwroot\\assets\\images\\cart_thamb1.jpg",
@@ -3502,6 +3536,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\eng.png"
     },
     {
+      "Identity": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce\\wwwroot\\assets\\images\\excited-girl-scream-joy-making-fist-pump-holding-shopping-bag-rejoicing-standing-dress-ove.jpg",
+      "SourceId": "Vcommerce.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce\\wwwroot\\",
+      "BasePath": "_content/Vcommerce.Web",
+      "RelativePath": "assets/images/excited-girl-scream-joy-making-fist-pump-holding-shopping-bag-rejoicing-standing-dress-ove.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\excited-girl-scream-joy-making-fist-pump-holding-shopping-bag-rejoicing-standing-dress-ove.jpg"
+    },
+    {
       "Identity": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce\\wwwroot\\assets\\images\\f1.png",
       "SourceId": "Vcommerce.Web",
       "SourceType": "Discovered",
@@ -4046,6 +4097,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\furniture_insta6.jpg"
     },
     {
+      "Identity": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce\\wwwroot\\assets\\images\\image-handsome-confident-man-putting-leather-biker-jacket-standing-against-white-backgroun.jpg",
+      "SourceId": "Vcommerce.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce\\wwwroot\\",
+      "BasePath": "_content/Vcommerce.Web",
+      "RelativePath": "assets/images/image-handsome-confident-man-putting-leather-biker-jacket-standing-against-white-backgroun.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\image-handsome-confident-man-putting-leather-biker-jacket-standing-against-white-backgroun.jpg"
+    },
+    {
       "Identity": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce\\wwwroot\\assets\\images\\insta_img1.jpg",
       "SourceId": "Vcommerce.Web",
       "SourceType": "Discovered",
@@ -4520,6 +4588,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\images\\menu_banner9.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce\\wwwroot\\assets\\images\\newcollectionBanner.jpg",
+      "SourceId": "Vcommerce.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce\\wwwroot\\",
+      "BasePath": "_content/Vcommerce.Web",
+      "RelativePath": "assets/images/newcollectionBanner.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\newcollectionBanner.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce\\wwwroot\\assets\\images\\newSeasonBanner.jpg",
+      "SourceId": "Vcommerce.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce\\wwwroot\\",
+      "BasePath": "_content/Vcommerce.Web",
+      "RelativePath": "assets/images/newSeasonBanner.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\newSeasonBanner.jpg"
     },
     {
       "Identity": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce\\wwwroot\\assets\\images\\paypal.png",
@@ -5489,6 +5591,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\images\\team_img4.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce\\wwwroot\\assets\\images\\testBanner.jpg",
+      "SourceId": "Vcommerce.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce\\wwwroot\\",
+      "BasePath": "_content/Vcommerce.Web",
+      "RelativePath": "assets/images/testBanner.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\testBanner.jpg"
     },
     {
       "Identity": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce\\wwwroot\\assets\\images\\tranding_img.png",
