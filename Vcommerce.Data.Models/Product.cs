@@ -43,6 +43,7 @@ public abstract class Product
     [Required]
     public bool IsOnSale { get; set; }
 
+    [Range(minimum:MinSalesPercentage,maximum:MaxSalesPercentage)]
     public decimal? SalePercentage { get; set; }
 
     [Required]

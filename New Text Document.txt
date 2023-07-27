@@ -2,3 +2,13 @@ Add custom model binder for the decimal
 Use repository pattern
 Add Json file to overwrite the jquery validation for decimal numbers and add the script
 Add validations for new product properties
+Finish database
+Add logic to view products
+Add details for a product
+Add login and regsiter view and logic
+Add dependency injecting for the repositories
+Add logic for the subscription
+Add logic for the sales
+Add logic for the hot and new products
+Add logic for CDRUD operations for products
+Add rating properties for the prodcut
