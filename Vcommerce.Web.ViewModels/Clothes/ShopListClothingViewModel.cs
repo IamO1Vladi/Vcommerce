@@ -10,6 +10,11 @@ namespace Vcommerce.Web.ViewModels.Clothes
 {
     public class ShopListClothingViewModel
     {
+        public ShopListClothingViewModel()
+        {
+            this.ImageUrls=new List<string>();
+        }
+
         [Required]
         public Guid ClothingId { get; set; }
 
@@ -38,7 +43,8 @@ namespace Vcommerce.Web.ViewModels.Clothes
         [StringLength(MaxDescriptionLength,MinimumLength = MinDescriptionLength)]
         public string Description { get; set; } = null!;
 
-
+        
+        public ICollection<string> ImageUrls { get; set; } 
 
 
 

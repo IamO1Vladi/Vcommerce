@@ -37,5 +37,14 @@ namespace ClothingRepository
 
             return clothes;
         }
+
+        public async Task<string[]> GetImageUrlsForAProductById(Guid id)
+        {
+            var imageUrls = await dbContext.ClothesImages.Where(ci => ci.ClothingGuid == id)
+                .Select(ci => ci.ImageUrl)
+                .ToArrayAsync();
+
+            return imageUrls;
+        }
     }
 }

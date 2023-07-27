@@ -9,4 +9,6 @@ public interface IClothingRepo
     public Task<Category[]> GetAvailableCategories(Gender gender);
 
     public Task<Clothes[]> GetAllClothesByCategoryAndGender(Gender gender,Category category);
+
+    public Task<string[]> GetImageUrlsForAProductById(Guid  id);
 }
