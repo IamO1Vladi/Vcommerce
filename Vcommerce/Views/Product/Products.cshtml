@@ -1,6 +1,5 @@
 ﻿@{
     ViewData["Title"] = "Products Page";
-    
 }
 @using System.Drawing
 @using Microsoft.AspNetCore.Mvc.TagHelpers
@@ -14,14 +13,14 @@
         <div class="row align-items-center">
             <div class="col-md-6">
                 <div class="page-title">
-                    <h1>Shop List</h1>
+                    <h1>Product List</h1>
                 </div>
             </div>
             <div class="col-md-6">
                 <ol class="breadcrumb justify-content-md-end">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                    <li class="breadcrumb-item active">Shop List</li>
+                    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li class="breadcrumb-item"><a asp-controller="Product" asp-action="Products" asp-route-category="@ViewData["Category"]", asp-route-gender="@ViewData["Gender"]">@ViewData["Gender"] Products</a></li>
+                    <li class="breadcrumb-item active">Products list</li>
                 </ol>
             </div>
         </div>
@@ -55,14 +54,7 @@
                     <a href="javascript:Void(0);" class="shorting_icon grid"><i class="ti-view-grid"></i></a>
                     <a href="javascript:Void(0);" class="shorting_icon list active"><i class="ti-layout-list-thumb"></i></a>
                 </div>
-                <div class="custom_select">
-                    <select class="form-control form-control-sm">
-                        <option value="">Showing</option>
-                        <option value="9">9</option>
-                        <option value="12">12</option>
-                        <option value="18">18</option>
-                    </select>
-                </div>
+              
             </div>
         </div>
     </div>
@@ -71,75 +63,78 @@
         @{
             if (Model.Length > 0)
             {
-                foreach (var clothing in Model)
-                {
-                    <div class="col-lg-3 col-md-4 col-6">
-                        <div class="product">
-                            <div class="product_img">
-                                <a href="shop-product-detail.html">
-                                    <img src="assets/images/product_img1.jpg" alt="product_img1">
-                                </a>
-                                <div class="product_action_box">
-                                    <ul class="list_none pr_action_btn">
-                                        <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                        <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
-                                        <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product_info">
-                                <h6 class="product_title"><a>@clothing.Name</a></h6>
-                                <div class="product_price">
+
+                @await Html.PartialAsync("PartialViews/_ProductsList",Model);
+
+                //foreach (var clothing in Model)
+                //{
+                //    <div class="col-lg-3 col-md-4 col-6">
+                //        <div class="product">
+                //            <div class="product_img">
+                //                <a href="shop-product-detail.html">
+                //                    <img src="assets/images/product_img1.jpg" alt="product_img1">
+                //                </a>
+                //                <div class="product_action_box">
+                //                    <ul class="list_none pr_action_btn">
+                //                        <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
+                //                        <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
+                //                        <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
+                //                        <li><a href="#"><i class="icon-heart"></i></a></li>
+                //                    </ul>
+                //                </div>
+                //            </div>
+                //            <div class="product_info">
+                //                <h6 class="product_title"><a>@clothing.Name</a></h6>
+                //                <div class="product_price">
                                     
-                                    @{
-                                        if (clothing.IsOnSale)
-                                        {
-                                            <span class="price">$@{
-                                                                     decimal? priceAfterSale = (clothing.Price - (clothing.Price * (clothing.SalesPercentage / 100)));
-                                                                     var finalPrice = Math.Round(priceAfterSale.Value, 2);
-                                                                 }
-                                                @finalPrice</span>
-                                            <del>$@clothing.Price</del>
-                                            <div class="on_sale">
-                                                <span>@clothing.SalesPercentage% Off</span>
-                                            </div>
-                                        }
-                                        else
-                                        {
-                                                            <span class="price">$@clothing.Price</span>
-                                        }
-                                    }
-                                </div>
-                                <div class="rating_wrap">
-                                    <div class="rating">
-                                        <div class="product_rate" style="width:80%"></div>
-                                    </div>
-                                    <span class="rating_num">(21)</span>
-                                </div>
-                                <div class="pr_desc">
-                                    <p>@clothing.Description</p>
-                                </div>
-                                <div class="pr_switch_wrap">
-                                    <div class="product_color_switch">
-                                        @{
-                                            Color color = Color.FromName(clothing.Color);
-                                        }
-                                        <span data-color="@ColorTranslator.ToHtml(color)"></span>
-                                    </div>
-                                </div>
-                                <div class="list_product_action_box">
-                                    <ul class="list_none pr_action_btn">
-                                        <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                        <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
-                                        <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                }
+                //                    @{
+                //                        if (clothing.IsOnSale)
+                //                        {
+                //                            <span class="price">$@{
+                //                                                     decimal? priceAfterSale = (clothing.Price - (clothing.Price * (clothing.SalesPercentage / 100)));
+                //                                                     var finalPrice = Math.Round(priceAfterSale.Value, 2);
+                //                                                 }
+                //                                @finalPrice</span>
+                //                            <del>$@clothing.Price</del>
+                //                            <div class="on_sale">
+                //                                <span>@clothing.SalesPercentage% Off</span>
+                //                            </div>
+                //                        }
+                //                        else
+                //                        {
+                //                                            <span class="price">$@clothing.Price</span>
+                //                        }
+                //                    }
+                //                </div>
+                //                <div class="rating_wrap">
+                //                    <div class="rating">
+                //                        <div class="product_rate" style="width:80%"></div>
+                //                    </div>
+                //                    <span class="rating_num">(21)</span>
+                //                </div>
+                //                <div class="pr_desc">
+                //                    <p>@clothing.Description</p>
+                //                </div>
+                //                <div class="pr_switch_wrap">
+                //                    <div class="product_color_switch">
+                //                        @{
+                //                            Color color = Color.FromName(clothing.Color);
+                //                        }
+                //                        <span data-color="@ColorTranslator.ToHtml(color)"></span>
+                //                    </div>
+                //                </div>
+                //                <div class="list_product_action_box">
+                //                    <ul class="list_none pr_action_btn">
+                //                        <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
+                //                        <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
+                //                        <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
+                //                        <li><a href="#"><i class="icon-heart"></i></a></li>
+                //                    </ul>
+                //                </div>
+                //            </div>
+                //        </div>
+                //    </div>
+                //}
             }
             else
             {
@@ -152,16 +147,7 @@
 
 
     </div>
-<div class="row">
-    <div class="col-12">
-        <ul class="pagination mt-3 justify-content-center pagination_style1">
-            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#"><i class="linearicons-arrow-right"></i></a></li>
-        </ul>
-    </div>
-</div>
+
 </div>
 </div>
 </div>

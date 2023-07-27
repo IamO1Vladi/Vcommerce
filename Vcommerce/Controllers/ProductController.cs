@@ -22,7 +22,8 @@ namespace Vcommerce.Web.Controllers
         {
 
             var clothes = await clothingService.GetClothesForShoppingList(gender, category);
-
+            ViewData["Gender"] = gender;
+            ViewData["Category"]=category;
             return View(clothes);
         }
 
