@@ -18,7 +18,7 @@ namespace Vcommerce.Data
 
         public DbSet<Clothes> Clothes { get; set; } = null!;
 
-        public DbSet<ProductImages> ProductImages { get; set; } = null!;
+        public DbSet<ClothingImages> ClothesImages { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

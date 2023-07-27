@@ -9,7 +9,7 @@ public class Clothes:Product
     public Clothes()
     {
         this.Id = new Guid();
-        this.Images = new HashSet<ProductImages>();
+        this.Images = new HashSet<ClothingImages>();
         this.DateCreated= DateTime.UtcNow;
     }
 

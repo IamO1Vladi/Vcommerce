@@ -1,4 +1,16 @@
-﻿<!DOCTYPE html>
+﻿@using ClothingRepository
+@using ClothingRepository.Interfaces
+@using Vcommerce.Data.Models.Enums
+
+@inject IClothingRepo ClothingRepo;
+
+@{
+    var manClothingCategories = await ClothingRepo.GetAvailableCategories(Gender.Male);
+    var womenClothingCategories = await ClothingRepo.GetAvailableCategories(Gender.Female);
+    var kidsClothingCategories = await ClothingRepo.GetAvailableCategories(Gender.Kids);
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
 
@@ -170,31 +182,36 @@
                                                 <li class="mega-menu-col col-lg-3">
                                                     <ul>
                                                         <li class="dropdown-header">Woman's</li>
-                                                        <li><a asp-controller="Product" asp-action="Products" class="dropdown-item nav-link nav_item">Test Product Page</a></li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="shop-left-sidebar.html">Donec porttitor</a></li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="shop-right-sidebar.html">Donec vitae facilisis</a></li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="shop-list.html">Curabitur tempus</a></li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="shop-load-more.html">Vivamus in tortor</a></li>
+                                                       
+                                                        @{
+                                                            foreach (var category in womenClothingCategories)
+                                                            {
+                                                        <li><a asp-controller="Product" asp-action="Products" asp-route-category="@category" asp-route-gender="@Gender.Female" class="dropdown-item nav-link nav_item">@category</a></li>
+                                                            }
+                                                        }
+                                                          
                                                     </ul>
                                                 </li>
                                                 <li class="mega-menu-col col-lg-3">
                                                     <ul>
                                                         <li class="dropdown-header">Men's</li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="shop-cart.html">Donec vitae ante ante</a></li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="checkout.html">Etiam ac rutrum</a></li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="wishlist.html">Quisque condimentum</a></li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="compare.html">Curabitur laoreet</a></li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="order-completed.html">Vivamus in tortor</a></li>
+                                                        @{
+                                                            foreach (var category in manClothingCategories)
+                                                            {
+                                                        <li><a asp-controller="Product" asp-action="Products" asp-route-category="@category" asp-route-gender="@Gender.Male" class="dropdown-item nav-link nav_item">@category</a></li>
+                                                            }
+                                                        }
                                                     </ul>
                                                 </li>
                                                 <li class="mega-menu-col col-lg-3">
                                                     <ul>
                                                         <li class="dropdown-header">Kid's</li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail.html">Donec vitae facilisis</a></li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-left-sidebar.html">Quisque condimentum</a></li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-right-sidebar.html">Etiam ac rutrum</a></li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-thumbnails-left.html">Donec vitae ante ante</a></li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-thumbnails-left.html">Donec porttitor</a></li>
+                                                        @{
+                                                            foreach (var category in kidsClothingCategories)
+                                                            {
+                                                                <li><a asp-controller="Product" asp-action="Products" asp-route-category="@category" asp-route-gender="@Gender.Kids" class="dropdown-item nav-link nav_item">@category</a></li>
+                                                            }
+                                                        }
                                                     </ul>
                                                 </li>
                                                 <li class="mega-menu-col col-lg-3">

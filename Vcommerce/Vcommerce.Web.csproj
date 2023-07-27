@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ClothingRepository\ClothingRepository.csproj" />
     <ProjectReference Include="..\Vcommerce.Data\Vcommerce.Data.csproj" />
     <ProjectReference Include="..\Vcommerce.Web.Infrastructures\Vcommerce.Web.Infrastructures.csproj" />
   </ItemGroup>

@@ -10,5 +10,9 @@ public class ClothesEntityConfiguration :IEntityTypeConfiguration<Clothes>
     {
         builder.Property(c => c.Price)
             .HasPrecision(18, 2);
+
+        builder.Property(c=>c.SalePercentage)
+            .HasPrecision(18, 2);
+
     }
 }

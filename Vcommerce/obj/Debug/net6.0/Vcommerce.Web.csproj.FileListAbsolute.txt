@@ -85,3 +85,12 @@ C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\obj\Debug\net
 C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\obj\Debug\net6.0\Vcommerce.Web.pdb
 C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\obj\Debug\net6.0\Vcommerce.Web.genruntimeconfig.cache
 C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\obj\Debug\net6.0\ref\Vcommerce.Web.dll
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\ClothingRepository.dll
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\ClothingRepository.pdb
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\System.Web.Mvc.dll
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\System.Web.Razor.dll
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\System.Web.Helpers.dll
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\System.Web.WebPages.Deployment.dll
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\System.Web.WebPages.Razor.dll
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\System.Web.WebPages.dll
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll

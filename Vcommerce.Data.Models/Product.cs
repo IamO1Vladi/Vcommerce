@@ -43,10 +43,9 @@ public abstract class Product
     [Required]
     public bool IsOnSale { get; set; }
 
-    [Required]
-    public decimal SalePercentage { get; set; }
+    public decimal? SalePercentage { get; set; }
 
     [Required]
     public int NumberOfSales { get; set; }
-    public ICollection<ProductImages> Images { get; set; } = null!;
+    public ICollection<ClothingImages> Images { get; set; } = null!;
 }

@@ -13,9 +13,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vcommerce.Data", "Vcommerce
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vcommerce.Data.Models", "Vcommerce.Data.Models\Vcommerce.Data.Models.csproj", "{36E35295-9EE1-4519-BEB1-5CF4EEB7E649}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vcommerce.Web.Infrastructures", "Vcommerce.Web.Infrastructures\Vcommerce.Web.Infrastructures.csproj", "{6392CA85-D6E2-4581-810A-6330EB992540}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vcommerce.Web.Infrastructures", "Vcommerce.Web.Infrastructures\Vcommerce.Web.Infrastructures.csproj", "{6392CA85-D6E2-4581-810A-6330EB992540}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VCommerce.Common", "VCommerce.Common\VCommerce.Common.csproj", "{268A17CC-7FB3-42C1-862E-D63BBE4BB40D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VCommerce.Common", "VCommerce.Common\VCommerce.Common.csproj", "{268A17CC-7FB3-42C1-862E-D63BBE4BB40D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repository", "Repository", "{60406176-0A6E-4674-BA37-DC0C5C7D3AF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClothingRepository", "ClothingRepository\ClothingRepository.csproj", "{114E349F-BF99-4E81-9C6D-ADAD07787416}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +47,10 @@ Global
 		{268A17CC-7FB3-42C1-862E-D63BBE4BB40D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{268A17CC-7FB3-42C1-862E-D63BBE4BB40D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{268A17CC-7FB3-42C1-862E-D63BBE4BB40D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{114E349F-BF99-4E81-9C6D-ADAD07787416}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{114E349F-BF99-4E81-9C6D-ADAD07787416}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{114E349F-BF99-4E81-9C6D-ADAD07787416}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{114E349F-BF99-4E81-9C6D-ADAD07787416}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,6 +60,7 @@ Global
 		{0C57264D-B5CE-435B-92C4-9CF8BF8CD4E1} = {BD2B4040-406F-4F77-93E2-541ED84C8C5E}
 		{36E35295-9EE1-4519-BEB1-5CF4EEB7E649} = {BD2B4040-406F-4F77-93E2-541ED84C8C5E}
 		{6392CA85-D6E2-4581-810A-6330EB992540} = {260684CE-F71E-4EE5-825E-C63DDB0E7A4D}
+		{114E349F-BF99-4E81-9C6D-ADAD07787416} = {60406176-0A6E-4674-BA37-DC0C5C7D3AF8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0518F679-EF56-4A9E-A8C5-95FDEE48985D}

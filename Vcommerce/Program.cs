@@ -1,3 +1,5 @@
+using ClothingRepository;
+using ClothingRepository.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Vcommerce.Data;
@@ -37,6 +39,8 @@ namespace Vcommerce
                 .AddEntityFrameworkStores<VcommerceDbContext>();
 
             //builder.Services.AddApplicationServices(typeof("enter service here"));
+
+            builder.Services.AddScoped<IClothingRepo, ClothingRepo>(); //Delete later an implement correctly 
 
             builder.Services.AddControllersWithViews();
 

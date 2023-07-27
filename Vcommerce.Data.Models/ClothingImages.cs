@@ -4,7 +4,7 @@ using static VCommerce.Common.DataBaseValidations.ProductImagesValidations;
 
 namespace Vcommerce.Data.Models;
 
-public class ProductImages
+public class ClothingImages
 {
     [Key]
     public Guid Id { get; set; }
@@ -14,9 +14,9 @@ public class ProductImages
     public string ImageUrl { get; set; } = null!;
 
     [Required]
-    [ForeignKey(nameof(RelatedProduct))]
-    public Guid ProductGuid { get; set; }
+    [ForeignKey(nameof(RelatedClothing))]
+    public Guid ClothingGuid { get; set; }
 
-    public virtual Product RelatedProduct { get; set; } = null!;
+    public virtual Clothes RelatedClothing { get; set; } = null!;
 
 }
