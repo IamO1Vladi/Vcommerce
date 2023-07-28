@@ -35,14 +35,14 @@
     <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
         <div class="product-image">
             <div class="product_img_box">
-                <img id="product_img" src='@Model.ImageUrls.FirstOrDefault()' data-zoom-image="@Model.ImageUrls.FirstOrDefault()" alt="product_img1" />
+                <img id="product_img" src='@Model.ImageUrls.FirstOrDefault()' data-zoom-image="@Model.ImageUrls.FirstOrDefault()" alt="product_img1"/>
                 <a href="#" class="product_img_zoom" title="Zoom">
                     <span class="linearicons-zoom-in"></span>
                 </a>
             </div>
 
             <div id="pr_item_gallery" class="product_gallery_item slick_slider" data-slides-to-show="4" data-slides-to-scroll="1" data-infinite="false">
-               
+
                 @{
                     if (Model.ImageUrls.Any())
                     {
@@ -50,11 +50,11 @@
                         {
                             <div class="item">
                                 <a href="#" class="product_gallery_item active" data-image="@imageUrl" data-zoom-image="@imageUrl">
-                                    <img src="@imageUrl" alt="product_small_img1" />
+                                    <img src="@imageUrl" alt="product_small_img1"/>
                                 </a>
                             </div>
                         }
-                     
+
                     }
                 }
 

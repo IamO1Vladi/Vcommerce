@@ -40,8 +40,8 @@ namespace Vcommerce
                 .AddEntityFrameworkStores<VcommerceDbContext>();
 
             builder.Services.AddApplicationServices(typeof(IClothingService));
-
-            builder.Services.AddScoped<IClothingRepo, ClothingRepo>(); //Delete later an implement correctly 
+            builder.Services.AddApplicationRepositoryServices(typeof(IClothingRepo));
+            //builder.Services.AddScoped<IClothingRepo, ClothingRepo>(); //Delete later an implement correctly 
 
             builder.Services.AddControllersWithViews();
 

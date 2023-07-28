@@ -13,6 +13,12 @@
 
         <div class="col-lg-3 col-md-4 col-6">
             <div class="product">
+                @{
+                    if (clothing.IsOnSale)
+                    {
+                        <span class="pr_flash bg-success">Sale</span>
+                    }
+                }
                 <div class="product_img">
                     <a href="shop-product-detail.html">
                         <img src="@result" alt="product_img1">
