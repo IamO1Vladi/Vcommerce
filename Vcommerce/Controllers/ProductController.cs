@@ -18,7 +18,7 @@ namespace Vcommerce.Web.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Products(Category category , Gender gender)
+        public async Task<IActionResult> ProductsByCategoryAndGender(Category category , Gender gender)
         {
 
             var clothes = await clothingService.GetClothesForShoppingList(gender, category);
@@ -29,14 +29,18 @@ namespace Vcommerce.Web.Controllers
 
         [HttpGet]
 
-        public async Task<IActionResult> ProductDetails(Guid productId)
+        public async Task<IActionResult> ProductDetails(Guid productId,Category category,Gender gender)
         {
 
             var productDetails = await clothingService.GetClothingDetails(productId);
-
+            ViewData["Gender"] = gender;
+            ViewData["Category"] = category;
 
             return View(productDetails);
         }
+
+
+
 
     }
 }

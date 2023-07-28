@@ -186,7 +186,7 @@
                                                         @{
                                                             foreach (var category in womenClothingCategories)
                                                             {
-                                                        <li><a asp-controller="Product" asp-action="Products" asp-route-category="@category" asp-route-gender="@Gender.Female" class="dropdown-item nav-link nav_item">@category</a></li>
+                                                        <li><a asp-controller="Product" asp-action="ProductsByCategoryAndGender" asp-route-category="@category" asp-route-gender="@Gender.Female" class="dropdown-item nav-link nav_item">@category</a></li>
                                                             }
                                                         }
                                                           
@@ -198,7 +198,7 @@
                                                         @{
                                                             foreach (var category in manClothingCategories)
                                                             {
-                                                        <li><a asp-controller="Product" asp-action="Products" asp-route-category="@category" asp-route-gender="@Gender.Male" class="dropdown-item nav-link nav_item">@category</a></li>
+                                                        <li><a asp-controller="Product" asp-action="ProductsByCategoryAndGender" asp-route-category="@category" asp-route-gender="@Gender.Male" class="dropdown-item nav-link nav_item">@category</a></li>
                                                             }
                                                         }
                                                     </ul>
@@ -209,7 +209,7 @@
                                                         @{
                                                             foreach (var category in kidsClothingCategories)
                                                             {
-                                                                <li><a asp-controller="Product" asp-action="Products" asp-route-category="@category" asp-route-gender="@Gender.Kids" class="dropdown-item nav-link nav_item">@category</a></li>
+                                                        <li><a asp-controller="Product" asp-action="ProductsByCategoryAndGender" asp-route-category="@category" asp-route-gender="@Gender.Kids" class="dropdown-item nav-link nav_item">@category</a></li>
                                                             }
                                                         }
                                                     </ul>
