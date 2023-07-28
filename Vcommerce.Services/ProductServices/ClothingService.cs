@@ -47,5 +47,29 @@ namespace Vcommerce.Services.ProductServices
 
             return clothesViewModel;
         }
+
+        public async Task<ClothingDetailsViewModel> GetClothingDetails(Guid id)
+        {
+            
+            var dbClothing= await clothingRepo.GetClothingById(id);
+
+            var images = await clothingRepo.GetImageUrlsForAProductById(id);
+
+            var clothingDetails = new ClothingDetailsViewModel()
+            {
+                ClothingId = dbClothing.Id,
+                Color = dbClothing.Color,
+                Description = dbClothing.Description,
+                IsNew = dbClothing.IsNew,
+                IsOnSale = dbClothing.IsOnSale,
+                Name = dbClothing.Name,
+                Price = dbClothing.Price,
+                Material = dbClothing.Material,
+                SalesPercentage = dbClothing.SalePercentage,
+                ImageUrls = images
+            };
+
+            return clothingDetails;
+        }
     }
 }

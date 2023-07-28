@@ -46,5 +46,18 @@ namespace ClothingRepository
 
             return imageUrls;
         }
+
+        public async Task<Clothes> GetClothingById(Guid id)
+        {
+
+            var clothing = await dbContext.Clothes.FindAsync(id);
+
+            if (clothing == null)
+            {
+                throw new ArgumentNullException("Add message later");
+            }
+
+            return clothing;
+        }
     }
 }

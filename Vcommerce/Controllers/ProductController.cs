@@ -27,5 +27,16 @@ namespace Vcommerce.Web.Controllers
             return View(clothes);
         }
 
+        [HttpGet]
+
+        public async Task<IActionResult> ProductDetails(Guid productId)
+        {
+
+            var productDetails = await clothingService.GetClothingDetails(productId);
+
+
+            return View(productDetails);
+        }
+
     }
 }

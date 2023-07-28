@@ -11,4 +11,6 @@ public interface IClothingRepo
     public Task<Clothes[]> GetAllClothesByCategoryAndGender(Gender gender,Category category);
 
     public Task<string[]> GetImageUrlsForAProductById(Guid  id);
+
+    public Task<Clothes> GetClothingById(Guid id);
 }

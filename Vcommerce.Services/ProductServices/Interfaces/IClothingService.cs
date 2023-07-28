@@ -7,4 +7,6 @@ namespace Vcommerce.Services.ProductServices.Interfaces;
 public interface IClothingService
 {
     public Task<ShopListClothingViewModel[]> GetClothesForShoppingList(Gender  gender, Category category);
+
+    public Task<ClothingDetailsViewModel> GetClothingDetails(Guid id);
 }

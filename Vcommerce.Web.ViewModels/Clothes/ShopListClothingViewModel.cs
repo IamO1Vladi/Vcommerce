@@ -13,6 +13,7 @@ namespace Vcommerce.Web.ViewModels.Clothes
         public ShopListClothingViewModel()
         {
             this.ImageUrls=new List<string>();
+            
         }
 
         [Required]
@@ -46,6 +47,7 @@ namespace Vcommerce.Web.ViewModels.Clothes
         
         public ICollection<string> ImageUrls { get; set; } 
 
+        
 
 
     }
