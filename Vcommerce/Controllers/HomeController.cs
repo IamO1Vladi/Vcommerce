@@ -18,10 +18,12 @@ namespace Vcommerce.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+
+        public Task<IActionResult> ExclusiveProducts(string tag)
         {
-            return View();
+
         }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

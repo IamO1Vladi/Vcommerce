@@ -27,9 +27,9 @@ public class ExclusiveProductsViewModel
     [Required]
     public bool IsNew { get; set; }
 
-    [Required]
+    
     [Range(minimum:MinSalesPercentage,maximum:MaxSalesPercentage)]
-    public decimal SalesPercentage { get; set; }
+    public decimal? SalesPercentage { get; set; }
 
     [Required]
     [StringLength(MaxUrlLength,MinimumLength = MinUrlLength)]

@@ -66,5 +66,12 @@ namespace ClothingRepository
 
             return clothing;
         }
+
+        public async Task<Clothes[]> GetClothesOnSale()
+        {
+            var clothes = await dbContext.Clothes.Where(c => c.IsOnSale == true).ToArrayAsync();
+
+            return clothes;
+        }
     }
 }

@@ -11,4 +11,6 @@ public interface IClothingService
     public Task<ClothingDetailsViewModel> GetClothingDetails(Guid id);
 
     public Task<ShopListClothingViewModel[]> GetClothesForShoppingListByGender(Gender gender);
+
+    public Task<ExclusiveProductsViewModel[]> GetExclusiveProductsForSpecialOffer();
 }

@@ -102,5 +102,31 @@ namespace Vcommerce.Services.ProductServices
 
             return clothesViewModel;
         }
+
+        public async Task<ExclusiveProductsViewModel[]> GetExclusiveProductsForSpecialOffer()
+        {
+            var clothes = await clothingRepo.GetClothesOnSale();
+
+            var exclusiveClothes = clothes.Select(c => new ExclusiveProductsViewModel()
+            {
+                Color = c.Color,
+                Id = c.Id,
+                IsNew = c.IsNew,
+                IsOnSale = c.IsOnSale,
+                Name = c.Name,
+                Price = c.Price,
+                SalesPercentage = c.SalePercentage
+
+            }).ToArray();
+
+            foreach (var clothing in exclusiveClothes)
+            {
+                var images = await clothingRepo.GetImageUrlsForAProductById(clothing.Id);
+
+                clothing.ImageUrl = images[0];
+            }
+
+            return exclusiveClothes;
+        }
     }
 }
