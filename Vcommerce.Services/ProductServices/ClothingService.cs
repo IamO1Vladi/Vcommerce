@@ -71,5 +71,30 @@ namespace Vcommerce.Services.ProductServices
 
             return clothingDetails;
         }
+
+        public async Task<ShopListClothingViewModel[]> GetClothesForShoppingListByGender(Gender gender)
+        {
+            var clothes = await clothingRepo.GetClothesByGender(gender);
+
+            var clothesViewModel = clothes.Select(c => new ShopListClothingViewModel()
+                {
+                    ClothingId = c.Id,
+                    Color = c.Color,
+                    Description = c.Description,
+                    IsNew = c.IsNew,
+                    IsOnSale = c.IsOnSale,
+                    Name = c.Name,
+                    Price = c.Price,
+                    SalesPercentage = c.SalePercentage
+                })
+                .ToArray();
+
+            foreach (var clothing in clothesViewModel)
+            {
+                clothing.ImageUrls = await clothingRepo.GetImageUrlsForAProductById(clothing.ClothingId);
+            }
+
+            return clothesViewModel;
+        }
     }
 }
