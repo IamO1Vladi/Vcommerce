@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\VCommerce.Common\VCommerce.Common.csproj" />
+    <ProjectReference Include="..\Vcommerce.Data.Models\Vcommerce.Data.Models.csproj" />
   </ItemGroup>
 
 </Project>

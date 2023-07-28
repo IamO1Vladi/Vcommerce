@@ -21,10 +21,9 @@ namespace Vcommerce.Web.Controllers
         public async Task<IActionResult> ProductsByCategoryAndGender(Category category , Gender gender)
         {
 
-            var clothes = await clothingService.GetClothesForShoppingList(gender, category);
-            ViewData["Gender"] = gender;
-            ViewData["Category"]=category;
-            return View(clothes);
+            var products = await clothingService.GetClothesForShoppingList(gender, category);
+            
+            return View(products);
         }
 
         [HttpGet]
@@ -33,13 +32,22 @@ namespace Vcommerce.Web.Controllers
         {
 
             var productDetails = await clothingService.GetClothingDetails(productId);
-            ViewData["Gender"] = gender;
-            ViewData["Category"] = category;
+            
 
             return View(productDetails);
         }
 
+        [HttpGet]
 
+        public async Task<IActionResult> ProductsByGender(Gender gender)
+        {
+            var products = await clothingService.GetClothesForShoppingListByGender(gender);
+           
+
+
+            return View(products);
+
+        }
 
 
     }

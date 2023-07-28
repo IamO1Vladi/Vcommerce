@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Vcommerce.Data.Models.Enums;
 using static VCommerce.Common.DataBaseValidations.ClothesValidations;
 using static VCommerce.Common.DataBaseValidations.ProductValidations;
 
@@ -50,6 +51,13 @@ namespace Vcommerce.Web.ViewModels.Clothes
         public string Material { get; set; } = null!;
 
         public ICollection<string> ImageUrls { get; set; }
+
+        [Required]
+        public Category Category { get; set; }
+
+        [Required]
+        public Gender Gender { get; set; }
+
 
     }
 }

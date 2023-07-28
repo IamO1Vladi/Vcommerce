@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Vcommerce.Data.Models.Enums;
 using static VCommerce.Common.DataBaseValidations.ProductValidations;
 
 namespace Vcommerce.Web.ViewModels.Clothes
@@ -44,9 +46,15 @@ namespace Vcommerce.Web.ViewModels.Clothes
         [StringLength(MaxDescriptionLength,MinimumLength = MinDescriptionLength)]
         public string Description { get; set; } = null!;
 
-        
+        [Required]
+        public Category Category { get; set; }
+
+        [Required]
+        public Gender Gender { get; set; }
+
         public ICollection<string> ImageUrls { get; set; } 
 
+        
         
 
 

@@ -36,7 +36,9 @@ namespace Vcommerce.Services.ProductServices
                 IsOnSale = c.IsOnSale,
                 Name = c.Name,
                 Price = c.Price,
-                SalesPercentage = c.SalePercentage
+                SalesPercentage = c.SalePercentage,
+                Category = c.Category,
+                Gender = c.Gender
             })
                 .ToArray();
 
@@ -66,7 +68,9 @@ namespace Vcommerce.Services.ProductServices
                 Price = dbClothing.Price,
                 Material = dbClothing.Material,
                 SalesPercentage = dbClothing.SalePercentage,
-                ImageUrls = images
+                ImageUrls = images,
+                Category = dbClothing.Category,
+                Gender = dbClothing.Gender
             };
 
             return clothingDetails;
@@ -85,7 +89,9 @@ namespace Vcommerce.Services.ProductServices
                     IsOnSale = c.IsOnSale,
                     Name = c.Name,
                     Price = c.Price,
-                    SalesPercentage = c.SalePercentage
+                    SalesPercentage = c.SalePercentage,
+                    Category = c.Category,
+                    Gender = c.Gender
                 })
                 .ToArray();
 

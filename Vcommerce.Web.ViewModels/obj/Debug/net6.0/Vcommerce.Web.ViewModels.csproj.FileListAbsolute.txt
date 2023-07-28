@@ -13,3 +13,5 @@ C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Web.ViewModel
 C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Web.ViewModels\obj\Debug\net6.0\refint\Vcommerce.Web.ViewModels.dll
 C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Web.ViewModels\obj\Debug\net6.0\Vcommerce.Web.ViewModels.pdb
 C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Web.ViewModels\obj\Debug\net6.0\ref\Vcommerce.Web.ViewModels.dll
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Web.ViewModels\bin\Debug\net6.0\Vcommerce.Data.Models.dll
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Web.ViewModels\bin\Debug\net6.0\Vcommerce.Data.Models.pdb

@@ -59,5 +59,12 @@ namespace ClothingRepository
 
             return clothing;
         }
+
+        public async Task<Clothes[]> GetClothesByGender(Gender gender)
+        {
+            var clothing = await dbContext.Clothes.Where(c=>c.Gender==gender).ToArrayAsync();
+
+            return clothing;
+        }
     }
 }

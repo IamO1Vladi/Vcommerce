@@ -366,6 +366,9 @@
             "projectReferences": {
               "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\VCommerce.Common\\VCommerce.Common.csproj": {
                 "projectPath": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\VCommerce.Common\\VCommerce.Common.csproj"
+              },
+              "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce.Data.Models\\Vcommerce.Data.Models.csproj": {
+                "projectPath": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce.Data.Models\\Vcommerce.Data.Models.csproj"
               }
             }
           }
