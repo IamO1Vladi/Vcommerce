@@ -1,15 +1,32 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
-@{
-}
 
+@using System.Drawing
+@model ExclusiveProductsViewModel[];
+
+@{
+
+    foreach (var product in Model)
+    {
+        var image = string.Empty;
+        if (string.IsNullOrEmpty(product.ImageUrl))
+        {
+            image = "assets/images/product_img1.jpg";
+        }
+        else { image = product.ImageUrl; }
 
 <div class="col-lg-3 col-md-4 col-6">
     <div class="product">
+        @{
+                    if (@product.IsOnSale)
+            {
+                <span class="pr_flash bg-success">Sale</span>
+            }
+        }
         <div class="product_img">
             <a href="shop-product-detail.html">
-                <img src="assets/images/product_img1.jpg" alt="product_img1">
+                <img src="@image" alt="product_img1">
             </a>
             <div class="product_action_box">
                 <ul class="list_none pr_action_btn">
@@ -21,12 +38,19 @@
             </div>
         </div>
         <div class="product_info">
-            <h6 class="product_title"><a href="shop-product-detail.html">Blue Dress For Woman</a></h6>
+                    <h6 class="product_title"><a href="shop-product-detail.html">@product.Name</a></h6>
             <div class="product_price">
-                <span class="price">$45.00</span>
-                <del>$55.25</del>
+                <span class="price">
+                    $
+                    @{
+                                decimal? priceAfterSale = (product.Price - (product.Price * (product.SalesPercentage / 100)));
+                        var finalPrice = Math.Round(priceAfterSale.Value, 2);
+                    }
+                    @finalPrice
+                </span>
+                        <del>$@product.Price</del>
                 <div class="on_sale">
-                    <span>35% Off</span>
+                            <span>@product.SalesPercentage% Off</span>
                 </div>
             </div>
             <div class="rating_wrap">
@@ -36,15 +60,20 @@
                 <span class="rating_num">(21)</span>
             </div>
             <div class="pr_desc">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
+                <p>With each purchase we offer:</p>
             </div>
             <div class="pr_switch_wrap">
                 <div class="product_color_switch">
-                    <span class="active" data-color="#87554B"></span>
-                    <span data-color="#333333"></span>
-                    <span data-color="#DA323F"></span>
+                    @{
+                                Color color = Color.FromName(@product.Color);
+                    }
+                    <span data-color="@ColorTranslator.ToHtml(color)"></span>
                 </div>
             </div>
         </div>
     </div>
 </div>
+    }
+
+}
+

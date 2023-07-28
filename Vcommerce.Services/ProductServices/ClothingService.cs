@@ -123,7 +123,16 @@ namespace Vcommerce.Services.ProductServices
             {
                 var images = await clothingRepo.GetImageUrlsForAProductById(clothing.Id);
 
-                clothing.ImageUrl = images[0];
+                if (images.Any())
+                {
+                    clothing.ImageUrl = images[0];
+                }
+                else
+                {
+                    clothing.ImageUrl = "/assets/images/product_img1.jpg";
+                }
+
+                
             }
 
             return exclusiveClothes;
