@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace VCommerce.Common.DataBaseValidations
 {
-    internal class CommentsValidations
+    public static class CommentsValidations
     {
+
+        public const int MaxAvatarUrlLength = 2048;
+        public const int MaxDescriptionLength = 1000;
+        public const int MinDescriptionLength = 10;
+
+
+
     }
 }

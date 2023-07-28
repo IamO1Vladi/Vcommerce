@@ -25,7 +25,7 @@ namespace Vcommerce.Data.Models.Blog
         public string Title { get; set; } = null!;
 
         [Required]
-        public DateOnly DatePosted { get; set; }
+        public DateTime DatePosted { get; set; }
 
         [Required]
         [MaxLength(MaxImageUrlLength)]

@@ -8,7 +8,7 @@ public class Clothes:Product
 {
     public Clothes()
     {
-        this.Id = new Guid();
+        this.Id = Guid.NewGuid();
         this.Images = new HashSet<ClothingImages>();
         this.DateCreated= DateTime.UtcNow;
         this.Reviews= new HashSet<Review>();

@@ -7,6 +7,12 @@ namespace Vcommerce.Data.Models;
 
 public class Review
 {
+
+    public Review()
+    {
+        this.Id=Guid.NewGuid();
+    }
+
     [Key]
     public Guid Id { get; set; }
 
@@ -14,7 +20,7 @@ public class Review
     public ApplicationUser UserPosted { get; set; } = null!;
 
     [Required]
-    public DateOnly DatePosted { get; set; }
+    public DateTime DatePosted { get; set; }
 
     [Required]
     [MaxLength(MaxAvatarUrlLength)]
@@ -31,7 +37,7 @@ public class Review
     [ForeignKey(nameof(RelatedClothing))]
     public Guid RelatedClothingIdGuid{ get; set; }
 
-    public Clothes RelatedClothing { get; set; } = null!;
+    public virtual Clothes RelatedClothing { get; set; } = null!;
 
 
 
