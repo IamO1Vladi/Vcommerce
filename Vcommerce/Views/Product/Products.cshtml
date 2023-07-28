@@ -20,7 +20,7 @@
                 <ol class="breadcrumb justify-content-md-end">
                     <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
                     <li class="breadcrumb-item"><a asp-controller="Product" asp-action="Products" asp-route-category="@ViewData["Category"]", asp-route-gender="@ViewData["Gender"]">@ViewData["Gender"] Products</a></li>
-                    <li class="breadcrumb-item active">Products list</li>
+                    <li class="breadcrumb-item active">@ViewData["Category"]</li>
                 </ol>
             </div>
         </div>
