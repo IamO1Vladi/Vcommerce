@@ -11,6 +11,7 @@ public class Clothes:Product
         this.Id = new Guid();
         this.Images = new HashSet<ClothingImages>();
         this.DateCreated= DateTime.UtcNow;
+        this.Reviews= new HashSet<Review>();
     }
 
     [Required]
@@ -26,5 +27,7 @@ public class Clothes:Product
     [Required]
     public Gender Gender { get; set; }
 
-    
+    public virtual ICollection<Review> Reviews { get; set; }
+
+
 }

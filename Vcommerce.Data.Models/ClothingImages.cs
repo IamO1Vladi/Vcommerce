@@ -6,6 +6,12 @@ namespace Vcommerce.Data.Models;
 
 public class ClothingImages
 {
+
+    public ClothingImages()
+    {
+        this.Id=Guid.NewGuid();
+    }
+
     [Key]
     public Guid Id { get; set; }
 
