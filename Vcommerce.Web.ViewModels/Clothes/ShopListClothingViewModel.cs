@@ -39,6 +39,10 @@ namespace Vcommerce.Web.ViewModels.Clothes
         public bool IsNew { get; set; }
 
         [Required]
+
+        public bool IsHot { get; set; }
+
+        [Required]
         [StringLength(MaxColorNameLength,MinimumLength = MinColorNameLength)]
         public string Color { get; set; } = null!;
 

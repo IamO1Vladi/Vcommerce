@@ -14,7 +14,15 @@
         <div class="col-lg-3 col-md-4 col-6">
             <div class="product">
                 @{
-                    if (clothing.IsOnSale)
+                    if (@clothing.IsHot)
+                    {
+                        <span class="pr_flash bg-danger">Hot</span>
+                    }
+                    else if (@clothing.IsNew)
+                    {
+                        <span class="pr_flash">New</span>
+                    }
+                    else if (@clothing.IsOnSale)
                     {
                         <span class="pr_flash bg-success">Sale</span>
                     }
@@ -33,10 +41,11 @@
                     </div>
                 </div>
                 <div class="product_info">
-                    <h6 class="product_title"><a asp-controller="Product" asp-action="ProductDetails" asp-route-productId="@clothing.ClothingId" asp-route-category="@Model.First().Category" , asp-route-gender="@ViewData["Gender"]">@clothing.Name</a></h6>
+                    <h6 class="product_title"><a asp-controller="Product" asp-action="ProductDetails" asp-route-productId="@clothing.ClothingId" asp-route-category="@clothing.Category" , asp-route-gender="@clothing.Gender">@clothing.Name</a></h6>
                     <div class="product_price">
 
                         @{
+                            
                             if (clothing.IsOnSale)
                             {
                                 <span class="price">

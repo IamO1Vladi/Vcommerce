@@ -9,6 +9,8 @@ using Vcommerce.Data.Models.Enums;
 using Vcommerce.Services.ProductServices.Interfaces;
 using Vcommerce.Web.ViewModels.Clothes;
 
+using static VCommerce.Common.ClothesFilters.ClothesFiltersConstants;
+
 namespace Vcommerce.Services.ProductServices
 {
     public class ClothingService:IClothingService
@@ -34,6 +36,7 @@ namespace Vcommerce.Services.ProductServices
                 Description = c.Description,
                 IsNew = c.IsNew,
                 IsOnSale = c.IsOnSale,
+                IsHot = c.NumberOfSales>=NumberOfSalesRequiredToBeHot,
                 Name = c.Name,
                 Price = c.Price,
                 SalesPercentage = c.SalePercentage,
@@ -87,6 +90,7 @@ namespace Vcommerce.Services.ProductServices
                     Description = c.Description,
                     IsNew = c.IsNew,
                     IsOnSale = c.IsOnSale,
+                    IsHot = c.NumberOfSales >= NumberOfSalesRequiredToBeHot,
                     Name = c.Name,
                     Price = c.Price,
                     SalesPercentage = c.SalePercentage,
@@ -115,7 +119,9 @@ namespace Vcommerce.Services.ProductServices
                 IsOnSale = c.IsOnSale,
                 Name = c.Name,
                 Price = c.Price,
-                SalesPercentage = c.SalePercentage
+                SalesPercentage = c.SalePercentage,
+                Category = c.Category,
+                Gender = c.Gender
 
             }).ToArray();
 
@@ -134,6 +140,100 @@ namespace Vcommerce.Services.ProductServices
 
                 
             }
+
+            return exclusiveClothes;
+        }
+
+        public async Task<ExclusiveProductsViewModel[]> GetExclusiveProductsForNewArrivals()
+        {
+            var clothes = await clothingRepo.GetNewClothes();
+
+            var exclusiveClothes = clothes.Select(c => new ExclusiveProductsViewModel()
+            {
+                Color = c.Color,
+                Id = c.Id,
+                IsNew = c.IsNew,
+                IsOnSale = c.IsOnSale,
+                Name = c.Name,
+                Price = c.Price,
+                SalesPercentage = c.SalePercentage,
+                Category = c.Category,
+                Gender = c.Gender
+
+
+            }).ToArray();
+
+            foreach (var clothing in exclusiveClothes)
+            {
+                var images = await clothingRepo.GetImageUrlsForAProductById(clothing.Id);
+
+                if (images.Any())
+                {
+                    clothing.ImageUrl = images[0];
+                }
+                else
+                {
+                    clothing.ImageUrl = "/assets/images/product_img1.jpg";
+                }
+
+
+            }
+
+            return exclusiveClothes;
+        }
+
+        public async Task<ExclusiveProductsViewModel[]> GetExclusiveProductsForBestSellers()
+        {
+            var clothes = await clothingRepo.GetHotClothes();
+
+            var exclusiveClothes = clothes.Select(c => new ExclusiveProductsViewModel()
+            {
+                Color = c.Color,
+                Id = c.Id,
+                IsNew = c.IsNew,
+                IsOnSale = c.IsOnSale,
+                IsHot = true,
+                Name = c.Name,
+                Price = c.Price,
+                SalesPercentage = c.SalePercentage,
+                Category = c.Category,
+                Gender = c.Gender
+
+            }).ToArray();
+
+            foreach (var clothing in exclusiveClothes)
+            {
+                var images = await clothingRepo.GetImageUrlsForAProductById(clothing.Id);
+
+                if (images.Any())
+                {
+                    clothing.ImageUrl = images[0];
+                }
+                else
+                {
+                    clothing.ImageUrl = "/assets/images/product_img1.jpg";
+                }
+
+
+            }
+
+            return exclusiveClothes;
+        }
+
+        public async Task<AllExclusiveProductsForHomePageVIewModel> GetAllExclusiveProducts()
+        {
+            var clothesOnSale = await this.GetExclusiveProductsForSpecialOffer();
+
+            var hotClothes= await this.GetExclusiveProductsForBestSellers();
+
+            var newClothes = await this.GetExclusiveProductsForNewArrivals();
+
+            var exclusiveClothes = new AllExclusiveProductsForHomePageVIewModel()
+            {
+                HotProducts = hotClothes,
+                NewProducts = newClothes,
+                ProductsOnSale = clothesOnSale
+            };
 
             return exclusiveClothes;
         }

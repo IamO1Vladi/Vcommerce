@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Vcommerce.Data.Models.Enums;
 
 namespace Vcommerce.Web.ViewModels.Clothes;
 
@@ -27,6 +28,8 @@ public class ExclusiveProductsViewModel
     [Required]
     public bool IsNew { get; set; }
 
+    public bool IsHot { get; set; }
+
     
     [Range(minimum:MinSalesPercentage,maximum:MaxSalesPercentage)]
     public decimal? SalesPercentage { get; set; }
@@ -39,5 +42,9 @@ public class ExclusiveProductsViewModel
     [StringLength(MaxColorNameLength,MinimumLength = MinColorNameLength)]
     public string Color { get; set; } = null!;
 
+    [Required]
+    public Category Category { get; set; }
 
+    [Required]
+    public Gender Gender { get; set; }
 }

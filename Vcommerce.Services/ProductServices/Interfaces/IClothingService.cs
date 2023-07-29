@@ -13,4 +13,10 @@ public interface IClothingService
     public Task<ShopListClothingViewModel[]> GetClothesForShoppingListByGender(Gender gender);
 
     public Task<ExclusiveProductsViewModel[]> GetExclusiveProductsForSpecialOffer();
+
+    public Task<ExclusiveProductsViewModel[]> GetExclusiveProductsForNewArrivals();
+
+    public Task<ExclusiveProductsViewModel[]> GetExclusiveProductsForBestSellers();
+
+    public Task<AllExclusiveProductsForHomePageVIewModel> GetAllExclusiveProducts();
 }

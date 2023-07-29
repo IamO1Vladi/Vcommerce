@@ -19,10 +19,18 @@
 <div class="col-lg-3 col-md-4 col-6">
     <div class="product">
         @{
-                    if (@product.IsOnSale)
+                    if (@product.IsHot)
+                    {
+                        <span class="pr_flash bg-danger">Hot</span>
+                    }
+                    else if (@product.IsNew)
             {
-                <span class="pr_flash bg-success">Sale</span>
-            }
+                <span class="pr_flash">New</span>
+                    }
+                    else if (@product.IsOnSale)
+                    {
+                        <span class="pr_flash bg-success">Sale</span>
+                    }
         }
         <div class="product_img">
             <a href="shop-product-detail.html">
@@ -38,20 +46,29 @@
             </div>
         </div>
         <div class="product_info">
-                    <h6 class="product_title"><a href="shop-product-detail.html">@product.Name</a></h6>
+                    <h6 class="product_title"><a asp-controller="Product" asp-action="ProductDetails" asp-route-productId="@product.Id" asp-route-category="@product.Category" , asp-route-gender="@product.Gender">@product.Name</a></h6>
             <div class="product_price">
-                <span class="price">
-                    $
-                    @{
-                                decimal? priceAfterSale = (product.Price - (product.Price * (product.SalesPercentage / 100)));
-                        var finalPrice = Math.Round(priceAfterSale.Value, 2);
+                @{
+                    if (product.IsOnSale)
+                    {
+                        <span class="price">
+                            $
+                            @{
+                                        decimal? priceAfterSale = (product.Price - (product.Price * (product.SalesPercentage / 100)));
+                                var finalPrice = Math.Round(priceAfterSale.Value, 2);
+                            }
+                            @finalPrice
+                        </span>
+                                <del>$@product.Price</del>
+                        <div class="on_sale">
+                                    <span>@product.SalesPercentage% Off</span>
+                        </div>
                     }
-                    @finalPrice
-                </span>
-                        <del>$@product.Price</del>
-                <div class="on_sale">
-                            <span>@product.SalesPercentage% Off</span>
-                </div>
+                    else
+                    {
+                                <span class="price">$@product.Price</span>
+                    }
+                }
             </div>
             <div class="rating_wrap">
                 <div class="rating">

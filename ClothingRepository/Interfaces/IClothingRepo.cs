@@ -17,4 +17,10 @@ public interface IClothingRepo
     public Task<Clothes[]> GetClothesByGender(Gender gender);
 
     public Task<Clothes[]> GetClothesOnSale();
+
+    public Task<Clothes[]> GetNewClothes();
+
+    public Task<Clothes[]> GetAllClothes();
+
+    public Task<Clothes[]> GetHotClothes();
 }

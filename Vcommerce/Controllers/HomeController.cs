@@ -17,10 +17,12 @@ namespace Vcommerce.Controllers
             this.clothingService = clothingService;
         }
 
-        public  IActionResult Index()
+        public async Task<IActionResult> Index()
         {
 
-            return View();
+            var exclusiveClothes = await clothingService.GetAllExclusiveProducts();
+
+            return View(exclusiveClothes);
         }
 
         [HttpGet]

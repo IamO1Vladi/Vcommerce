@@ -9,6 +9,8 @@ using Vcommerce.Data;
 using Vcommerce.Data.Models;
 using Vcommerce.Data.Models.Enums;
 
+using static VCommerce.Common.ClothesFilters.ClothesFiltersConstants;
+
 namespace ClothingRepository
 {
     public class ClothingRepo:IClothingRepo
@@ -70,6 +72,28 @@ namespace ClothingRepository
         public async Task<Clothes[]> GetClothesOnSale()
         {
             var clothes = await dbContext.Clothes.Where(c => c.IsOnSale == true).ToArrayAsync();
+
+            return clothes;
+        }
+
+        public async Task<Clothes[]> GetNewClothes()
+        {
+            var clothes = await dbContext.Clothes.Where(c => c.IsNew == true).ToArrayAsync();
+            
+            return clothes;
+        }
+
+        public async Task<Clothes[]> GetAllClothes()
+        {
+            var clothes = await dbContext.Clothes.ToArrayAsync();
+
+            return clothes;
+        }
+
+        public async Task<Clothes[]> GetHotClothes()
+        {
+            var clothes = await dbContext.Clothes.Where(c => c.NumberOfSales >= NumberOfSalesRequiredToBeHot).OrderBy(c=>c.NumberOfSales)
+                .ToArrayAsync();
 
             return clothes;
         }
