@@ -12,6 +12,7 @@ public class Clothes:Product
         this.Images = new HashSet<ClothingImages>();
         this.DateCreated= DateTime.UtcNow;
         this.Reviews= new HashSet<Review>();
+        //this.Size = new HashSet<ClothesSizes>(); Fix later
     }
 
     [Required]
@@ -19,6 +20,8 @@ public class Clothes:Product
     public string Material { get; set; } = null!;
 
     [Required]
+   // public ICollection<ClothesSizes> Size { get; set; } Fix later
+
     public ClothesSizes Size { get; set; }
 
     [Required]

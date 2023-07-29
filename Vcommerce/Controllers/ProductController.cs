@@ -49,6 +49,14 @@ namespace Vcommerce.Web.Controllers
 
         }
 
+        [HttpGet]
+
+        public IActionResult Add()
+        {
+
+
+            return View();
+        }
 
     }
 }
