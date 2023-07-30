@@ -25,6 +25,7 @@ namespace Vcommerce.Data.Models.Enums
         Tunics=15,
         Rompers=16,
         Jumpsuits=17,
+        Pants=18
     }
 
 }
