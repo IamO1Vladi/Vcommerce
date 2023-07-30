@@ -12,17 +12,12 @@ public class Clothes:Product
         this.Images = new HashSet<ClothingImages>();
         this.DateCreated= DateTime.UtcNow;
         this.Reviews= new HashSet<Review>();
-        //this.Size = new HashSet<ClothesSizes>(); Fix later
+        this.Sizes = new HashSet<ClothingSizes>();
     }
 
     [Required]
     [MaxLength(MaxMaterialNameLength)]
     public string Material { get; set; } = null!;
-
-    [Required]
-   // public ICollection<ClothesSizes> Size { get; set; } Fix later
-
-    public ClothesSizes Size { get; set; }
 
     [Required]
     public Category Category { get; set; }
@@ -32,5 +27,5 @@ public class Clothes:Product
 
     public virtual ICollection<Review> Reviews { get; set; }
 
-
+    public virtual ICollection<ClothingSizes> Sizes { get; set; }
 }

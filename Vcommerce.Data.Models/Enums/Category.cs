@@ -9,12 +9,23 @@ namespace Vcommerce.Data.Models.Enums
     public enum Category
     {
         TShirts=1,
-        Pants=2,
-        Shirts=3,
-        Trousers = 4,
-        Pajamas = 5,
-        Swimsuits=6,
-        Jackets=7,
-
+        DressShirts=2,
+        Jeans=3,
+        PoloShirts=4,
+        Jackets=5,
+        Hoodies=6,
+        Suits=7,
+        Shorts=8,
+        Sweaters=9,
+        Blazers=10,
+        Blouses=11,
+        Dresses=12,
+        Skirts=13,
+        Leggings=14,
+        Tunics=15,
+        Rompers=16,
+        Jumpsuits=17,
     }
+
 }
+

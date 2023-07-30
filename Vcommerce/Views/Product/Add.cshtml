@@ -66,23 +66,6 @@
             <input asp-for="Material" type="text" placeholder="Enter clothing material here:" class="form-control" id="Material" name="Material" >
         </div>
 
-        <div class="mb-3">
-       
-            <label asp-for="Sizes" class="form-label">Sizes:</label>
-            <select  class="form-select" id="Sizes" name="Sizes">
-                @{
-                    foreach (var size in Enum.GetValues(typeof(ClothesSizes)) )
-                    {
-                        <option value="@size">@size.ToString()</option>
-                    }
-                }
-               
-            </select>
-
-
-        </div>
-        
-    
        
 
         <div class="mb-3">

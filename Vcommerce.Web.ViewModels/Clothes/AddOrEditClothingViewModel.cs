@@ -42,11 +42,6 @@ namespace Vcommerce.Web.ViewModels.Clothes
         public string Description { get; set; } = null!;
 
         [Required]
-        [Range(minimum: MinQuantity, maximum: MaxQuantity)]
-        public int Quantity { get; set; }
-
-
-        [Required]
         public bool IsOnSale { get; set; }
 
         [Range(minimum: MinSalesPercentage, maximum: MaxSalesPercentage)]
@@ -60,7 +55,7 @@ namespace Vcommerce.Web.ViewModels.Clothes
         [MaxLength(MaxMaterialNameLength)]
         public string Material { get; set; } = null!;
 
-        [Required] public ICollection<ClothesSizes> Sizes { get; set; } = null!;
+        public ICollection<ClothesSizes>? Sizes { get; set; }
 
         [Required]
         public Category Category { get; set; }
