@@ -21,6 +21,8 @@ namespace Vcommerce.Data
 
         public DbSet<ClothingImages> ClothesImages { get; set; } = null!;
 
+        public DbSet<ClothingSizes> ClothingSizes { get; set; } = null!;
+
         public DbSet<Review> ClothingReviews { get; set; } = null!;
 
         public DbSet<BlogPost> BlogPosts { get; set; } = null!;
