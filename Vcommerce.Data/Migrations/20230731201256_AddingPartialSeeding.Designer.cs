@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Vcommerce.Data;
 
@@ -11,9 +12,10 @@ using Vcommerce.Data;
 namespace Vcommerce.Data.Migrations
 {
     [DbContext(typeof(VcommerceDbContext))]
-    partial class VcommerceDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230731201256_AddingPartialSeeding")]
+    partial class AddingPartialSeeding
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

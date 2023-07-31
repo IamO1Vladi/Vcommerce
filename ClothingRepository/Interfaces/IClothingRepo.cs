@@ -23,4 +23,5 @@ public interface IClothingRepo
     public Task<Clothes[]> GetAllClothes();
 
     public Task<Clothes[]> GetHotClothes();
+
 }

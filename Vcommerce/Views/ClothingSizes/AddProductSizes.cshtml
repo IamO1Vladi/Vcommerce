@@ -1,0 +1,58 @@
+﻿@using Vcommerce.Data.Models.Enums
+@{
+    ViewData["Title"] = "Add Clothing Size";
+}
+
+@model ClothingSizesViewModel[]
+
+
+
+<div class="container">
+    
+    <h2 class="text-center">@ViewData["Title"]</h2>
+
+    <form method="post" asp-controller="ClothingSizes" asp-action="AddProductSizes">
+        @Html.AntiForgeryToken()
+
+
+
+
+        <div class="row justify-content-center">
+
+            @{
+                var sizes = Enum.GetValues(typeof(ClothesSizes));
+                for (int i = 0; i < sizes.Length; i++)
+                {
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label asp-for="@Model[i].Size" class="col-form-label col-md-4">@sizes.GetValue(i)</label>
+                                <div class="col-md-8">
+                                    <input asp-for="@Model[i].SizeQuantity" class="form-control"/>
+                                    <span asp-validation-for="@Model[i].SizeQuantity" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+
+
+            }
+
+
+
+        </div>
+
+
+
+
+
+
+        <div class="form-group text-center">
+            <input type="submit" value="Create" class="btn btn-primary"/>
+        </div>
+    </form>
+
+
+</div>

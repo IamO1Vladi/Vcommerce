@@ -54,8 +54,15 @@ namespace Vcommerce.Web.Controllers
         public IActionResult Add()
         {
 
-
             return View();
+        }
+
+        [HttpPost]
+
+        public async Task<IActionResult> Add(AddOrEditClothingViewModel model)
+        {
+
+            return RedirectToAction("AddProductSizes", "ClothingSizes");
         }
 
     }

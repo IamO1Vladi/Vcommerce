@@ -237,5 +237,10 @@ namespace Vcommerce.Services.ProductServices
 
             return exclusiveClothes;
         }
+
+        public Task AddClothing(AddOrEditClothingViewModel viewModel)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

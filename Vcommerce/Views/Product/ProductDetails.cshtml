@@ -46,7 +46,7 @@
                 @{
                     if (Model.ImageUrls.Any())
                     {
-                        foreach (var imageUrl in Model.ImageUrls)
+                        foreach (var imageUrl in Model.ImageUrls.Skip(1))
                         {
                             <div class="item">
                                 <a href="#" class="product_gallery_item active" data-image="@imageUrl" data-zoom-image="@imageUrl">
@@ -54,6 +54,8 @@
                                 </a>
                             </div>
                         }
+
+                       
 
                     }
                 }

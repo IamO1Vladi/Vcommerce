@@ -18,7 +18,6 @@ namespace Vcommerce.Web.ViewModels.Clothes
         public AddOrEditClothingViewModel()
         {
             this.Images = new HashSet<IFormFile>();
-            this.Sizes = new HashSet<ClothesSizes>();
         }
 
         [Required]
@@ -54,8 +53,6 @@ namespace Vcommerce.Web.ViewModels.Clothes
         [Required]
         [MaxLength(MaxMaterialNameLength)]
         public string Material { get; set; } = null!;
-
-        public ICollection<ClothesSizes>? Sizes { get; set; }
 
         [Required]
         public Category Category { get; set; }

@@ -8,7 +8,7 @@ public class ClothesImagesEntityConfiguration :IEntityTypeConfiguration<Clothing
 {
     public void Configure(EntityTypeBuilder<ClothingImages> builder)
     {
-        
+        builder.HasData(GenerateClothingImages());
     }
 
     private ClothingImages[] GenerateClothingImages()
