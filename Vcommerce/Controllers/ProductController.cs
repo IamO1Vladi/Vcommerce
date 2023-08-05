@@ -8,12 +8,14 @@ namespace Vcommerce.Web.Controllers
     public class ProductController : Controller
     {
 
-        private IClothingService clothingService;
+        private readonly IClothingService clothingService;
+        private readonly IClothingImagesService clothingImagesService;
 
-        public ProductController(IClothingService clothingService)
+        public ProductController(IClothingService clothingService,IClothingImagesService clothingImagesService)
         {
             
             this.clothingService = clothingService;
+            this.clothingImagesService = clothingImagesService;
 
         }
 
@@ -61,6 +63,10 @@ namespace Vcommerce.Web.Controllers
 
         public async Task<IActionResult> Add(AddOrEditClothingViewModel model)
         {
+
+            var productId=await clothingService.AddClothing(model);
+            await clothingImagesService.AddClothingImages(model.Images,productId);
+
 
             return RedirectToAction("AddProductSizes", "ClothingSizes");
         }

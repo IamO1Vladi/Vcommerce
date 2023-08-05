@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ClothingRepository.Interfaces;
 using Vcommerce.Data;
+using Vcommerce.Data.Models;
 using Vcommerce.Data.Models.Enums;
 using Vcommerce.Services.ProductServices.Interfaces;
 using Vcommerce.Web.ViewModels.Clothes;
@@ -238,9 +239,33 @@ namespace Vcommerce.Services.ProductServices
             return exclusiveClothes;
         }
 
-        public Task AddClothing(AddOrEditClothingViewModel viewModel)
+        public async Task<Guid> AddClothing(AddOrEditClothingViewModel viewModel)
         {
-            throw new NotImplementedException();
+
+            Clothes newClothing = new Clothes()
+            {
+                Brand = viewModel.Brand,
+                Category = viewModel.Category,
+                Color = viewModel.Color,
+                Description = viewModel.Description,
+                Gender = viewModel.Gender,
+                IsNew = true,
+                IsOnSale = viewModel.IsOnSale,
+                SalePercentage = viewModel.SalePercentage,
+                Price = viewModel.Price,
+                Name = viewModel.Name,
+                Quantity = 0,
+                Material = viewModel.Material,
+                NumberOfSales = 0
+            };
+
+            
+            
+                await context.Clothes.AddAsync(newClothing);
+                await context.SaveChangesAsync();
+            
+
+            return newClothing.Id;
         }
     }
 }

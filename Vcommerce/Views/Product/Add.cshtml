@@ -13,7 +13,7 @@
 
 <div class="container mt-4">
     <h2>Add Clothing</h2>
-    <form  method="post">
+    <form method="post" enctype="multipart/form-data" asp-controller="Product" asp-action="Add">
         <!-- Hidden field for Id -->
         <input type="hidden" name="Id" value="">
 

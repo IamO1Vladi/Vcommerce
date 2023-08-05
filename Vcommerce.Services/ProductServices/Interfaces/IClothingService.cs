@@ -20,5 +20,5 @@ public interface IClothingService
 
     public Task<AllExclusiveProductsForHomePageVIewModel> GetAllExclusiveProducts();
 
-    public Task AddClothing(AddOrEditClothingViewModel viewModel);
+    public Task<Guid> AddClothing(AddOrEditClothingViewModel viewModel);
 }

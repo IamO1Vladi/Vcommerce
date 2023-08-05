@@ -1,5 +1,7 @@
 using ClothingRepository;
 using ClothingRepository.Interfaces;
+using FirebaseAdmin;
+using Google.Apis.Auth.OAuth2;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Vcommerce.Data;
@@ -15,6 +17,8 @@ namespace Vcommerce
         public static async Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            
 
             // Add services to the container.
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
@@ -38,6 +42,10 @@ namespace Vcommerce
                         builder.Configuration.GetValue<int>("Identity:Password:RequiredLength");
                 })
                 .AddEntityFrameworkStores<VcommerceDbContext>();
+
+
+          
+            Environment.SetEnvironmentVariable("bucket", "craftdemo-78c02.appspot.com");
 
             builder.Services.AddApplicationServices(typeof(IClothingService));
             builder.Services.AddApplicationRepositoryServices(typeof(IClothingRepo));
