@@ -47,7 +47,7 @@ public class ClothingImagesService:IClothingImagesService
             }
 
         }
-        await dbContext.AddRangeAsync(clothingImages);
+        await dbContext.ClothesImages.AddRangeAsync(clothingImages);
         await dbContext.SaveChangesAsync();
 
 

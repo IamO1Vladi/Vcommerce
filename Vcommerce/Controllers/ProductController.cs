@@ -30,7 +30,7 @@ namespace Vcommerce.Web.Controllers
 
         [HttpGet]
 
-        public async Task<IActionResult> ProductDetails(Guid productId,Category category,Gender gender)
+        public async Task<IActionResult> ProductDetails(Guid productId)
         {
 
             var productDetails = await clothingService.GetClothingDetails(productId);
@@ -68,7 +68,16 @@ namespace Vcommerce.Web.Controllers
             await clothingImagesService.AddClothingImages(model.Images,productId);
 
 
-            return RedirectToAction("AddProductSizes", "ClothingSizes");
+            return RedirectToAction("AddProductSizes", "ClothingSizes",new {productId=productId});
+        }
+
+        [HttpDelete]
+
+        public async Task<IActionResult> Delete(Guid productId)
+        {
+            await clothingService.DeleteClothing(productId);
+
+            return Json(new { success = true, message = "Item deleted successfully." });
         }
 
     }

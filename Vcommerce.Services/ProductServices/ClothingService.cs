@@ -267,5 +267,22 @@ namespace Vcommerce.Services.ProductServices
 
             return newClothing.Id;
         }
+
+        public async Task UpdateClothingQuantity(Guid clothingId,int quantity)
+        {
+            var clothing = await context.Clothes.FindAsync(clothingId);
+
+            clothing.Quantity=quantity;
+
+            await context.SaveChangesAsync();
+        }
+
+        public async Task DeleteClothing(Guid clothingId)
+        {
+            Clothes clothingToRemove= await context.Clothes.FindAsync(clothingId);
+            context.Clothes.Remove(clothingToRemove);
+
+            await context.SaveChangesAsync();
+        }
     }
 }
