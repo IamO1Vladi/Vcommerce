@@ -80,5 +80,25 @@ namespace Vcommerce.Web.Controllers
             return Json(new { success = true, message = "Item deleted successfully." });
         }
 
+
+        [HttpGet]
+
+        public async Task<IActionResult> Edit(Guid productId)
+        {
+
+            var clothing = await clothingService.GetClothingViewModelById(productId);
+
+            return View(clothing);
+        }
+
+        [HttpPost]
+
+        public async Task<IActionResult> Edit(Guid productId,AddOrEditClothingViewModel model)
+        {
+         
+            await clothingService.EditClothing(productId,model);
+
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

@@ -25,4 +25,8 @@ public interface IClothingService
     public Task UpdateClothingQuantity(Guid clothingId,int quantity);
 
     public Task DeleteClothing(Guid clothingId);
+
+    public Task<AddOrEditClothingViewModel> GetClothingViewModelById(Guid id);
+
+    public Task EditClothing(Guid id,AddOrEditClothingViewModel model);
 }

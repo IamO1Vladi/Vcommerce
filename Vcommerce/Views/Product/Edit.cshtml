@@ -1,0 +1,14 @@
+﻿@using Vcommerce.Data.Models.Enums
+@model AddOrEditClothingViewModel;
+
+@{
+    ViewData["productId"] = Context.Request.Query["productId"];
+}
+
+<partial name="PartialViews/_ClothingFormPartial" model="@Model"/>
+
+
+@*@section Scripts
+{
+    <partial name="_ValidationScriptsPartial"/>
+}*@

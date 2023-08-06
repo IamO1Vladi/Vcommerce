@@ -284,5 +284,45 @@ namespace Vcommerce.Services.ProductServices
 
             await context.SaveChangesAsync();
         }
+
+        public async Task<AddOrEditClothingViewModel> GetClothingViewModelById(Guid id)
+        {
+           var clothing= await clothingRepo.GetClothingById(id);
+
+           AddOrEditClothingViewModel viewModel = new AddOrEditClothingViewModel()
+           {
+               Brand = clothing.Brand,
+               Category = clothing.Category,
+               Color = clothing.Color,
+               Description = clothing.Description,
+               Gender = clothing.Gender,
+               IsOnSale = clothing.IsOnSale,
+               Material = clothing.Material,
+               Name = clothing.Name,
+               Price = clothing.Price,
+               SalePercentage = clothing.SalePercentage
+           };
+
+           return viewModel;
+        }
+
+        public async Task EditClothing(Guid id,AddOrEditClothingViewModel model)
+        {
+            var currentClothing = await clothingRepo.GetClothingById(id);
+
+            currentClothing.Brand = model.Brand;
+            currentClothing.Category = model.Category;
+            currentClothing.Color = model.Color;
+            currentClothing.Description = model.Description;
+            currentClothing.Gender = model.Gender;
+            currentClothing.IsOnSale = model.IsOnSale;
+            currentClothing.Material = model.Material;
+            currentClothing.Name = model.Name;
+            currentClothing.Price = model.Price;
+            currentClothing.SalePercentage = model.SalePercentage;
+
+            await context.SaveChangesAsync();
+            
+        }
     }
 }

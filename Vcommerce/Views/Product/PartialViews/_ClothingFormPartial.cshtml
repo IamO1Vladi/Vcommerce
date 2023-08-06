@@ -1,0 +1,125 @@
+﻿@using Vcommerce.Data.Models.Enums
+@using System.Drawing
+@model AddOrEditClothingViewModel;
+
+
+
+    <!DOCTYPE html>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta2/dist/css/bootstrap-select.min.css" rel="stylesheet">
+
+
+
+<div class="container mt-4">
+    <h2>Add Clothing</h2>
+
+    <form method="post" enctype="multipart/form-data" >
+        <!-- Hidden field for Id -->
+        <input type="hidden" name="Id" value="">
+
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label">Name:</label>
+            <input asp-for="Name" type="text" placeholder="Enter clothing name here" class="form-control" id="Name" name="Name">
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Brand" class="form-label">Brand:</label>
+            <input asp-for="Brand" type="text" placeholder="Enter clothing brand here" class="form-control" id="Brand" name="Brand">
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Price" class="form-label">Price:</label>
+            <input asp-for="Price" placeholder="Enter price here" type="number" class="form-control" id="Price" name="Price">
+        </div>
+
+
+        <label asp-for="Color" class="form-label">Color:</label>
+        <input asp-for="Color" type="color" class="form-control form-control-color" id="Color" name="Color"  title="Choose color" />
+
+
+
+        <div class="mb-3">
+            <label asp-for="Description" class="form-label">Description:</label>
+            <textarea asp-for="Description" placeholder="Enter description here:" class="form-control" id="Description" name="Description"></textarea>
+        </div>
+
+
+
+        <div class="form-check">
+            <input asp-for="IsOnSale" type="checkbox" class="form-check-input" id="IsOnSale" name="IsOnSale">
+            <label class="form-check-label" asp-for="IsOnSale">Is On Sale</label>
+        </div>
+
+        <div class="mb-3" id="salePercentageDiv" style="display:none">
+            <label asp-for="SalePercentage" class="form-label">Sale Percentage:</label>
+            <input asp-for="SalePercentage" type="number" placeholder="Enter sale percentage here:" class="form-control" id="SalePercentage" name="SalePercentage">
+        </div>
+
+
+        <!-- ClothingImages field for images (you may handle this separately based on your backend) -->
+
+        <div class="mb-3">
+            <label asp-for="Material" class="form-label">Material:</label>
+            <input asp-for="Material" type="text" placeholder="Enter clothing material here:" class="form-control" id="Material" name="Material">
+        </div>
+
+
+
+        <div class="mb-3">
+            <label asp-for="Category" class="form-label">Category:</label>
+            <select asp-for="Category" class="form-select" id="Category" name="Category">
+                @{
+                    foreach (var category in Enum.GetValues(typeof(Category)))
+                    {
+                        <option value="@category">@category</option>
+                    }
+                }
+
+            </select>
+        </div>
+
+
+        <div class="mb-3">
+            <label asp-for="Gender" class="form-label">Gender:</label>
+            <select asp-for="Gender" class="form-select" id="Gender" name="Gender">
+                @{
+                    foreach (var gender in Enum.GetValues(typeof(Gender)))
+                    {
+                        <option value="@gender">@gender</option>
+
+                    }
+                }
+
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Images" class="form-label">Select multiple images to upload:</label>
+            <input asp-for="Images" type="file" class="form-control" id="Images" name="Images" accept="image/*" multiple>
+        </div>
+
+        <button type="submit" class="btn btn-primary" value="Save">Submit</button>
+        <button type="button" class="btn btn-secondary" id="cancelButton">Cancel</button>
+
+    </form>
+</div>
+
+
+<script>
+    const isOnSaleCheckbox = document.getElementById('IsOnSale');
+    const salePercentageDiv = document.getElementById('salePercentageDiv');
+
+    isOnSaleCheckbox.addEventListener('change', function () {
+        if (this.checked) {
+            salePercentageDiv.style.display = 'block'; // Show the Sale Percentage div
+        } else {
+            salePercentageDiv.style.display = 'none'; // Hide the Sale Percentage div
+        }
+    });
+</script>
+
+<script>
+    document.getElementById('cancelButton').addEventListener('click', function() {
+        window.history.back(); // Navigate back to the previous page
+    });
+</script>
