@@ -32,5 +32,26 @@ namespace Vcommerce.Web.Controllers
 
             return RedirectToAction("Index","Home");
         }
+
+        [HttpGet]
+        public async Task<IActionResult> EditProductSizes(Guid productId)
+        {
+            ViewData["productId"]=productId;
+
+            var sizes = await clothingSizesService.GetClothingSizesViewModel(productId);
+
+            return View(sizes);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditProductSizes(ClothingSizesViewModel[] sizes)
+        {
+
+            await clothingSizesService.EditSizesForClothing(sizes);
+
+            return RedirectToAction("Index","Home");
+        }
+
+        
     }
 }

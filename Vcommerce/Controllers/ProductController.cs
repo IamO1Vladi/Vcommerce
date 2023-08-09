@@ -98,7 +98,7 @@ namespace Vcommerce.Web.Controllers
          
             await clothingService.EditClothing(productId,model);
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("EditProductSizes", "ClothingSizes", new {productId=productId});
         }
     }
 }

@@ -1,0 +1,14 @@
+﻿@model ClothingSizesViewModel[]
+
+@{
+    ViewData["Title"] = "Edit sizes";
+}
+
+
+<div class="container">
+
+    <h2 class="text-center">@ViewData["Title"]</h2>
+
+    <partial name="PartialViews/_ClothingSizesFormPartial" model="@Model" />
+
+</div>

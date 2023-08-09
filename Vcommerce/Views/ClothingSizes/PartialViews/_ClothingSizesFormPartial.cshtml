@@ -1,0 +1,51 @@
+﻿@using Vcommerce.Data.Models.Enums
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+
+@model ClothingSizesViewModel[];
+
+<form method="post">
+    @Html.AntiForgeryToken()
+
+
+
+
+    <div class="row justify-content-center">
+
+        @{
+            var sizes = Enum.GetValues(typeof(ClothesSizes));
+            for (int i = 0; i < sizes.Length; i++)
+            {
+                <input type="hidden" asp-for="@Model[i].ClothingId" value="@ViewData["productId"]"/>
+
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label asp-for="@Model[i].Size" class="col-form-label col-md-4">@sizes.GetValue(i)</label>
+                            <input type="hidden" asp-for="@Model[i].Size" value="@sizes.GetValue(i)" />
+                            <div class="col-md-8">
+                                <input asp-for="@Model[i].SizeQuantity" class="form-control"/>
+                                <span asp-validation-for="@Model[i].SizeQuantity" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            }
+
+
+        }
+
+
+
+    </div>
+
+
+
+
+
+
+    <div class="form-group text-center">
+        <input type="submit" value="Submit" class="btn btn-primary"/>
+    </div>
+</form>
+

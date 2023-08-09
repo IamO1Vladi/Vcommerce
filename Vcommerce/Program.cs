@@ -4,8 +4,11 @@ using FirebaseAdmin;
 using Google.Apis.Auth.OAuth2;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using Vcommerce.Data;
 using Vcommerce.Data.Models.Users;
+using Vcommerce.Services.ApiServices.FireBaseApiService;
+using Vcommerce.Services.ApiServices.FireBaseApiService.Interfaces;
 using Vcommerce.Services.ProductServices.Interfaces;
 using Vcommerce.Web.Infrastructures.Extensions;
 
@@ -46,6 +49,11 @@ namespace Vcommerce
 
           
             Environment.SetEnvironmentVariable("bucket", "craftdemo-78c02.appspot.com");
+
+            //Adding DI for Google Credentials
+            var credentials = builder.Configuration.GetSection("FireBaseCredentials").GetChildren();
+            
+            builder.Services.AddSingleton<IFireBaseGoogleCredential>(new FireBaseGoogleCredential(credentials));
 
             builder.Services.AddApplicationServices(typeof(IClothingService));
             builder.Services.AddApplicationRepositoryServices(typeof(IClothingRepo));

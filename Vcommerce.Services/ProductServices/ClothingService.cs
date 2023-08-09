@@ -42,7 +42,8 @@ namespace Vcommerce.Services.ProductServices
                 Price = c.Price,
                 SalesPercentage = c.SalePercentage,
                 Category = c.Category,
-                Gender = c.Gender
+                Gender = c.Gender,
+                Brand = c.Brand
             })
                 .ToArray();
 
@@ -96,7 +97,8 @@ namespace Vcommerce.Services.ProductServices
                     Price = c.Price,
                     SalesPercentage = c.SalePercentage,
                     Category = c.Category,
-                    Gender = c.Gender
+                    Gender = c.Gender,
+                    Brand = c.Brand
                 })
                 .ToArray();
 

@@ -56,10 +56,12 @@ namespace Vcommerce.Web.ViewModels.Clothes
         [Required]
         public Gender Gender { get; set; }
 
-        public ICollection<string> ImageUrls { get; set; } 
+        public ICollection<string> ImageUrls { get; set; }
 
-        
-        
+
+        [Required]
+
+        public string Brand { get; set; }=null!;
 
 
     }

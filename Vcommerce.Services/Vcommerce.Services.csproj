@@ -8,7 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="ApiServices\FireBaseApiService\Interfaces\" />
     <Folder Include="ProductServices\Interfaces\" />
   </ItemGroup>
 
