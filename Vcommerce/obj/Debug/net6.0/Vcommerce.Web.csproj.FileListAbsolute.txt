@@ -87,13 +87,6 @@ C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\obj\Debug\net
 C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\obj\Debug\net6.0\ref\Vcommerce.Web.dll
 C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\ClothingRepository.dll
 C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\ClothingRepository.pdb
-C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\System.Web.Mvc.dll
-C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\System.Web.Razor.dll
-C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\System.Web.Helpers.dll
-C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\System.Web.WebPages.Deployment.dll
-C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\System.Web.WebPages.Razor.dll
-C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\System.Web.WebPages.dll
-C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll
 C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\Vcommerce.Web.ViewModels.dll
 C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\Vcommerce.Web.ViewModels.pdb
 C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\Vcommerce.Services.dll
@@ -111,3 +104,12 @@ C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net
 C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\Microsoft.Extensions.Configuration.UserSecrets.dll
 C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\Firebase.Storage.dll
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\Microsoft.AspNetCore.Razor.Language.dll
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\Microsoft.CodeAnalysis.dll
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\Microsoft.CodeAnalysis.Razor.dll
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

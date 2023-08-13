@@ -1225,6 +1225,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce\\wwwroot\\js\\jquery-override.js",
+      "PackagePath": "staticwebassets\\js\\jquery-override.js"
+    },
+    {
       "Id": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

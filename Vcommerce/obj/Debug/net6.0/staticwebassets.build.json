@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "HJsgK8hisSvOahyXpI8OiP6K49SbZgxNzv/5bxDW5J0=",
+  "Hash": "bGeqCD4/OAV9sbtAHpvN0cVFHZoevvsc/RP2CgWwwGg=",
   "Source": "Vcommerce.Web",
   "BasePath": "_content/Vcommerce.Web",
   "Mode": "Default",
@@ -6254,6 +6254,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce\\wwwroot\\js\\jquery-override.js",
+      "SourceId": "Vcommerce.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce\\wwwroot\\",
+      "BasePath": "_content/Vcommerce.Web",
+      "RelativePath": "js/jquery-override.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\jquery-override.js"
     },
     {
       "Identity": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce\\wwwroot\\js\\site.js",

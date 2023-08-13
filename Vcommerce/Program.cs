@@ -11,6 +11,7 @@ using Vcommerce.Services.ApiServices.FireBaseApiService;
 using Vcommerce.Services.ApiServices.FireBaseApiService.Interfaces;
 using Vcommerce.Services.ProductServices.Interfaces;
 using Vcommerce.Web.Infrastructures.Extensions;
+using Vcommerce.Web.Infrastructures.ModelBinders;
 
 
 namespace Vcommerce
@@ -59,7 +60,11 @@ namespace Vcommerce
             builder.Services.AddApplicationRepositoryServices(typeof(IClothingRepo));
             //builder.Services.AddScoped<IClothingRepo, ClothingRepo>(); //Delete later an implement correctly 
 
-            builder.Services.AddControllersWithViews();
+            builder.Services.AddControllersWithViews()
+                .AddMvcOptions(options =>
+                {
+                    options.ModelBinderProviders.Insert(0,new DecimalModelBinderProvider());
+                });
 
             var app = builder.Build();
 
