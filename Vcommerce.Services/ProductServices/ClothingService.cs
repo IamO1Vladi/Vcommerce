@@ -246,7 +246,7 @@ namespace Vcommerce.Services.ProductServices
 
             Clothes newClothing = new Clothes()
             {
-                Brand = viewModel.Brand,
+                BrandId = viewModel.Brand,
                 Category = viewModel.Category,
                 Color = viewModel.Color,
                 Description = viewModel.Description,
@@ -292,7 +292,7 @@ namespace Vcommerce.Services.ProductServices
 
            AddOrEditClothingViewModel viewModel = new AddOrEditClothingViewModel()
            {
-               Brand = clothing.Brand,
+               Brand = clothing.BrandId,
                Category = clothing.Category,
                Color = clothing.Color,
                Description = clothing.Description,
@@ -311,7 +311,7 @@ namespace Vcommerce.Services.ProductServices
         {
             var currentClothing = await clothingRepo.GetClothingById(id);
 
-            currentClothing.Brand = model.Brand;
+            currentClothing.BrandId = model.Brand;
             currentClothing.Category = model.Category;
             currentClothing.Color = model.Color;
             currentClothing.Description = model.Description;

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ClothingRepository.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 using Vcommerce.Data.Models.Enums;
 using Vcommerce.Services.ProductServices.Interfaces;
 using Vcommerce.Web.ViewModels.Clothes;
@@ -7,13 +8,16 @@ namespace Vcommerce.Web.Controllers
 {
     public class ProductController : Controller
     {
+        private readonly IBrandRepo brandRepo;
+
 
         private readonly IClothingService clothingService;
         private readonly IClothingImagesService clothingImagesService;
 
-        public ProductController(IClothingService clothingService,IClothingImagesService clothingImagesService)
+        public ProductController(IClothingService clothingService,IClothingImagesService clothingImagesService,IBrandRepo brandRepo)
         {
-            
+            this.brandRepo = brandRepo;
+
             this.clothingService = clothingService;
             this.clothingImagesService = clothingImagesService;
 
@@ -53,9 +57,9 @@ namespace Vcommerce.Web.Controllers
 
         [HttpGet]
 
-        public IActionResult Add()
+        public async Task<IActionResult> Add()
         {
-
+            ViewData["Brands"] = await brandRepo.GetAllBrandsAsync();
             return View();
         }
 
@@ -85,7 +89,7 @@ namespace Vcommerce.Web.Controllers
 
         public async Task<IActionResult> Edit(Guid productId)
         {
-
+            ViewData["Brands"] = await brandRepo.GetAllBrandsAsync();
             var clothing = await clothingService.GetClothingViewModelById(productId);
 
             return View(clothing);

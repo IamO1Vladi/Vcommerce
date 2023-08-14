@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Vcommerce.Data.Models;
+using Vcommerce.Data.Models.BrandInfo;
 using Vcommerce.Data.Models.Enums;
 
 using static VCommerce.Common.DataBaseValidations.ProductValidations;
@@ -25,8 +26,8 @@ namespace Vcommerce.Web.ViewModels.Clothes
         public string Name { get; set; } = null!;
 
         [Required]
-        [MaxLength(MaxBrandLength)]
-        public string Brand { get; set; } = null!;
+       
+        public Guid Brand { get; set; }
 
         [Required]
         [Range(minimum: MinPrice, maximum: MaxPrice)]

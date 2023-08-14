@@ -121,12 +121,12 @@
                             <ul class="list_brand">
                                 
                                 @{
-                                    foreach (var clothing in Model.OrderBy(m=>m.Brand))
+                                    foreach (var clothing in Model.OrderBy(m=>m.Brand.Name).DistinctBy(b=>b.Brand.Name))
                                     {
                                         <li>
                                             <div class="custome-checkbox">
-                                                <input class="form-check-input" type="checkbox" name="checkbox" id="@clothing.Brand" value="">
-                                                <label class="form-check-label" for="@clothing.Brand"><span>@clothing.Brand</span></label>
+                                                <input class="form-check-input" type="checkbox" name="checkbox" id="@clothing.Brand.Id" value="">
+                                                <label class="form-check-label" for="@clothing.Brand.Id"><span>@clothing.Brand.Name</span></label>
                                             </div>
                                         </li>
                                     }

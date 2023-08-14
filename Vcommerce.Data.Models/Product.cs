@@ -1,8 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Vcommerce.Data.Models.BrandInfo;
 
 namespace Vcommerce.Data.Models;
 using static VCommerce.Common.DataBaseValidations.ProductValidations;
+
 
 public abstract class Product
 {
@@ -14,10 +16,6 @@ public abstract class Product
     [Required]
     [MaxLength(MaxNameLength)]
     public string Name { get; set; } = null!;
-
-    [Required]
-    [MaxLength(MaxBrandLength)]
-    public string Brand { get; set; } = null!;
 
     [Required]
     [Range(minimum: MinPrice, maximum: MaxPrice)]

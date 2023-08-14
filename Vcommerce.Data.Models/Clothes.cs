@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Vcommerce.Data.Models.BrandInfo;
 using Vcommerce.Data.Models.Enums;
 using static VCommerce.Common.DataBaseValidations.ClothesValidations;
 
@@ -16,6 +18,12 @@ public class Clothes:Product
     }
 
     [Required]
+    [ForeignKey(nameof(Brand))]
+    public Guid BrandId { get; set; }
+
+    public virtual Brand Brand { get; set; } = null!;
+
+    [Required]
     [MaxLength(MaxMaterialNameLength)]
     public string Material { get; set; } = null!;
 
@@ -28,4 +36,6 @@ public class Clothes:Product
     public virtual ICollection<Review> Reviews { get; set; }
 
     public virtual ICollection<ClothingSizes> Sizes { get; set; }
+
+
 }

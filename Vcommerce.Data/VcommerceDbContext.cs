@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Vcommerce.Data.Configurations;
 using Vcommerce.Data.Models;
 using Vcommerce.Data.Models.Blog;
+using Vcommerce.Data.Models.BrandInfo;
 using Vcommerce.Data.Models.Users;
 
 namespace Vcommerce.Data
@@ -28,6 +29,8 @@ namespace Vcommerce.Data
         public DbSet<BlogPost> BlogPosts { get; set; } = null!;
 
         public DbSet<Comment> PostComments { get; set; } = null!;
+
+        public DbSet<Brand> Brands { get; set; }=null!;
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

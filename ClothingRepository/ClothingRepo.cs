@@ -35,7 +35,7 @@ namespace ClothingRepository
 
         public async Task<Clothes[]> GetAllClothesByCategoryAndGender(Gender gender, Category category)
         {
-            var clothes = await dbContext.Clothes.Where(c => c.Category == category && c.Gender == gender).ToArrayAsync();
+            var clothes = await dbContext.Clothes.Where(c => c.Category == category && c.Gender == gender).Include(b=>b.Brand).ToArrayAsync();
 
             return clothes;
         }
@@ -64,7 +64,7 @@ namespace ClothingRepository
 
         public async Task<Clothes[]> GetClothesByGender(Gender gender)
         {
-            var clothing = await dbContext.Clothes.Where(c=>c.Gender==gender).ToArrayAsync();
+            var clothing = await dbContext.Clothes.Where(c=>c.Gender==gender).Include(b=>b.Brand).ToArrayAsync();
 
             return clothing;
         }

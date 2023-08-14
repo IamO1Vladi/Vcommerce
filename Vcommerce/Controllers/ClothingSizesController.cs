@@ -41,7 +41,7 @@ namespace Vcommerce.Web.Controllers
 
             var sizes = await clothingSizesService.GetClothingSizesViewModel(productId);
 
-            return RedirectToAction("ProductDetails", "Product", new { productId = sizes.First().ClothingId });
+            return View(sizes);
         }
 
         [HttpPost]
@@ -50,7 +50,7 @@ namespace Vcommerce.Web.Controllers
 
             await clothingSizesService.EditSizesForClothing(sizes);
 
-            return RedirectToAction("Index","Home");
+            return RedirectToAction("ProductDetails", "Product", new { productId = sizes.First().ClothingId });
         }
 
         
