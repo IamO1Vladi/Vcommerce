@@ -54,8 +54,7 @@ public class ClothesEntityConfiguration :IEntityTypeConfiguration<Clothes>
             Gender = Gender.Male,
             DateCreated = dateCreated,
             NumberOfSales = random.Next(1, 100),
-            Quantity = 0,
-            IsNew = IsNew(dateCreated)
+            Quantity = 0
 
         };
         clothes.Add(clothing);
@@ -76,8 +75,7 @@ public class ClothesEntityConfiguration :IEntityTypeConfiguration<Clothes>
             Gender = Gender.Male,
             DateCreated = dateCreated,
             NumberOfSales = random.Next(1, 100),
-            Quantity = 0,
-            IsNew = IsNew(dateCreated)
+            Quantity = 0
 
         };
         clothes.Add(clothing);
@@ -98,8 +96,7 @@ public class ClothesEntityConfiguration :IEntityTypeConfiguration<Clothes>
             Gender = Gender.Male,
             DateCreated = dateCreated,
             NumberOfSales = random.Next(1, 100),
-            Quantity = 0,
-            IsNew = IsNew(dateCreated)
+            Quantity = 0
 
         };
         clothes.Add(clothing);
@@ -120,8 +117,7 @@ public class ClothesEntityConfiguration :IEntityTypeConfiguration<Clothes>
             Gender = Gender.Male,
             DateCreated = dateCreated,
             NumberOfSales = random.Next(1, 100),
-            Quantity = 0,
-            IsNew = IsNew(dateCreated)
+            Quantity = 0
 
         };
         clothes.Add(clothing);
@@ -142,8 +138,7 @@ public class ClothesEntityConfiguration :IEntityTypeConfiguration<Clothes>
             Gender = Gender.Male,
             DateCreated = dateCreated,
             NumberOfSales = random.Next(1, 100),
-            Quantity = 0,
-            IsNew = IsNew(dateCreated)
+            Quantity = 0
 
         };
         clothes.Add(clothing);
@@ -164,8 +159,7 @@ public class ClothesEntityConfiguration :IEntityTypeConfiguration<Clothes>
             Gender = Gender.Male,
             DateCreated = this.dateCreated,
             NumberOfSales = random.Next(1, 100),
-            Quantity = 0,
-            IsNew = this.IsNew(this.dateCreated)
+            Quantity = 0
 
         };
         clothes.Add(clothing);
@@ -186,8 +180,7 @@ public class ClothesEntityConfiguration :IEntityTypeConfiguration<Clothes>
             Gender = Gender.Male,
             DateCreated = this.dateCreated,
             NumberOfSales = random.Next(1, 100),
-            Quantity = 0,
-            IsNew = this.IsNew(this.dateCreated)
+            Quantity = 0
         };
         clothes.Add(clothing);
 
@@ -207,8 +200,7 @@ public class ClothesEntityConfiguration :IEntityTypeConfiguration<Clothes>
             Gender = Gender.Male,
             DateCreated = this.dateCreated,
             NumberOfSales = random.Next(1, 100),
-            Quantity = 0,
-            IsNew = this.IsNew(this.dateCreated)
+            Quantity = 0
         };
         clothes.Add(clothing);
 
@@ -228,8 +220,7 @@ public class ClothesEntityConfiguration :IEntityTypeConfiguration<Clothes>
             Gender = Gender.Male,
             DateCreated = this.dateCreated,
             NumberOfSales = random.Next(1, 100),
-            Quantity = 0,
-            IsNew = this.IsNew(this.dateCreated)
+            Quantity = 0
         };
         clothes.Add(clothing);
 
@@ -249,8 +240,7 @@ public class ClothesEntityConfiguration :IEntityTypeConfiguration<Clothes>
             Gender = Gender.Male,
             DateCreated = this.dateCreated,
             NumberOfSales = random.Next(1, 100),
-            Quantity = 0,
-            IsNew = this.IsNew(this.dateCreated)
+            Quantity = 0
         };
         clothes.Add(clothing);
 
@@ -270,8 +260,7 @@ public class ClothesEntityConfiguration :IEntityTypeConfiguration<Clothes>
             Gender = Gender.Male,
             DateCreated = this.dateCreated,
             NumberOfSales = random.Next(1, 100),
-            Quantity = 0,
-            IsNew = this.IsNew(this.dateCreated)
+            Quantity = 0
         };
         clothes.Add(clothing);
 
@@ -291,8 +280,7 @@ public class ClothesEntityConfiguration :IEntityTypeConfiguration<Clothes>
             Gender = Gender.Male,
             DateCreated = this.dateCreated,
             NumberOfSales = random.Next(1, 100),
-            Quantity = 0,
-            IsNew = this.IsNew(this.dateCreated)
+            Quantity = 0
         };
         clothes.Add(clothing);
 
@@ -312,8 +300,7 @@ public class ClothesEntityConfiguration :IEntityTypeConfiguration<Clothes>
             Gender = Gender.Male,
             DateCreated = this.dateCreated,
             NumberOfSales = random.Next(1, 100),
-            Quantity = 0,
-            IsNew = this.IsNew(this.dateCreated)
+            Quantity = 0
         };
         clothes.Add(clothing);
 
@@ -333,8 +320,7 @@ public class ClothesEntityConfiguration :IEntityTypeConfiguration<Clothes>
             Gender = Gender.Male,
             DateCreated = this.dateCreated,
             NumberOfSales = random.Next(1, 100),
-            Quantity = 0,
-            IsNew = this.IsNew(this.dateCreated)
+            Quantity = 0
         };
         clothes.Add(clothing);
 
@@ -354,8 +340,7 @@ public class ClothesEntityConfiguration :IEntityTypeConfiguration<Clothes>
             Gender = Gender.Male,
             DateCreated = this.dateCreated,
             NumberOfSales = random.Next(1, 100),
-            Quantity = 0,
-            IsNew = this.IsNew(this.dateCreated)
+            Quantity = 0
         };
         clothes.Add(clothing);
 
@@ -378,8 +363,7 @@ public class ClothesEntityConfiguration :IEntityTypeConfiguration<Clothes>
             Gender = Gender.Female,
             DateCreated = RandomDate(thisYear),
             NumberOfSales = random.Next(1, 100),
-            Quantity = 0,
-            IsNew = IsNew(dateCreated)
+            Quantity = 0
 
         };
         clothes.Add(clothing);
@@ -400,8 +384,7 @@ public class ClothesEntityConfiguration :IEntityTypeConfiguration<Clothes>
             Gender = Gender.Female,
             DateCreated = RandomDate(thisYear),
             NumberOfSales = random.Next(1, 100),
-            Quantity = 0,
-            IsNew = IsNew(dateCreated)
+            Quantity = 0
         };
         clothes.Add(clothing);
 
@@ -421,8 +404,7 @@ public class ClothesEntityConfiguration :IEntityTypeConfiguration<Clothes>
             Gender = Gender.Female,
             DateCreated = RandomDate(thisYear),
             NumberOfSales = random.Next(1, 100),
-            Quantity = 0,
-            IsNew = IsNew(dateCreated)
+            Quantity = 0
         };
         clothes.Add(clothing);
 
@@ -442,8 +424,7 @@ public class ClothesEntityConfiguration :IEntityTypeConfiguration<Clothes>
             Gender = Gender.Female,
             DateCreated = RandomDate(thisYear),
             NumberOfSales = random.Next(1, 100),
-            Quantity = 0,
-            IsNew = IsNew(dateCreated)
+            Quantity = 0
         };
         clothes.Add(clothing);
 
@@ -463,8 +444,7 @@ public class ClothesEntityConfiguration :IEntityTypeConfiguration<Clothes>
             Gender = Gender.Female,
             DateCreated = RandomDate(thisYear),
             NumberOfSales = random.Next(1, 100),
-            Quantity = 0,
-            IsNew = IsNew(dateCreated)
+            Quantity = 0
         };
         clothes.Add(clothing);
 
@@ -484,8 +464,7 @@ public class ClothesEntityConfiguration :IEntityTypeConfiguration<Clothes>
             Gender = Gender.Female,
             DateCreated = RandomDate(thisYear),
             NumberOfSales = random.Next(1, 100),
-            Quantity = 0,
-            IsNew = IsNew(dateCreated)
+            Quantity = 0
         };
         clothes.Add(clothing);
 
@@ -505,8 +484,7 @@ public class ClothesEntityConfiguration :IEntityTypeConfiguration<Clothes>
             Gender = Gender.Female,
             DateCreated = RandomDate(thisYear),
             NumberOfSales = random.Next(1, 100),
-            Quantity = 0,
-            IsNew = IsNew(dateCreated)
+            Quantity = 0
         };
         clothes.Add(clothing);
 
@@ -526,8 +504,7 @@ public class ClothesEntityConfiguration :IEntityTypeConfiguration<Clothes>
             Gender = Gender.Female,
             DateCreated = RandomDate(thisYear),
             NumberOfSales = random.Next(1, 100),
-            Quantity = 0,
-            IsNew = IsNew(dateCreated)
+            Quantity = 0
         };
         clothes.Add(clothing);
 
@@ -547,8 +524,7 @@ public class ClothesEntityConfiguration :IEntityTypeConfiguration<Clothes>
             Gender = Gender.Female,
             DateCreated = dateCreated,
             NumberOfSales = random.Next(1, 100),
-            Quantity = 0,
-            IsNew = IsNew(dateCreated)
+            Quantity = 0
         };
         clothes.Add(clothing);
 
@@ -568,8 +544,7 @@ public class ClothesEntityConfiguration :IEntityTypeConfiguration<Clothes>
             Gender = Gender.Female,
             DateCreated = dateCreated,
             NumberOfSales = random.Next(1, 100),
-            Quantity = 0,
-            IsNew = IsNew(dateCreated)
+            Quantity = 0
         };
         clothes.Add(clothing);
 
@@ -592,8 +567,7 @@ public class ClothesEntityConfiguration :IEntityTypeConfiguration<Clothes>
             Gender = Gender.Kids,
             DateCreated = RandomDate(thisYear),
             NumberOfSales = random.Next(1, 100),
-            Quantity = 0,
-            IsNew = IsNew(dateCreated)
+            Quantity = 0
 
         };
         clothes.Add(clothing);
@@ -614,8 +588,7 @@ public class ClothesEntityConfiguration :IEntityTypeConfiguration<Clothes>
             Gender = Gender.Kids,
             DateCreated = RandomDate(thisYear),
             NumberOfSales = random.Next(1, 100),
-            Quantity = 0,
-            IsNew = IsNew(dateCreated)
+            Quantity = 0
         };
         clothes.Add(clothing);
 
@@ -635,8 +608,7 @@ public class ClothesEntityConfiguration :IEntityTypeConfiguration<Clothes>
             Gender = Gender.Kids,
             DateCreated = RandomDate(thisYear),
             NumberOfSales = random.Next(1, 100),
-            Quantity = 0,
-            IsNew = IsNew(dateCreated)
+            Quantity = 0
         };
         clothes.Add(clothing);
 
@@ -656,8 +628,7 @@ public class ClothesEntityConfiguration :IEntityTypeConfiguration<Clothes>
             Gender = Gender.Kids,
             DateCreated = RandomDate(thisYear),
             NumberOfSales = random.Next(1, 100),
-            Quantity = 0,
-            IsNew = IsNew(dateCreated)
+            Quantity = 0
         };
         clothes.Add(clothing);
 
@@ -677,8 +648,7 @@ public class ClothesEntityConfiguration :IEntityTypeConfiguration<Clothes>
             Gender = Gender.Kids,
             DateCreated = RandomDate(thisYear),
             NumberOfSales = random.Next(1, 100),
-            Quantity = 0,
-            IsNew = IsNew(dateCreated)
+            Quantity = 0
         };
         clothes.Add(clothing);
 
@@ -698,8 +668,7 @@ public class ClothesEntityConfiguration :IEntityTypeConfiguration<Clothes>
             Gender = Gender.Kids,
             DateCreated = RandomDate(thisYear),
             NumberOfSales = random.Next(1, 100),
-            Quantity = 0,
-            IsNew = IsNew(dateCreated)
+            Quantity = 0
         };
         clothes.Add(clothing);
 
@@ -719,8 +688,7 @@ public class ClothesEntityConfiguration :IEntityTypeConfiguration<Clothes>
             Gender = Gender.Kids,
             DateCreated = RandomDate(thisYear),
             NumberOfSales = random.Next(1, 100),
-            Quantity = 0,
-            IsNew = IsNew(dateCreated)
+            Quantity = 0
         };
         clothes.Add(clothing);
 
@@ -740,8 +708,7 @@ public class ClothesEntityConfiguration :IEntityTypeConfiguration<Clothes>
             Gender = Gender.Kids,
             DateCreated = RandomDate(thisYear),
             NumberOfSales = random.Next(1, 100),
-            Quantity = 0,
-            IsNew = IsNew(dateCreated)
+            Quantity = 0
         };
         clothes.Add(clothing);
 
@@ -761,8 +728,7 @@ public class ClothesEntityConfiguration :IEntityTypeConfiguration<Clothes>
             Gender = Gender.Kids,
             DateCreated = RandomDate(thisYear),
             NumberOfSales = random.Next(1, 100),
-            Quantity = 0,
-            IsNew = IsNew(dateCreated)
+            Quantity = 0
         };
         clothes.Add(clothing);
 
@@ -782,8 +748,7 @@ public class ClothesEntityConfiguration :IEntityTypeConfiguration<Clothes>
             Gender = Gender.Kids,
             DateCreated = dateCreated,
             NumberOfSales = random.Next(1, 100),
-            Quantity = 0,
-            IsNew = IsNew(dateCreated)
+            Quantity = 0
         };
         clothes.Add(clothing);
 
@@ -798,13 +763,5 @@ public class ClothesEntityConfiguration :IEntityTypeConfiguration<Clothes>
         return new DateTime(year, 1, 1).AddDays(randomDay - 1);
     }
 
-    private bool IsNew(DateTime dateCreated)
-    {
-        if (dateCreated > DateTime.Today.AddDays(-14))
-        {
-            return true;
-        }
-
-        return false;
-    }
+   
 }

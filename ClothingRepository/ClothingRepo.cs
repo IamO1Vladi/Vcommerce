@@ -78,7 +78,7 @@ namespace ClothingRepository
 
         public async Task<Clothes[]> GetNewClothes()
         {
-            var clothes = await dbContext.Clothes.Where(c => c.IsNew == true).ToArrayAsync();
+            var clothes = await dbContext.Clothes.Where(c => c.DateCreated >= DateTime.UtcNow.AddDays(-14)).ToArrayAsync();
             
             return clothes;
         }

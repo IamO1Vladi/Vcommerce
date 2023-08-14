@@ -38,8 +38,6 @@ public abstract class Product
     [Required]
     public DateTime DateCreated { get; set; }
 
-    [Required]
-    public bool IsNew { get; set; }
 
     [Required]
     public bool IsOnSale { get; set; }

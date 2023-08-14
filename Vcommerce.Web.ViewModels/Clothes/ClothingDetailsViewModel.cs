@@ -18,44 +18,31 @@ namespace Vcommerce.Web.ViewModels.Clothes
             this.ImageUrls = new List<string>();
         }
 
-        [Required]
+        
         public Guid ClothingId { get; set; }
 
-        [Required]
-        [StringLength(MaxNameLength, MinimumLength = MinNameLength)]
         public string Name { get; set; } = null!;
 
-        [Required]
-        [Range(minimum: MinPrice, maximum: MaxPrice)]
         public decimal Price { get; set; }
 
-        [Range(minimum: MinSalesPercentage, maximum: MaxSalesPercentage)]
         public decimal? SalesPercentage { get; set; }
 
-        [Required]
         public bool IsOnSale { get; set; }
 
-        [Required]
         public bool IsNew { get; set; }
 
-        [Required]
-        [StringLength(MaxColorNameLength, MinimumLength = MinColorNameLength)]
+        
         public string Color { get; set; } = null!;
 
-        [Required]
-        [StringLength(MaxDescriptionLength, MinimumLength = MinDescriptionLength)]
+        
         public string Description { get; set; } = null!;
 
-        [Required]
-        [StringLength(MaxMaterialNameLength,MinimumLength = MinMaterialNameLength)]
         public string Material { get; set; } = null!;
 
         public ICollection<string> ImageUrls { get; set; }
 
-        [Required]
         public Category Category { get; set; }
 
-        [Required]
         public Gender Gender { get; set; }
 
 
