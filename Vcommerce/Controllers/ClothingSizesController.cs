@@ -1,5 +1,6 @@
 ﻿using FirebaseAdmin.Auth.Multitenancy;
 using Microsoft.AspNetCore.Mvc;
+using Vcommerce.Data.Models;
 using Vcommerce.Services.ProductServices.Interfaces;
 using Vcommerce.Web.ViewModels.ClothingSizes;
 
@@ -30,7 +31,7 @@ namespace Vcommerce.Web.Controllers
 
             await clothingSizesService.AddSizesForClothing(sizes);
 
-            return RedirectToAction("Index","Home");
+            return RedirectToAction("ProductDetails","Product", new { productId =sizes.First().ClothingId});
         }
 
         [HttpGet]
@@ -40,7 +41,7 @@ namespace Vcommerce.Web.Controllers
 
             var sizes = await clothingSizesService.GetClothingSizesViewModel(productId);
 
-            return View(sizes);
+            return RedirectToAction("ProductDetails", "Product", new { productId = sizes.First().ClothingId });
         }
 
         [HttpPost]

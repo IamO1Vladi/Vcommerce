@@ -350,8 +350,9 @@
                     success: function (data) {
                         if (data.success) {
                             // Handle success response
-                            // Redirect to the home index page
-                            window.location.href = "/Home/Index";
+                            
+                         window.location.href='@Url.Action("Index","Home")';
+                            
                         } else {
                             // Handle failure response
                             console.error(data.message);

@@ -77,7 +77,7 @@ namespace Vcommerce.Web.Controllers
         {
             await clothingService.DeleteClothing(productId);
 
-            return Json(new { success = true, message = "Item deleted successfully." });
+            return Json(new { success = true, redirectToUrl = "Item deleted successfully." });
         }
 
 
