@@ -21,4 +21,10 @@ public class BrandRepo:IBrandRepo
 
         return brands;
     }
+
+    public async Task AddBrandAsync(Brand brand)
+    {
+        await dbContext.AddAsync(brand);
+        await dbContext.SaveChangesAsync();
+    }
 }

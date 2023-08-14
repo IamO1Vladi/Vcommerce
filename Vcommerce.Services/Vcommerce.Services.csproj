@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="ProductServices\Interfaces\" />
+    <Folder Include="BrandServices\Interfaces\" />
   </ItemGroup>
 
   <ItemGroup>

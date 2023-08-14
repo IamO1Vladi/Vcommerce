@@ -155,6 +155,7 @@
                             <div class="col-md-6">
                                 <div class="text-center text-md-end">
                                     <ul class="header_list">
+                                        <li><a asp-controller="Brand" asp-action="Add"><span>Add Clothing Brand</span></a></li>
                                         <li><a asp-controller="Product" asp-action="Add"><span>Add Clothing Product</span></a></li>
                                         <li><a href="compare.html"><i class="ti-control-shuffle"></i><span>Compare</span></a></li>
                                         <li><a href="wishlist.html"><i class="ti-heart"></i><span>Wishlist</span></a></li>
@@ -164,7 +165,11 @@
                                 </div>
                             </div>
                         </div>
+                       
                     </div>
+                   
+                      
+                    
                 </div>
                 <div class="bottom_header dark_skin main_menu_uppercase">
                     <div class="container">
@@ -193,7 +198,7 @@
                                                         @{
                                                             foreach (var category in womenClothingCategories)
                                                             {
-                                                        <li><a asp-controller="Product" asp-action="ProductsByCategoryAndGender" asp-route-category="@category" asp-route-gender="@Gender.Female" class="dropdown-item nav-link nav_item">@category</a></li>
+                                                                <li><a asp-controller="Product" asp-action="ProductsByCategoryAndGender" asp-route-category="@category" asp-route-gender="@Gender.Female" class="dropdown-item nav-link nav_item">@category</a></li>
                                                             }
                                                         }
                                                           
@@ -205,7 +210,7 @@
                                                         @{
                                                             foreach (var category in manClothingCategories)
                                                             {
-                                                        <li><a asp-controller="Product" asp-action="ProductsByCategoryAndGender" asp-route-category="@category" asp-route-gender="@Gender.Male" class="dropdown-item nav-link nav_item">@category</a></li>
+                                                                <li><a asp-controller="Product" asp-action="ProductsByCategoryAndGender" asp-route-category="@category" asp-route-gender="@Gender.Male" class="dropdown-item nav-link nav_item">@category</a></li>
                                                             }
                                                         }
                                                     </ul>
@@ -216,7 +221,7 @@
                                                         @{
                                                             foreach (var category in kidsClothingCategories)
                                                             {
-                                                        <li><a asp-controller="Product" asp-action="ProductsByCategoryAndGender" asp-route-category="@category" asp-route-gender="@Gender.Kids" class="dropdown-item nav-link nav_item">@category</a></li>
+                                                                <li><a asp-controller="Product" asp-action="ProductsByCategoryAndGender" asp-route-category="@category" asp-route-gender="@Gender.Kids" class="dropdown-item nav-link nav_item">@category</a></li>
                                                             }
                                                         }
                                                     </ul>
@@ -266,6 +271,10 @@
                                             </div>
                                         </div>
                                     </li>
+                            <li class="dropdown">
+                                <a class="nav-link" asp-controller="Brand" asp-action="BrandsList">Brands</a>
+
+                            </li>
                                     <li class="dropdown">
                                         <a class="dropdown-toggle nav-link" href="#" data-bs-toggle="dropdown">Blog</a>
                                         <div class="dropdown-menu dropdown-reverse">

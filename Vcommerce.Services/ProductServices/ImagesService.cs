@@ -6,12 +6,12 @@ using Vcommerce.Services.ProductServices.Interfaces;
 
 namespace Vcommerce.Services.ProductServices;
 
-public class ClothingImagesService:IClothingImagesService
+public class ImagesService:IImagesService
 {
     private readonly IFireBaseApiService fireBaApiService;
     private readonly VcommerceDbContext dbContext;
 
-    public ClothingImagesService(IFireBaseApiService service,VcommerceDbContext context)
+    public ImagesService(IFireBaseApiService service,VcommerceDbContext context)
     {
         this.fireBaApiService=service;
         this.dbContext=context;
@@ -32,7 +32,7 @@ public class ClothingImagesService:IClothingImagesService
                 {
                     Guid imageName = Guid.NewGuid();
                     string imageUrl = await fireBaApiService.UploadImageToFireBase(stream, imageName.ToString(),
-                        Environment.GetEnvironmentVariable("bucket"));
+                        Environment.GetEnvironmentVariable("bucket")!);
 
                     ClothingImages newImage = new ClothingImages()
                     {
@@ -51,5 +51,25 @@ public class ClothingImagesService:IClothingImagesService
         await dbContext.SaveChangesAsync();
 
 
+    }
+
+    public async Task<string> AddBrandImage(IFormFile image, Guid brandId)
+    {
+        if (image.Length > 0)
+        {
+            using (var stream = image.OpenReadStream())
+            {
+                Guid imageName=Guid.NewGuid();
+                string imageUrl = await fireBaApiService.UploadImageToFireBase(stream, imageName.ToString(),
+                    Environment.GetEnvironmentVariable("bucket")!);
+
+                return imageUrl;
+            }
+
+            
+           
+        }
+
+        return "NoImage";
     }
 }

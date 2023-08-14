@@ -12,9 +12,9 @@ namespace Vcommerce.Web.Controllers
 
 
         private readonly IClothingService clothingService;
-        private readonly IClothingImagesService clothingImagesService;
+        private readonly IImagesService clothingImagesService;
 
-        public ProductController(IClothingService clothingService,IClothingImagesService clothingImagesService,IBrandRepo brandRepo)
+        public ProductController(IClothingService clothingService,IImagesService clothingImagesService,IBrandRepo brandRepo)
         {
             this.brandRepo = brandRepo;
 

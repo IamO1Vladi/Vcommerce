@@ -24,8 +24,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRcQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/User/OneDrive/Работен плот/Vcommerce/Vcommerce/Views/Brand/BrandsList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRcQnJhbmRzTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/User/OneDrive/Работен плот/Vcommerce/Vcommerce/Views/Brand/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/OneDrive/Работен плот/Vcommerce/Vcommerce/Views/Brand/PartialViews/_BrandsListPartialView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRcUGFydGlhbFZpZXdzXF9CcmFuZHNMaXN0UGFydGlhbFZpZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/User/OneDrive/Работен плот/Vcommerce/Vcommerce/Views/Brand/PartialViews/_ClothingBrandFormPartial.cshtml]

@@ -7,4 +7,6 @@ public interface IBrandRepo
 
     public Task<Brand[]> GetAllBrandsAsync();
 
+    public Task AddBrandAsync(Brand brand);
+
 }

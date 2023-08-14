@@ -1,0 +1,50 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model Vcommerce.Web.ViewModels.Brands.ListAllBrandsViewModel[];
+
+
+
+@{
+    foreach (var brand in Model)
+    {
+
+        var result = string.IsNullOrWhiteSpace(brand.LogoUrl) ? "/assets/images/product_img2.jpg" : brand.LogoUrl;
+
+        <div class="col-lg-3 col-md-4 col-6">
+            <div class="product">
+
+                <div class="product_img">
+                    <a href="shop-product-detail.html">
+                        <img src="@result" alt="product_img1">
+                    </a>
+                    <div class="product_action_box">
+                        <ul class="list_none pr_action_btn">
+                            <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="product_info">
+                    <h6 class="product_title"><a asp-controller="Brand" asp-action="BrandsList">@brand.Name</a></h6>
+                    <div class="product_price">
+                    </div>
+                    <div class="rating_wrap">
+                        <div class="rating">
+                            <div class="product_rate" style="width:80%"></div>
+                        </div>
+                        <span class="rating_num">(21)</span>
+                    </div>
+                    <div class="pr_desc">
+                        <p>@brand.Description</p>
+                    </div>
+                    <div class="pr_switch_wrap">
+                    </div>
+                    <div class="list_product_action_box">
+                        <ul class="list_none pr_action_btn">
+                            <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
+                           
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
