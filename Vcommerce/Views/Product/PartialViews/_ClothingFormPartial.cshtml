@@ -29,7 +29,7 @@
 
         <div class="mb-3">
             <label asp-for="Price" class="form-label">Price:</label>
-            <input asp-for="Price" placeholder="Enter price here" type="number" class="form-control" id="Price" name="Price">
+            <input asp-for="Price" placeholder="Enter price here" class="form-control" id="Price" name="Price">
         </div>
 
 
@@ -52,7 +52,7 @@
 
         <div class="mb-3" id="salePercentageDiv" style="display:none">
             <label asp-for="SalePercentage" class="form-label">Sale Percentage:</label>
-            <input asp-for="SalePercentage" type="number" placeholder="Enter sale percentage here:" class="form-control" id="SalePercentage" name="SalePercentage">
+            <input asp-for="SalePercentage"  placeholder="Enter sale percentage here:" class="form-control" id="SalePercentage" name="SalePercentage">
         </div>
 
 
@@ -116,6 +116,19 @@
             salePercentageDiv.style.display = 'none'; // Hide the Sale Percentage div
         }
     });
+</script>
+
+<script>
+    
+    $(document).ready(function (){
+      
+            if ($("#IsOnSale").is(":checked")) {
+            
+                $("#salePercentageDiv").show();
+            }
+
+    });
+
 </script>
 
 <script>
