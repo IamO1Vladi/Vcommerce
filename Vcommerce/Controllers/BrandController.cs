@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Vcommerce.Services.BrandServices.Interfaces;
+using Vcommerce.Services.ProductServices.Interfaces;
 using Vcommerce.Web.ViewModels.Brands;
 using Vcommerce.Web.ViewModels.Clothes;
 
@@ -9,10 +10,12 @@ namespace Vcommerce.Web.Controllers
     {
 
         private readonly IBrandService brandService;
+        private readonly IClothingService clothingService;
 
-        public BrandController(IBrandService service)
+        public BrandController(IBrandService service,IClothingService clothingService)
         {
             this.brandService = service;
+            this.clothingService = clothingService;
         }
 
         [HttpGet]
@@ -60,6 +63,31 @@ namespace Vcommerce.Web.Controllers
         {
 
             await brandService.EditBrandAsync(model, brandId);
+
+            return RedirectToAction("BrandsList", "Brand");
+        }
+
+        [HttpGet]
+
+        public async Task<IActionResult> Delete(Guid brandId)
+        {
+
+            var clothesToDelete = await clothingService.GetClotheDeleteViewModelsByBrandIdAsync(brandId);
+
+            ViewData["brandId"] = brandId;
+
+            return View(clothesToDelete);
+        }
+
+
+        [HttpPost]
+
+        public async Task<IActionResult> DeleteBrand(Guid brandId)
+        {
+
+            await clothingService.DeleteAllClothesByBrandId(brandId);
+
+            await brandService.DeleteBrandAsync(brandId);
 
             return RedirectToAction("BrandsList", "Brand");
         }

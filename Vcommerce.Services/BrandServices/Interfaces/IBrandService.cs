@@ -13,4 +13,6 @@ public interface IBrandService
 
     public Task<AddOrEditBrandViewModel> GetBrandViewModelAsync(Guid brandId);
 
+    public Task DeleteBrandAsync(Guid brandId);
+
 }

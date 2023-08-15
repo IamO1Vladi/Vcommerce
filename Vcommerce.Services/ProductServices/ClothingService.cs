@@ -325,5 +325,35 @@ namespace Vcommerce.Services.ProductServices
             await context.SaveChangesAsync();
             
         }
+
+        public async Task<DeleteClothesByBranViewModel[]> GetClotheDeleteViewModelsByBrandIdAsync(Guid brandId)
+        {
+            var clothes = await clothingRepo.GetClothesByBrandIdAsync(brandId);
+
+            ICollection<DeleteClothesByBranViewModel> clothesToDelete = new HashSet<DeleteClothesByBranViewModel>();
+
+            DeleteClothesByBranViewModel viewModel;
+
+            foreach (var clothe in clothes)
+            {
+                viewModel = new DeleteClothesByBranViewModel
+                {
+                    Id = clothe.Id,
+                    Name = clothe.Name,
+                    ImageUrl = clothe.Images.Count > 0
+                        ? clothe.Images.First().ImageUrl
+                        : "/assets/images/product_img2.jpg",
+                    Price = clothe.Price,
+                };
+                clothesToDelete.Add(viewModel);
+            }
+
+            return clothesToDelete.ToArray();
+        }
+
+        public async Task DeleteAllClothesByBrandId(Guid brandId)
+        {
+            await clothingRepo.DeleteAllClothesFromABrandAsync(brandId);
+        }
     }
 }

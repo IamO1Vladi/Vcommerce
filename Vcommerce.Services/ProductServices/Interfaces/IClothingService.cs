@@ -29,4 +29,8 @@ public interface IClothingService
     public Task<AddOrEditClothingViewModel> GetClothingViewModelById(Guid id);
 
     public Task EditClothing(Guid id,AddOrEditClothingViewModel model);
+
+    public Task<DeleteClothesByBranViewModel[]> GetClotheDeleteViewModelsByBrandIdAsync(Guid brandId);
+
+    public Task DeleteAllClothesByBrandId(Guid brandId);
 }

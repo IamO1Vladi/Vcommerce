@@ -97,5 +97,28 @@ namespace ClothingRepository
 
             return clothes;
         }
+
+        public async Task<Clothes[]> GetClothesByBrandIdAsync(Guid brandId)
+        {
+            var clothes = await dbContext.Clothes.Where(c => c.BrandId == brandId).ToArrayAsync();
+
+            return clothes;
+        }
+
+        public async Task DeleteAllClothesFromABrandAsync(Guid brandId)
+        {
+
+            var clothesToRemove = await this.GetClothesByBrandIdAsync(brandId);
+
+            if (clothesToRemove.Length>0)
+            {
+                dbContext.Clothes.RemoveRange(clothesToRemove);
+
+                await dbContext.SaveChangesAsync();
+
+            }
+
+
+        }
     }
 }

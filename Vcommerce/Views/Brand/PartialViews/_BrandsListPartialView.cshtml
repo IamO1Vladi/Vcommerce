@@ -1,7 +1,57 @@
 ﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
 @model Vcommerce.Web.ViewModels.Brands.ListAllBrandsViewModel[];
 
+<style>
+    
+    .shop_container.list .list_product_action_box .pr_action_btn li.add-to-cart-edit a {
+        font-size: 16px;
+        width: auto;
+        height: auto;
+        padding: 12px 30px;
+        background-color: #0000FF;
+        border: 1px solid #0000FF;
+        color: #fff;
+        border-radius: 4px;
+    }
 
+    .shop_container.list .pr_action_btn li.add-to-cart-edit a:hover {
+        background-color: transparent;
+        color: #0000FF;
+    }
+
+    .shop_container.list .pr_action_btn li.add-to-cart-edit a i {
+        line-height: normal;
+        margin-right: 5px;
+    }
+
+    
+    
+
+
+    .shop_container.list .list_product_action_box .pr_action_btn li.add-to-cart-delete a {
+        font-size: 16px;
+        width: auto;
+        height: auto;
+        padding: 12px 30px;
+        background-color: #FF0000;
+        border: 1px solid #FF0000;
+        color: #fff;
+        border-radius: 4px;
+    }
+
+    .shop_container.list .pr_action_btn li.add-to-cart-delete a:hover {
+        background-color: transparent;
+        color: #FF0000;
+    }
+
+    .shop_container.list .pr_action_btn li.add-to-cart-delete a i {
+        line-height: normal;
+        margin-right: 5px;
+    }
+
+
+
+</style>
 
 @{
     foreach (var brand in Model)
@@ -18,8 +68,8 @@
                     </a>
                     <div class="product_action_box">
                         <ul class="list_none pr_action_btn">
-                            <li class="add-to-cart" ><a asp-controller="Brand" asp-action="Edit" asp-route-brandId="@brand.BrandId">Edit</a></li>
-                            <li class="add-to-cart"><a >Delete</a></li>
+                            <li class="add-to-cart-edit"><a asp-controller="Brand" asp-action="Edit" asp-route-brandId="@brand.BrandId">Edit</a></li>
+                            <li class="add-to-cart-delete"><a asp-controller="Brand" asp-action="Delete" asp-route-brandId="@brand.BrandId">Delete</a></li>
                         </ul>
 
 
@@ -42,8 +92,8 @@
                     </div>
                     <div class="list_product_action_box">
                         <ul class="list_none pr_action_btn">
-                            <li class="add-to-cart"><a asp-controller="Brand" asp-action="Edit" asp-route-brandId="@brand.BrandId"> Edit</a></li>
-                            <li class="add-to-cart"><a>Delete</a></li>
+                            <li class="add-to-cart-edit"><a asp-controller="Brand" asp-action="Edit" asp-route-brandId="@brand.BrandId"> Edit</a></li>
+                            <li class="add-to-cart-delete"><a asp-controller="Brand" asp-action="Delete" asp-route-brandId="@brand.BrandId">Delete</a></li>
                         </ul>
                     </div>
                 </div>

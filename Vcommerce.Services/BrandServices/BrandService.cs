@@ -12,12 +12,13 @@ public class BrandService:IBrandService
 
     private readonly IBrandRepo brandRepo;
     private readonly IImagesService clothingImagesService;
+    private readonly IClothingService clothingClothingService;
 
-    public BrandService(IBrandRepo repo,IImagesService clothingImagesService)
+    public BrandService(IBrandRepo repo,IImagesService clothingImagesService, IClothingService clothingClothingService)
     {
         this.brandRepo = repo;
         this.clothingImagesService = clothingImagesService;
-        
+        this.clothingClothingService = clothingClothingService;
     }
     public async Task AddBrandAsync(AddOrEditBrandViewModel viewModel)
     {
@@ -89,5 +90,16 @@ public class BrandService:IBrandService
         };
 
         return brandViewModel;
+    }
+
+
+
+    public async Task DeleteBrandAsync(Guid brandId)
+    {
+
+        var brand = await brandRepo.GetBrandByIdAsync(brandId);
+
+        await brandRepo.DeleteBrandAsync(brand);
+
     }
 }

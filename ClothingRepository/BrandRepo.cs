@@ -36,7 +36,8 @@ public class BrandRepo:IBrandRepo
 
     public async Task DeleteBrandAsync(Brand brand)
     {
-        throw new NotImplementedException();
+        dbContext.Remove(brand);
+        await dbContext.SaveChangesAsync();
     }
 
     public async Task<Brand> GetBrandByIdAsync(Guid id)

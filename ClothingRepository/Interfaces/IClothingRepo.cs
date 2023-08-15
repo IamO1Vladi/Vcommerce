@@ -24,4 +24,8 @@ public interface IClothingRepo
 
     public Task<Clothes[]> GetHotClothes();
 
+    public Task<Clothes[]> GetClothesByBrandIdAsync(Guid brandId);
+
+    public Task DeleteAllClothesFromABrandAsync(Guid brandId);
+
 }
