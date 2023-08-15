@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <Folder Include="BrandServices\Interfaces\" />
+    <Folder Include="CollectionServices\Interfaces\" />
   </ItemGroup>
 
   <ItemGroup>

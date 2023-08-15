@@ -21,11 +21,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repository", "Repository", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClothingRepository", "ClothingRepository\ClothingRepository.csproj", "{114E349F-BF99-4E81-9C6D-ADAD07787416}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vcommerce.Web.ViewModels", "Vcommerce.Web.ViewModels\Vcommerce.Web.ViewModels.csproj", "{FC6C9A79-24BB-4F4A-9887-27C14A0FF38C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vcommerce.Web.ViewModels", "Vcommerce.Web.ViewModels\Vcommerce.Web.ViewModels.csproj", "{FC6C9A79-24BB-4F4A-9887-27C14A0FF38C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{457F684D-D7B3-4AB5-B81D-2E63DD83F83B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vcommerce.Services", "Vcommerce.Services\Vcommerce.Services.csproj", "{AAC39393-B801-4132-9AA3-9BA41702CFA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vcommerce.Services", "Vcommerce.Services\Vcommerce.Services.csproj", "{AAC39393-B801-4132-9AA3-9BA41702CFA7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

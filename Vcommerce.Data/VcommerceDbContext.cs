@@ -6,6 +6,7 @@ using Vcommerce.Data.Configurations;
 using Vcommerce.Data.Models;
 using Vcommerce.Data.Models.Blog;
 using Vcommerce.Data.Models.BrandInfo;
+using Vcommerce.Data.Models.Collections;
 using Vcommerce.Data.Models.Users;
 
 namespace Vcommerce.Data
@@ -31,6 +32,8 @@ namespace Vcommerce.Data
         public DbSet<Comment> PostComments { get; set; } = null!;
 
         public DbSet<Brand> Brands { get; set; }=null!;
+
+        public DbSet<Collection> Collections { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

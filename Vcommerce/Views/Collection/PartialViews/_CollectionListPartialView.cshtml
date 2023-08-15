@@ -1,0 +1,198 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model Vcommerce.Web.ViewModels.Collections.ListAllCollectionsViewModel[];
+
+<style>
+
+    .shop_container.list .list_product_action_box .pr_action_btn li.add-to-cart-edit a {
+        font-size: 16px;
+        width: auto;
+        height: auto;
+        padding: 12px 30px;
+        background-color: #0000FF;
+        border: 1px solid #0000FF;
+        color: #fff;
+        border-radius: 4px;
+    }
+
+    .shop_container.list .pr_action_btn li.add-to-cart-edit a:hover {
+        background-color: transparent;
+        color: #0000FF;
+    }
+
+    .shop_container.list .pr_action_btn li.add-to-cart-edit a i {
+        line-height: normal;
+        margin-right: 5px;
+    }
+    
+
+
+
+
+
+
+    .shop_container.list .list_product_action_box .pr_action_btn li.add-to-cart-delete a {
+        font-size: 16px;
+        width: auto;
+        height: auto;
+        padding: 12px 30px;
+        background-color: #FF0000;
+        border: 1px solid #FF0000;
+        color: #fff;
+        border-radius: 4px;
+    }
+
+    .shop_container.list .pr_action_btn li.add-to-cart-delete a:hover {
+        background-color: transparent;
+        color: #FF0000;
+    }
+
+    .shop_container.list .pr_action_btn li.add-to-cart-delete a i {
+        line-height: normal;
+        margin-right: 5px;
+    }
+
+
+
+
+    .shop_container.list .list_product_action_box .pr_action_btn li.add-to-cart-add a {
+        font-size: 16px;
+        width: auto;
+        height: auto;
+        padding: 12px 30px;
+        background-color: #8B8000;
+        border: 1px solid #8B8000;
+        color: #fff;
+        border-radius: 4px;
+    }
+
+    .shop_container.list .pr_action_btn li.add-to-cart-add a:hover {
+        background-color: transparent;
+        color: #8B8000;
+    }
+
+    .shop_container.list .pr_action_btn li.add-to-cart-add a i {
+        line-height: normal;
+        margin-right: 5px;
+    }
+
+</style>
+
+
+<!-- Delete Confirmation Modal -->
+<div class="modal fade" id="confirmDeleteModal" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmDeleteModalLabel">Confirm Delete</h5>
+                <button type="button" id="closeButton" class="btn-close" data-dismiss="modal" aria-label="Close">
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete this collection?
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="cancelButton" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <a id="confirmDelete" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@{
+    foreach (var collection in Model)
+    {
+
+        
+
+        <div class="col-lg-3 col-md-4 col-6">
+            <div class="product">
+
+              
+                <div class="product_info">
+                    <h6 class="product_title"><a asp-controller="Collection" asp-action="CollectionsList">@collection.Name</a></h6>
+                    <div class="product_price">
+                    </div>
+                    <div class="rating_wrap">
+                        <div class="rating">
+                            <div class="product_rate" style="width:80%"></div>
+                        </div>
+                        <span class="rating_num">(21)</span>
+                    </div>
+                    <div class="pr_desc">
+                        <p>@collection.Description</p>
+                    </div>
+                    <div class="pr_switch_wrap">
+                    </div>
+                    <div class="list_product_action_box">
+                        <ul class="list_none pr_action_btn">
+                            <li class="add-to-cart-add"><a asp-controller="Collection" asp-action="AddClothesToCollection" asp-route-collectionId="@collection.CollectionId" asp-route-gender="@collection.Gender"> Add Clothes To Collection</a></li>
+                            <li class="add-to-cart-edit"><a asp-controller="Collection" asp-action="Edit" asp-route-collectionId="@collection.CollectionId"> Edit</a></li>
+                            <li class="add-to-cart-delete"><a  id="@collection.CollectionId">Delete</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      
+
+    }
+}
+
+
+
+
+
+
+<script>
+   
+        $('.add-to-cart-delete a').each(function () {
+            var deleteButton = $(this);
+            var collectionId = deleteButton.attr('id');
+
+            deleteButton.on('click', function (e) {
+                e.preventDefault();
+                $('#confirmDeleteModal').modal('show');
+
+                $('#confirmDelete').on('click', function () {
+
+                var itemId = collectionId; // Get the item ID
+                var url = "/Collection/Delete/?collectionId=" + itemId; // Construct the URL for the DELETE request
+
+                // Send the DELETE request using Ajax
+                $.ajax({
+                    url: url,
+                    type: 'DELETE',
+                    success: function (data) {
+                        if (data.success) {
+                            // Handle success response
+
+                            window.location.href = '@Url.Action("CollectionsList","Collection")';
+
+                        } else {
+                            // Handle failure response
+                            console.error(data.message);
+                        }
+                    }
+                });
+
+                });
+            });
+            
+        });
+
+    $('#cancelButton').on(`click`,function(e){
+    
+        e.preventDefault();
+        $('#confirmDeleteModal').modal('hide');
+    });
+    
+    $('#closeButton').on(`click`, function (e) {
+
+        e.preventDefault();
+        $('#confirmDeleteModal').modal('hide');
+    });
+        
+
+</script>
+

@@ -31,6 +31,11 @@ public class ClothesEntityConfiguration :IEntityTypeConfiguration<Clothes>
             .HasForeignKey(c=>c.BrandId)
             .OnDelete(DeleteBehavior.NoAction);
 
+        builder.HasOne(c => c.Collection)
+            .WithMany(col=>col.Clothes)
+            .HasForeignKey(c => c.CollectionId)
+            .OnDelete(DeleteBehavior.NoAction);
+
         builder.HasData(GenerateClothes());
 
     }
