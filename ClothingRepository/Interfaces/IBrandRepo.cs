@@ -9,4 +9,9 @@ public interface IBrandRepo
 
     public Task AddBrandAsync(Brand brand);
 
+    public Task SaveChangesToDbAsync();
+
+    public Task DeleteBrandAsync(Brand brand);
+
+    public Task<Brand> GetBrandByIdAsync(Guid id);
 }

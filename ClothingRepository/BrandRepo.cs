@@ -27,4 +27,27 @@ public class BrandRepo:IBrandRepo
         await dbContext.AddAsync(brand);
         await dbContext.SaveChangesAsync();
     }
+
+    public async Task SaveChangesToDbAsync()
+    {
+        await dbContext.SaveChangesAsync();
+    }
+
+
+    public async Task DeleteBrandAsync(Brand brand)
+    {
+        throw new NotImplementedException();
+    }
+
+    public async Task<Brand> GetBrandByIdAsync(Guid id)
+    {
+        Brand? brand = await dbContext.Brands.FindAsync(id);
+
+        if (brand == null)
+        {
+            throw new ArgumentNullException();
+        }
+        
+        return brand;
+    }
 }

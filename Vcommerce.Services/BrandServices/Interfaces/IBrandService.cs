@@ -9,4 +9,8 @@ public interface IBrandService
 
     public Task<ListAllBrandsViewModel[]> GetAllBrandsListAsync();
 
+    public Task EditBrandAsync(AddOrEditBrandViewModel viewModel,Guid brandId);
+
+    public Task<AddOrEditBrandViewModel> GetBrandViewModelAsync(Guid brandId);
+
 }

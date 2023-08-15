@@ -46,19 +46,22 @@ namespace Vcommerce.Web.Controllers
 
         [HttpGet]
 
-        public async Task<IActionResult> Edit()
+        public async Task<IActionResult> Edit(Guid brandId)
         {
 
-            throw new NotImplementedException();
+            var model = await brandService.GetBrandViewModelAsync(brandId);
 
+            return View(model);
         }
 
         [HttpPost]
 
-        public async Task<IActionResult> Edit(AddOrEditBrandViewModel model)
+        public async Task<IActionResult> Edit(Guid brandId,AddOrEditBrandViewModel model)
         {
 
-            throw new NotImplementedException();
+            await brandService.EditBrandAsync(model, brandId);
+
+            return RedirectToAction("BrandsList", "Brand");
         }
     }
 }

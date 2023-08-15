@@ -61,4 +61,33 @@ public class BrandService:IBrandService
 
         return brandsViewModel.ToArray();
     }
+
+    public async Task EditBrandAsync(AddOrEditBrandViewModel viewModel, Guid brandId)
+    {
+        var brand = await brandRepo.GetBrandByIdAsync(brandId);
+
+        brand.Name = viewModel.Name;
+        brand.Description = viewModel.Description;
+        if (viewModel.Image != null)
+        {
+            string imageUrl = await clothingImagesService.AddBrandImage(viewModel.Image, brand.Id);
+            brand.LogoUrl = imageUrl;
+        }
+
+        await brandRepo.SaveChangesToDbAsync();
+
+    }
+
+    public async Task<AddOrEditBrandViewModel> GetBrandViewModelAsync(Guid brandId)
+    {
+        var brand = await brandRepo.GetBrandByIdAsync(brandId);
+
+        AddOrEditBrandViewModel brandViewModel = new AddOrEditBrandViewModel
+        {
+            Name = brand.Name,
+            Description = brand.Description,
+        };
+
+        return brandViewModel;
+    }
 }
