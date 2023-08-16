@@ -33,4 +33,6 @@ public interface IClothingService
     public Task<DeleteClothesByBranViewModel[]> GetClotheDeleteViewModelsByBrandIdAsync(Guid brandId);
 
     public Task DeleteAllClothesByBrandId(Guid brandId);
+
+    
 }

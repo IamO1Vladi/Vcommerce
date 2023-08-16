@@ -28,4 +28,8 @@ public interface IClothingRepo
 
     public Task DeleteAllClothesFromABrandAsync(Guid brandId);
 
+    public Task SaveChangesAsync();
+
+    
+
 }

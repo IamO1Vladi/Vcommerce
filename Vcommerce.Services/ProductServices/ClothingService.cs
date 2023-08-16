@@ -355,5 +355,7 @@ namespace Vcommerce.Services.ProductServices
         {
             await clothingRepo.DeleteAllClothesFromABrandAsync(brandId);
         }
+
+       
     }
 }

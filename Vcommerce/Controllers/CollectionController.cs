@@ -72,14 +72,26 @@ namespace Vcommerce.Web.Controllers
         }
 
 
+        [HttpPost]
+
+        public async Task<IActionResult> AddClothesToCollection(Guid clothingId, Guid collectionId)
+        {
+
+            await collectionService.AddClothingToCollection(clothingId, collectionId);
+
+            return Json(new { success = true, redirectToUrl = "Item deleted successfully." });
+        }
+
         [HttpGet]
 
         public async Task<IActionResult> AddClothesToCollection(Guid collectionId, Gender gender)
         {
 
+            var clothes = await collectionService.GetClothesByGenderForCollectionAsync(collectionId, gender);
 
+            ViewData["collectionId"] = collectionId;
 
-            return View();
+            return View("ListClothesByGenderForCollectionAdding",clothes);
         }
 
     }

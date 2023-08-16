@@ -64,7 +64,7 @@ namespace ClothingRepository
 
         public async Task<Clothes[]> GetClothesByGender(Gender gender)
         {
-            var clothing = await dbContext.Clothes.Where(c=>c.Gender==gender).Include(b=>b.Brand).ToArrayAsync();
+            var clothing = await dbContext.Clothes.Where(c=>c.Gender==gender).Include(b=>b.Brand).Include(c=>c.Images).ToArrayAsync();
 
             return clothing;
         }
@@ -100,7 +100,7 @@ namespace ClothingRepository
 
         public async Task<Clothes[]> GetClothesByBrandIdAsync(Guid brandId)
         {
-            var clothes = await dbContext.Clothes.Where(c => c.BrandId == brandId).ToArrayAsync();
+            var clothes = await dbContext.Clothes.Where(c => c.BrandId == brandId).Include(c=>c.Images).ToArrayAsync();
 
             return clothes;
         }
@@ -119,6 +119,11 @@ namespace ClothingRepository
             }
 
 
+        }
+
+        public async Task SaveChangesAsync()
+        {
+            await dbContext.SaveChangesAsync();
         }
     }
 }

@@ -13,7 +13,6 @@
 
   <ItemGroup>
     <Folder Include="Brands\" />
-    <Folder Include="Collections\" />
     <Folder Include="BlogPosts\" />
     <Folder Include="Users\" />
   </ItemGroup>

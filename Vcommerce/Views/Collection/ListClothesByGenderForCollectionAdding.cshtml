@@ -1,0 +1,117 @@
+﻿@model ListClothesByGenderForCollection[]
+
+
+
+<div class="main_content">
+
+  
+
+    <!-- START SECTION SHOP -->
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="table-responsive wishlist_table">
+
+                        @{
+                            if (Model.Any())
+                            {
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="product-thumbnail">&nbsp;</th>
+                                            <th class="product-name">Product</th>
+                                            <th class="product-price">Price</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        @{
+
+                                            foreach (var clothing in Model)
+                                            {
+                                                <tr>
+                                                    <td class="product-thumbnail"><a href="#"><img src="@clothing.ImageUrl" alt="product1"></a></td>
+                                                    <td class="product-name" data-title="Product"><a href="#">@clothing.Name</a></td>
+                                                    <td class="product-price" data-title="Price">$@clothing.Price</td>
+                                                    <td class="product-add-to-cart"><a id="@clothing.Id" href="#" class="btn btn-fill-out"> Add to Collection</a></td>
+                                                </tr>
+                                            }
+
+
+                                        }
+
+
+
+                                    </tbody>
+                                </table>
+                            }
+                            else
+                            {
+                                <h2 class="text-center">!</h2>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END SECTION SHOP -->
+    <!-- START SECTION SUBSCRIBE NEWSLETTER -->
+    <div class="section bg_default small_pt small_pb">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="heading_s1 mb-md-0 heading_light">
+                        <h3>Subscribe Our Newsletter</h3>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="newsletter_form">
+                        <form>
+                            <input type="text" required="" class="form-control rounded-0" placeholder="Enter Email Address">
+                            <button type="submit" class="btn btn-dark rounded-0" name="submit" value="Submit">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- START SECTION SUBSCRIBE NEWSLETTER -->
+
+</div>
+<!-- END MAIN CONTENT -->
+
+                        
+             @section Scripts
+             {
+                 <script>
+    
+        $(".product-add-to-cart a").each(function () {
+    $(this).on("click", function (e) {
+        e.preventDefault(); // Prevent default link behavior
+
+        
+           var clothingId= $(this).attr("id");
+            var url = "/Collection/AddClothesToCollection?collectionId=" + `@ViewData["collectionId"]` + `&clothingId=`+clothingId;
+            
+                var row = $(this).closest("tr");
+
+        // Make an AJAX POST request
+        $.ajax({
+            type: "POST",
+            url: url, // Replace with your controller and action
+            success: function (response) {
+                if (response.success) {
+                    row.remove();
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error(error);
+            }
+        });
+    });
+    });
+
+</script>
+             }
