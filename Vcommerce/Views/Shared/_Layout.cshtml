@@ -146,22 +146,18 @@
     <header class="header_wrap fixed-top header_with_topbar">
                 <div class="top-header">
                     <div class="container">
-                        <div class="row align-items-center">
-                            <div class="col-md-6">
-                                <div class="d-flex align-items-center justify-content-center justify-content-md-start">
-                                   
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="text-center text-md-end">
+                        <div class="row align-items-right">
+                           
+                            <div class="col-md">
+                                <div class="text-right text-md-end">
                                     <ul class="header_list">
                                         <li><a asp-controller="Collection" asp-action="Add"><span>Add Clothing Collection</span></a></li>
                                         <li><a asp-controller="Brand" asp-action="Add"><span>Add Clothing Brand</span></a></li>
                                         <li><a asp-controller="Product" asp-action="Add"><span>Add Clothing Product</span></a></li>
                                         <li><a href="compare.html"><i class="ti-control-shuffle"></i><span>Compare</span></a></li>
                                         <li><a href="wishlist.html"><i class="ti-heart"></i><span>Wishlist</span></a></li>
-                                        <li><a asp-controller="User" asp-action="Login"><i class="ti-user"></i><span>Login</span></a></li>
-                                        <li><a asp-controller="User" asp-action="Register"><i class="ti-user"></i><span>Register</span></a></li>
+                                        <partial name="_LoginPartial" />
+                                    
                                     </ul>
                                 </div>
                             </div>
@@ -192,7 +188,7 @@
                                         <a class="dropdown-toggle nav-link" href="#" data-bs-toggle="dropdown">Products</a>
                                         <div class="dropdown-menu">
                                             <ul class="mega-menu d-lg-flex">
-                                                <li class="mega-menu-col col-lg-3">
+                                                <li class="mega-menu-col col-lg-4">
                                                     <ul>
                                                         <li class="dropdown-header">Woman's</li>
                                                        
@@ -205,7 +201,7 @@
                                                           
                                                     </ul>
                                                 </li>
-                                                <li class="mega-menu-col col-lg-3">
+                                                <li class="mega-menu-col col-lg-4">
                                                     <ul>
                                                         <li class="dropdown-header">Men's</li>
                                                         @{
@@ -216,7 +212,7 @@
                                                         }
                                                     </ul>
                                                 </li>
-                                                <li class="mega-menu-col col-lg-3">
+                                                <li class="mega-menu-col col-lg-4">
                                                     <ul>
                                                         <li class="dropdown-header">Kid's</li>
                                                         @{
@@ -227,16 +223,7 @@
                                                         }
                                                     </ul>
                                                 </li>
-                                                <li class="mega-menu-col col-lg-3">
-                                                    <ul>
-                                                        <li class="dropdown-header">Accessories</li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail.html">Donec vitae facilisis</a></li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-left-sidebar.html">Quisque condimentum</a></li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-right-sidebar.html">Etiam ac rutrum</a></li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-thumbnails-left.html">Donec vitae ante ante</a></li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-thumbnails-left.html">Donec porttitor</a></li>
-                                                    </ul>
-                                                </li>
+                                               
                                             </ul>
                                             <div class="d-lg-flex menu_banners row g-3 px-3">
                                                 <div class="col-sm-4">
@@ -368,6 +355,7 @@
                                         </div>
                                     </div>
                                 </li>
+                                
                             </ul>
                         </nav>
                     </div>

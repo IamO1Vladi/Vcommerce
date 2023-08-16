@@ -113,3 +113,5 @@ C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net
 C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
 C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\BlogRepository.dll
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce\bin\Debug\net6.0\BlogRepository.pdb

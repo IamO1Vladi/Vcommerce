@@ -1,3 +1,4 @@
+using BlogRepository.Interfaces;
 using ClothingRepository;
 using ClothingRepository.Interfaces;
 using FirebaseAdmin;
@@ -58,7 +59,14 @@ namespace Vcommerce
 
             builder.Services.AddApplicationServices(typeof(IClothingService));
             builder.Services.AddApplicationRepositoryServices(typeof(IClothingRepo));
+            builder.Services.AddApplicationRepositoryServices(typeof(IBlogRepo));
             //builder.Services.AddScoped<IClothingRepo, ClothingRepo>(); //Delete later an implement correctly 
+
+            builder.Services.ConfigureApplicationCookie(cfg =>
+            {
+                cfg.LoginPath = "/User/Login";
+                cfg.AccessDeniedPath = "/User/Login";
+            });
 
             builder.Services.AddControllersWithViews()
                 .AddMvcOptions(options =>

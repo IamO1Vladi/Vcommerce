@@ -1,8 +1,7 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@using Vcommerce.Web.ViewModels.Users
+
+@model LoginUserFormViewModel
+
 <!-- START SECTION BREADCRUMB -->
 <div class="breadcrumb_section bg_gray page-title-mini">
     <div class="container">
@@ -37,17 +36,19 @@
                             <div class="heading_s1">
                                 <h3>Login</h3>
                             </div>
-                            <form method="post">
+                            <form method="post" asp-controller="User" asp-action="Login">
                                 <div class="form-group mb-3">
-                                    <input type="text" required="" class="form-control" name="email" placeholder="Your Email">
+                                    <input asp-for="Email" type="text" required="true" class="form-control" name="email" placeholder="Your Email">
+                                    <span asp-validation-for="Email" class="text-danger" ></span>
                                 </div>
                                 <div class="form-group mb-3">
-                                    <input class="form-control" required="" type="password" name="password" placeholder="Password">
+                                    <input asp-for="Password" class="form-control" required="true" type="password" name="password" placeholder="Password">
+                                    <span asp-validation-for="Password" class="text-danger" ></span>
                                 </div>
                                 <div class="login_footer form-group mb-3">
                                     <div class="chek-form">
                                         <div class="custome-checkbox">
-                                            <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox1" value="">
+                                            <input asp-for="RememberMe" class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox1" value="">
                                             <label class="form-check-label" for="exampleCheckbox1"><span>Remember me</span></label>
                                         </div>
                                     </div>
@@ -64,7 +65,7 @@
                                 <li><a href="#" class="btn btn-facebook"><i class="ion-social-facebook"></i>Facebook</a></li>
                                 <li><a href="#" class="btn btn-google"><i class="ion-social-googleplus"></i>Google</a></li>
                             </ul>
-                            <div class="form-note text-center">Don't Have an Account? <a href="signup.html">Sign up now</a></div>
+                            <div class="form-note text-center">Don't Have an Account? <a asp-controller="User" asp-action="Register">Sign up now</a></div>
                         </div>
                     </div>
                 </div>

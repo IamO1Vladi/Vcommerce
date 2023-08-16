@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "Vcommerce.Web/1.0.0": {
         "dependencies": {
+          "BlogRepository": "1.0.0",
           "ClothingRepository": "1.0.0",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "6.0.15",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.15",
@@ -1952,6 +1953,15 @@
           "System.Xml.XPath": "4.3.0"
         }
       },
+      "BlogRepository/1.0.0": {
+        "dependencies": {
+          "Vcommerce.Data": "1.0.0",
+          "Vcommerce.Data.Models": "1.0.0"
+        },
+        "runtime": {
+          "BlogRepository.dll": {}
+        }
+      },
       "ClothingRepository/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "6.0.15",
@@ -3483,6 +3493,11 @@
       "sha512": "sha512-jw9oHHEIVW53mHY9PgrQa98Xo2IZ0ZjrpdOTmtvk+Rvg4tq7dydmxdNqUvJ5YwjDqhn75mBXWttWjiKhWP53LQ==",
       "path": "system.xml.xpath.xdocument/4.3.0",
       "hashPath": "system.xml.xpath.xdocument.4.3.0.nupkg.sha512"
+    },
+    "BlogRepository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "ClothingRepository/1.0.0": {
       "type": "project",

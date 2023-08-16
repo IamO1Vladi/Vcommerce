@@ -14,7 +14,8 @@ namespace VCommerce.Common.DataBaseValidations
         public const int MaxImageUrlLength = 2048;
         public const int MaxContextLength = 5000;
         public const int MinContextLength = 1000;
-
+        public const int MaxShortContextLength = 132;
+        public const int MinShortContextLength = 132;
 
     }
 }
