@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "Vcommerce.Services/1.0.0": {
         "dependencies": {
+          "BlogRepository": "1.0.0",
           "ClothingRepository": "1.0.0",
           "FirebaseAdmin": "2.4.0",
           "FirebaseStorage.net": "1.0.3",
@@ -1347,6 +1348,15 @@
           "System.Xml.ReaderWriter": "4.3.0"
         }
       },
+      "BlogRepository/1.0.0": {
+        "dependencies": {
+          "Vcommerce.Data": "1.0.0",
+          "Vcommerce.Data.Models": "1.0.0"
+        },
+        "runtime": {
+          "BlogRepository.dll": {}
+        }
+      },
       "ClothingRepository/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "6.0.15",
@@ -2364,6 +2374,11 @@
       "sha512": "sha512-5zJ0XDxAIg8iy+t4aMnQAu0MqVbqyvfoUVl1yDV61xdo3Vth45oA2FoY4pPkxYAH5f8ixpmTqXeEIya95x0aCQ==",
       "path": "system.xml.xdocument/4.3.0",
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
+    },
+    "BlogRepository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "ClothingRepository/1.0.0": {
       "type": "project",

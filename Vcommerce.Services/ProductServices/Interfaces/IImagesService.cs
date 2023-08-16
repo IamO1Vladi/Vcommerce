@@ -8,6 +8,8 @@ public interface IImagesService
 
     public Task AddClothingImages(ICollection<IFormFile> images,Guid clothingId);
 
-    public Task<string> AddBrandImage(IFormFile image, Guid brandId);
+    public Task<string> AddBrandImage(IFormFile image);
+
+    public Task<string> AddBlogImageAsync(IFormFile image);
 
 }

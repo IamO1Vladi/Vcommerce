@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BlogRepository\BlogRepository.csproj" />
     <ProjectReference Include="..\ClothingRepository\ClothingRepository.csproj" />
     <ProjectReference Include="..\Vcommerce.Data.Models\Vcommerce.Data.Models.csproj" />
     <ProjectReference Include="..\Vcommerce.Data\Vcommerce.Data.csproj" />

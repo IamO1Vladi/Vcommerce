@@ -53,7 +53,7 @@ public class ImagesService:IImagesService
 
     }
 
-    public async Task<string> AddBrandImage(IFormFile image, Guid brandId)
+    public async Task<string> AddBrandImage(IFormFile image)
     {
         if (image.Length > 0)
         {
@@ -68,6 +68,26 @@ public class ImagesService:IImagesService
 
             
            
+        }
+
+        return "NoImage";
+    }
+
+    public async Task<string> AddBlogImageAsync(IFormFile image)
+    {
+        if (image.Length > 0)
+        {
+            using (var stream = image.OpenReadStream())
+            {
+                Guid imageName = Guid.NewGuid();
+                string imageUrl = await fireBaApiService.UploadImageToFireBase(stream, imageName.ToString(),
+                    Environment.GetEnvironmentVariable("bucket")!);
+
+                return imageUrl;
+            }
+
+
+
         }
 
         return "NoImage";

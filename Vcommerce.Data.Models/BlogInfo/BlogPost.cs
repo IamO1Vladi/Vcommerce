@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Vcommerce.Data.Models.Users;
 using static VCommerce.Common.DataBaseValidations.BlogPostValidations;
 
 namespace Vcommerce.Data.Models.Blog
@@ -40,6 +42,12 @@ namespace Vcommerce.Data.Models.Blog
         [Required]
         [MaxLength(MaxContextLength)]
         public string Context { get; set; } = null!;
+
+        [Required]
+        [ForeignKey(nameof(Author))]
+        public Guid AuthorId { get; set; }
+
+        public ApplicationUser Author { get; set; }
 
         public virtual ICollection<Comment> Comments { get; set; }
 

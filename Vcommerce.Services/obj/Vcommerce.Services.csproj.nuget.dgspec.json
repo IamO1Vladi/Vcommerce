@@ -4,6 +4,68 @@
     "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce.Services\\Vcommerce.Services.csproj": {}
   },
   "projects": {
+    "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\BlogRepository\\BlogRepository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\BlogRepository\\BlogRepository.csproj",
+        "projectName": "BlogRepository",
+        "projectPath": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\BlogRepository\\BlogRepository.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\BlogRepository\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce.Data.Models\\Vcommerce.Data.Models.csproj": {
+                "projectPath": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce.Data.Models\\Vcommerce.Data.Models.csproj"
+              },
+              "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce.Data\\Vcommerce.Data.csproj": {
+                "projectPath": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce.Data\\Vcommerce.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\ClothingRepository\\ClothingRepository.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -296,6 +358,9 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\BlogRepository\\BlogRepository.csproj": {
+                "projectPath": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\BlogRepository\\BlogRepository.csproj"
+              },
               "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\ClothingRepository\\ClothingRepository.csproj": {
                 "projectPath": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\ClothingRepository\\ClothingRepository.csproj"
               },

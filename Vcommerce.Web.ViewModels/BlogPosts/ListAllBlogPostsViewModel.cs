@@ -23,5 +23,4 @@ public class ListAllBlogPostsViewModel
     [StringLength(MaxImageUrlLength)]
     public string ThumbnailUrl { get; set; } = null!;
 
-
 }

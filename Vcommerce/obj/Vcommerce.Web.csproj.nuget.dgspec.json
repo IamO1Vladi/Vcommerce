@@ -358,6 +358,9 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\BlogRepository\\BlogRepository.csproj": {
+                "projectPath": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\BlogRepository\\BlogRepository.csproj"
+              },
               "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\ClothingRepository\\ClothingRepository.csproj": {
                 "projectPath": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\ClothingRepository\\ClothingRepository.csproj"
               },
@@ -621,6 +624,10 @@
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[6.0.15, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[6.0.16, )"
             }
           },
           "imports": [

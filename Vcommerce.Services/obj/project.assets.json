@@ -2469,6 +2469,20 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
+      "BlogRepository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Vcommerce.Data": "1.0.0",
+          "Vcommerce.Data.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BlogRepository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BlogRepository.dll": {}
+        }
+      },
       "ClothingRepository/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -7616,6 +7630,11 @@
         "system.xml.xdocument.nuspec"
       ]
     },
+    "BlogRepository/1.0.0": {
+      "type": "project",
+      "path": "../BlogRepository/BlogRepository.csproj",
+      "msbuildProject": "../BlogRepository/BlogRepository.csproj"
+    },
     "ClothingRepository/1.0.0": {
       "type": "project",
       "path": "../ClothingRepository/ClothingRepository.csproj",
@@ -7644,6 +7663,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "BlogRepository >= 1.0.0",
       "ClothingRepository >= 1.0.0",
       "FirebaseAdmin >= 2.4.0",
       "FirebaseStorage.net >= 1.0.3",
@@ -7681,6 +7701,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\BlogRepository\\BlogRepository.csproj": {
+              "projectPath": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\BlogRepository\\BlogRepository.csproj"
+            },
             "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\ClothingRepository\\ClothingRepository.csproj": {
               "projectPath": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\ClothingRepository\\ClothingRepository.csproj"
             },

@@ -30,7 +30,7 @@ public class BrandService:IBrandService
 
         if (viewModel.Image != null)
         {
-            string imageUrl= await clothingImagesService.AddBrandImage(viewModel.Image, newBrand.Id);
+            string imageUrl= await clothingImagesService.AddBrandImage(viewModel.Image);
 
             newBrand.LogoUrl = imageUrl;
         }
@@ -71,7 +71,7 @@ public class BrandService:IBrandService
         brand.Description = viewModel.Description;
         if (viewModel.Image != null)
         {
-            string imageUrl = await clothingImagesService.AddBrandImage(viewModel.Image, brand.Id);
+            string imageUrl = await clothingImagesService.AddBrandImage(viewModel.Image);
             brand.LogoUrl = imageUrl;
         }
 
