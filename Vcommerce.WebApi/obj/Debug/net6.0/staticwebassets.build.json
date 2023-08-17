@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "F9hhpeZFtNA1jeUtJWs1ZOU8sQZhdYrNufkx/lSK2VM=",
+  "Source": "Vcommerce.WebApi",
+  "BasePath": "_content/Vcommerce.WebApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -1,8 +1,11 @@
 ﻿using ClothingRepository.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Vcommerce.Data.Models;
 using Vcommerce.Data.Models.Enums;
 using Vcommerce.Services.ProductServices.Interfaces;
 using Vcommerce.Web.ViewModels.Clothes;
+using Vcommerce.Web.ViewModels.Reviews;
 
 namespace Vcommerce.Web.Controllers
 {
@@ -103,6 +106,24 @@ namespace Vcommerce.Web.Controllers
             await clothingService.EditClothing(productId,model);
 
             return RedirectToAction("EditProductSizes", "ClothingSizes", new {productId=productId});
+        }
+
+
+        [HttpPost]
+
+        public async Task<IActionResult> SubmitReview([FromBody] AddReviewViewModel review)
+        {
+            if (ModelState.IsValid)
+            {
+
+              Guid reviewId= await clothingService.AddClothingReview(review.ClothingId, review);
+
+              var reviewModel = await clothingService.GetClothingReviewByIdAsync(reviewId);
+
+              return PartialView("PartialViews/_ClothingReviewsPartialView", reviewModel);
+            }
+
+            return BadRequest(ModelState);
         }
     }
 }

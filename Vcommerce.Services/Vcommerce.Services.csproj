@@ -24,6 +24,7 @@
     <ProjectReference Include="..\ClothingRepository\ClothingRepository.csproj" />
     <ProjectReference Include="..\Vcommerce.Data.Models\Vcommerce.Data.Models.csproj" />
     <ProjectReference Include="..\Vcommerce.Data\Vcommerce.Data.csproj" />
+    <ProjectReference Include="..\Vcommerce.Web.Infrastructures\Vcommerce.Web.Infrastructures.csproj" />
     <ProjectReference Include="..\Vcommerce.Web.ViewModels\Vcommerce.Web.ViewModels.csproj" />
   </ItemGroup>
 

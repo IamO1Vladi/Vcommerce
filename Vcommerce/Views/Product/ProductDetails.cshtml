@@ -1,8 +1,17 @@
 ﻿
 @using System.Drawing
+@using System.Security.Claims
 @using Microsoft.AspNetCore.Mvc.TagHelpers
+@using Vcommerce.Services.ProductServices.Interfaces
+@using Vcommerce.Web.Infrastructures.Extensions
 @model ClothingDetailsViewModel;
 
+@inject IClothingService Service
+
+@{
+    var reviews = await Service.GetClothingReviewsByIdAsync(@Model.ClothingId);
+    var userId = ClaimsPrincipalExtensions.GetId(User);
+}
 
 <div class="breadcrumb_section bg_gray page-title-mini">
     <div class="container">
@@ -213,7 +222,7 @@
                     <a class="nav-link" id="Additional-info-tab" data-bs-toggle="tab" href="#Additional-info" role="tab" aria-controls="Additional-info" aria-selected="false">Additional info</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="Reviews-tab" data-bs-toggle="tab" href="#Reviews" role="tab" aria-controls="Reviews" aria-selected="false">Reviews (2)</a>
+                    <a class="nav-link" id="Reviews-tab" data-bs-toggle="tab" href="#Reviews" role="tab" aria-controls="Reviews" aria-selected="false">Reviews</a>
                 </li>
             </ul>
             <div class="tab-content shop_info_tab">
@@ -236,51 +245,28 @@
                 </div>
                 <div class="tab-pane fade" id="Reviews" role="tabpanel" aria-labelledby="Reviews-tab">
                     <div class="comments">
-                        <h5 class="product_tab_title">2 Review For <span>Blue Dress For Woman</span></h5>
+                        <h5 class="product_tab_title"> Reviews For <span>@Model.Name</span></h5>
                         <ul class="list_none comment_list mt-4">
-                            <li>
-                                <div class="comment_img">
-                                    <img src="assets/images/user1.jpg" alt="user1"/>
-                                </div>
-                                <div class="comment_block">
-                                    <div class="rating_wrap">
-                                        <div class="rating">
-                                            <div class="product_rate" style="width:80%"></div>
-                                        </div>
-                                    </div>
-                                    <p class="customer_meta">
-                                        <span class="review_author">Alea Brooks</span>
-                                        <span class="comment-date">March 5, 2018</span>
-                                    </p>
-                                    <div class="description">
-                                        <p>Lorem Ipsumin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="comment_img">
-                                    <img src="assets/images/user2.jpg" alt="user2"/>
-                                </div>
-                                <div class="comment_block">
-                                    <div class="rating_wrap">
-                                        <div class="rating">
-                                            <div class="product_rate" style="width:60%"></div>
-                                        </div>
-                                    </div>
-                                    <p class="customer_meta">
-                                        <span class="review_author">Grace Wong</span>
-                                        <span class="comment-date">June 17, 2018</span>
-                                    </p>
-                                    <div class="description">
-                                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>
-                                    </div>
-                                </div>
-                            </li>
+                          
+                            @{
+                                if (reviews.Any())
+                                {
+                                    foreach (var reviewViewModelForList in reviews)
+                                    {
+                                        <partial name="PartialViews/_ClothingReviewsPartialView" model="reviewViewModelForList"/>
+                                    }
+                                }
+                                else
+                                {
+                            <h2 class="text-center"> Be the first to write a review!</h2>
+                                }
+                            }
+                        
                         </ul>
                     </div>
                     <div class="review_form field_form">
                         <h5>Add a review</h5>
-                        <form class="row mt-3">
+                        <form id="reviewForm" class="row mt-3">
                             <div class="form-group col-12 mb-3">
                                 <div class="star_rating">
                                     <span data-value="1"><i class="far fa-star"></i></span>
@@ -293,13 +279,6 @@
                             <div class="form-group col-12 mb-3">
                                 <textarea required="required" placeholder="Your review *" class="form-control" name="message" rows="4"></textarea>
                             </div>
-                            <div class="form-group col-md-6 mb-3">
-                                <input required="required" placeholder="Enter Name *" class="form-control" name="name" type="text">
-                            </div>
-                            <div class="form-group col-md-6 mb-3">
-                                <input required="required" placeholder="Enter Email *" class="form-control" name="email" type="email">
-                            </div>
-                                   
                             <div class="form-group col-12 mb-3">
                                 <button type="submit" class="btn btn-fill-out" name="submit" value="Submit">Submit Review</button>
                             </div>
@@ -321,6 +300,49 @@
 </div>
 </div>
 </div>
+
+
+<script>
+        $("#reviewForm").submit(function (event) {
+            event.preventDefault(); // Prevent the form from normal submission
+
+            // Get form data
+            var formData = {
+                description: $("textarea[name='message']").val(),
+                clothingId: "@Model.ClothingId", // You can replace this with your actual ClothingId
+                rating: $(".star_rating .selected:last").attr("data-value"),
+                userposted:'@userId'
+                // Add more data as needed
+            };
+
+            // Send AJAX request
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("SubmitReview", "Product")",
+                data: JSON.stringify(formData),
+                contentType: "application/json",
+                success: function (response) {
+                    // Handle success response, update the page if needed
+                $("#reviewForm textarea[name = 'message']").val('');
+                $(".star_rating span").removeClass("selected");
+
+                $(".comment_list").prepend(response);
+
+                },
+                error: function (error) {
+                    // Handle error response
+                    console.error(error);
+                }
+            });
+        });
+
+        // Handle star rating selection
+        $(".star_rating span").click(function () {
+            $(".star_rating span").removeClass("selected");
+            $(this).addClass("selected");
+        });
+</script>
+
 
 
 

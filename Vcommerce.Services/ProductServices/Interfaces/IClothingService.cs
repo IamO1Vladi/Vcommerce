@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel;
+using Vcommerce.Data.Models;
 using Vcommerce.Data.Models.Enums;
 using Vcommerce.Web.ViewModels.Clothes;
+using Vcommerce.Web.ViewModels.Reviews;
 
 namespace Vcommerce.Services.ProductServices.Interfaces;
 
@@ -34,5 +36,11 @@ public interface IClothingService
 
     public Task DeleteAllClothesByBrandId(Guid brandId);
 
-    
+    public Task<ReviewViewModelForList[]> GetClothingReviewsByIdAsync(Guid clothingId);
+
+    public Task<Guid> AddClothingReview(Guid clothingId, AddReviewViewModel review);
+
+    public Task<ReviewViewModelForList> GetClothingReviewByIdAsync(Guid reviewId);
+
+
 }

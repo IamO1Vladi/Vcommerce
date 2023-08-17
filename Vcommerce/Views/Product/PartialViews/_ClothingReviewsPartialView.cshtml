@@ -1,0 +1,27 @@
+﻿
+@model Vcommerce.Web.ViewModels.Reviews.ReviewViewModelForList
+
+@{
+    int ratingPercentage = Model.Rating * 20;
+}
+
+
+<li>
+    <div class="comment_img">
+        <img src="@Model.AvatarUrl" alt="user1"/>
+    </div>
+    <div class="comment_block">
+        <div class="rating_wrap">
+            <div class="rating">
+                <div class="product_rate" style="width: @ratingPercentage%"></div>
+            </div>
+        </div>
+        <p class="customer_meta">
+            <span class="review_author">@Model.Name</span>
+            <span class="comment-date">@DateOnly.FromDateTime(Model.DateCreated)</span>
+        </p>
+        <div class="description">
+            <p>@Model.Description</p>
+        </div>
+    </div>
+</li>

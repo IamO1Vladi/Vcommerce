@@ -4,12 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ClothingRepository.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using Vcommerce.Data;
 using Vcommerce.Data.Models;
 using Vcommerce.Data.Models.Enums;
+using Vcommerce.Data.Models.Users;
 using Vcommerce.Services.ProductServices.Interfaces;
 using Vcommerce.Web.ViewModels.Clothes;
-
+using Vcommerce.Web.ViewModels.Reviews;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
+using Vcommerce.Web.Infrastructures.Extensions;
 using static VCommerce.Common.ClothesFilters.ClothesFiltersConstants;
 
 namespace Vcommerce.Services.ProductServices
@@ -356,6 +361,71 @@ namespace Vcommerce.Services.ProductServices
             await clothingRepo.DeleteAllClothesFromABrandAsync(brandId);
         }
 
-       
+        public async Task<ReviewViewModelForList[]> GetClothingReviewsByIdAsync(Guid clothingId)
+        {
+            ICollection<ReviewViewModelForList> reviewViewModel = new List<ReviewViewModelForList>();
+
+            Review[] reviews = await context.ClothingReviews.Where(r => r.RelatedClothingIdGuid == clothingId).Include(r=>r.UserPosted)
+                .OrderByDescending(r => r.DatePosted).ToArrayAsync();
+
+            ReviewViewModelForList viewModel;
+
+            foreach (var review in reviews)
+            {
+                viewModel = new ReviewViewModelForList
+                {
+                    Description = review.Description,
+                    ClothingId = review.RelatedClothingIdGuid,
+                    Rating = review.Rating,
+                    DateCreated = review.DatePosted,
+                    AvatarUrl = "/assets/images/user2.jpg", // fix later
+                    Name = review.UserPosted.UserName
+                };
+
+                reviewViewModel.Add(viewModel);
+            }
+
+
+            return reviewViewModel.ToArray();
+        }
+
+        public async Task<Guid> AddClothingReview(Guid clothingId, AddReviewViewModel review)
+        {
+            var clothing = await context.Clothes.FindAsync(clothingId);
+
+            
+
+            Review newReview = new Review
+            {
+                UserPostedId = review.UserPosted,
+                DatePosted = DateTime.UtcNow,
+                Rating = review.Rating,
+                Description = review.Description,
+                RelatedClothingIdGuid = review.ClothingId
+            };
+
+            await context.ClothingReviews.AddAsync(newReview);
+            await context.SaveChangesAsync();
+
+            return newReview.Id;
+        }
+
+        public async Task<ReviewViewModelForList> GetClothingReviewByIdAsync(Guid reviewId)
+        {
+            var review = await context.ClothingReviews.Include(r => r.UserPosted).FirstAsync(r => r.Id == reviewId);
+
+            ReviewViewModelForList viewModel = new ReviewViewModelForList
+            {
+                Description = review.Description,
+                ClothingId = review.RelatedClothingIdGuid,
+                Rating = review.Rating,
+                DateCreated = review.DatePosted,
+                AvatarUrl = "/assets/images/user2.jpg", // fux later
+                Name = review.UserPosted.UserName
+            };
+
+
+            return viewModel;
+        }
     }
 }

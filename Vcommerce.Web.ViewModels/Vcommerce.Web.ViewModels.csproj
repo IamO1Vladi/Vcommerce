@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <Folder Include="Brands\" />
+    <Folder Include="Reviews\" />
     <Folder Include="Users\" />
   </ItemGroup>
 

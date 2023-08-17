@@ -1,0 +1,12 @@
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Services.ServiceModels\bin\Debug\net6.0\Vcommerce.Services.ServiceModels.deps.json
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Services.ServiceModels\bin\Debug\net6.0\Vcommerce.Services.ServiceModels.dll
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Services.ServiceModels\bin\Debug\net6.0\Vcommerce.Services.ServiceModels.pdb
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Services.ServiceModels\obj\Debug\net6.0\Vcommerce.Services.ServiceModels.csproj.AssemblyReference.cache
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Services.ServiceModels\obj\Debug\net6.0\Vcommerce.Services.ServiceModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Services.ServiceModels\obj\Debug\net6.0\Vcommerce.Services.ServiceModels.AssemblyInfoInputs.cache
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Services.ServiceModels\obj\Debug\net6.0\Vcommerce.Services.ServiceModels.AssemblyInfo.cs
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Services.ServiceModels\obj\Debug\net6.0\Vcommerce.Services.ServiceModels.csproj.CoreCompileInputs.cache
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Services.ServiceModels\obj\Debug\net6.0\Vcommerce.Services.ServiceModels.dll
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Services.ServiceModels\obj\Debug\net6.0\refint\Vcommerce.Services.ServiceModels.dll
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Services.ServiceModels\obj\Debug\net6.0\Vcommerce.Services.ServiceModels.pdb
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Services.ServiceModels\obj\Debug\net6.0\ref\Vcommerce.Services.ServiceModels.dll

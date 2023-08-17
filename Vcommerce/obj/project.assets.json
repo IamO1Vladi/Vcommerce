@@ -5156,6 +5156,7 @@
           "Microsoft.Extensions.Configuration.UserSecrets": "6.0.1",
           "Vcommerce.Data": "1.0.0",
           "Vcommerce.Data.Models": "1.0.0",
+          "Vcommerce.Web.Infrastructures": "1.0.0",
           "Vcommerce.Web.ViewModels": "1.0.0"
         },
         "compile": {

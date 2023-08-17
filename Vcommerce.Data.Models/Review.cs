@@ -17,6 +17,9 @@ public class Review
     public Guid Id { get; set; }
 
     [Required]
+    [ForeignKey(nameof(UserPosted))]
+    public Guid UserPostedId { get; set; }
+    
     public ApplicationUser UserPosted { get; set; } = null!;
 
     [Required]
