@@ -8,6 +8,12 @@ public interface IBlogService
 
     public Task<ListAllBlogPostsViewModel[]> GetAllBlogsPostsViewModelAsync();
 
-    public Task AddAsync(AddOrEditBlogPostViewModel blogPost);
+    public Task AddAsync(AddBlogPostViewModel blogPost);
+
+    public Task<BlogPostDetailsViewModel> GetPostDetailsByIdAsync(Guid postId);
+
+    public Task<EditBlogPostViewModel> GetPostForEditView(Guid postId);
+
+    public Task EditAsync(EditBlogPostViewModel blogPost);
 
 }

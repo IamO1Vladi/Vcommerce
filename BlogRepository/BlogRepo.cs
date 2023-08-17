@@ -37,7 +37,7 @@ public class BlogRepo:IBlogRepo
 
     public async Task<BlogPost> GetByIdAsync(Guid blogId)
     {
-        var blogPost = await dbContext.BlogPosts.FindAsync(blogId);
+        var blogPost = await dbContext.BlogPosts.Include(b => b.Author).FirstAsync(b => b.Id == blogId);
 
         return blogPost;
     }

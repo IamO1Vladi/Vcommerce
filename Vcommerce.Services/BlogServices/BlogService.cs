@@ -1,5 +1,7 @@
 ﻿using BlogRepository.Interfaces;
+using Microsoft.AspNetCore.Identity;
 using Vcommerce.Data.Models.Blog;
+using Vcommerce.Data.Models.Users;
 using Vcommerce.Services.ApiServices.FireBaseApiService.Interfaces;
 using Vcommerce.Services.BlogServices.Interfaces;
 using Vcommerce.Services.ProductServices.Interfaces;
@@ -15,10 +17,12 @@ public class BlogService:IBlogService
     private readonly IBlogRepo blogRepo;
     private readonly IImagesService imagesService;
 
+
     public BlogService(IBlogRepo repo, IImagesService service)
     {
         this.blogRepo = repo;
         this.imagesService = service;
+       
     }
 
     public async Task<ListAllBlogPostsViewModel[]> GetAllBlogsPostsViewModelAsync()
@@ -41,7 +45,7 @@ public class BlogService:IBlogService
                     : blogPost.Context,
                 DatePosted = blogPost.DatePosted,
                 NumberOfComments = 0,
-                ThumbnailUrl = blogPost.PostMainPictureUrl
+                ThumbnailUrl = blogPost.PostMainPictureUrl,
             };
 
             blogPostsView.Add(post);
@@ -51,7 +55,7 @@ public class BlogService:IBlogService
         return blogPostsView.ToArray();
     }
 
-    public async Task AddAsync(AddOrEditBlogPostViewModel blogPost)
+    public async Task AddAsync(AddBlogPostViewModel blogPost)
     {
 
         string mainPictureUrl = await imagesService.AddBlogImageAsync(blogPost.ThumbMail);
@@ -71,6 +75,55 @@ public class BlogService:IBlogService
         };
 
         await blogRepo.AddAsync(newPost);
+
+    }
+
+    public async Task<BlogPostDetailsViewModel> GetPostDetailsByIdAsync(Guid postId)
+    {
+        BlogPost post = await blogRepo.GetByIdAsync(postId);
+
+
+
+        BlogPostDetailsViewModel details = new BlogPostDetailsViewModel
+        {
+            Id = post.Id,
+            Title = post.Title,
+            Context = post.Context,
+            MainImageUrl = post.PostMainPictureUrl,
+            LeftSideImageUrl = post.PostMidSectionLeftImageUrl,
+            RightSideImageUrl = post.PostMidSectionRightImageUrl,
+            DatePosted = post.DatePosted,
+            NumberOfComments = 0,
+            Author = post.Author,
+        };
+
+        return details;
+    }
+
+    public async Task<EditBlogPostViewModel> GetPostForEditView(Guid postId)
+    {
+        BlogPost currentPost = await blogRepo.GetByIdAsync(postId);
+
+        EditBlogPostViewModel post = new EditBlogPostViewModel()
+        {
+            Context = currentPost.Context,
+            Title = currentPost.Title,
+            Id=postId,
+        };
+
+        return post;
+
+    }
+
+    public async Task EditAsync(EditBlogPostViewModel blogPost)
+    {
+        BlogPost currentPost = await blogRepo.GetByIdAsync(blogPost.Id);
+
+       currentPost.Context=blogPost.Context;
+       currentPost.Title=blogPost.Title;
+
+       await blogRepo.UpdateAsync(currentPost);
+
 
     }
 }

@@ -22,9 +22,6 @@ public class Review
     [Required]
     public DateTime DatePosted { get; set; }
 
-    [Required]
-    [MaxLength(MaxAvatarUrlLength)]
-    public string AvatarUrl { get; set; } = null!;
 
     [Required]
     [Range(minimum:MinRating,maximum:MaxRating)]

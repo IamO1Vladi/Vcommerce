@@ -6,7 +6,7 @@ using static VCommerce.Common.DataBaseValidations.BlogPostValidations;
 
 namespace Vcommerce.Web.ViewModels.BlogPosts;
 
-public class AddOrEditBlogPostViewModel
+public class AddBlogPostViewModel
 {
 
     [Required]

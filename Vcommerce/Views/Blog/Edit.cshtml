@@ -1,0 +1,45 @@
+﻿@using Vcommerce.Web.ViewModels.BlogPosts
+@using Microsoft.AspNetCore.Identity
+@using Vcommerce.Data.Models.Users
+
+@model EditBlogPostViewModel
+
+@{
+    var postId = Context.Request.Query["postId"];
+}
+
+
+<!-- START MAIN CONTENT -->
+<div class="main_content">
+    <!-- START SECTION BLOG -->
+    <div class="section">
+        <div class="container">
+            <div class="row">
+
+
+                <!-- Image Upload and Post Creation Form -->
+                <div class="image_upload_form">
+                    <h5 class="widget_title">Add New Post</h5>
+                    <form method="post" asp-controller="Blog" asp-action="Edit" asp-route-postId="@postId" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label asp-for="Title">Title:</label>
+                            <input asp-for="Title" type="text" name="Title" id="title" class="form-control" required>
+                            <span asp-validation-for="Title"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Context">Context:</label>
+                            <textarea asp-for="Context" name="Context" id="context" class="form-control" rows="4" required></textarea>
+                            <span asp-validation-for="Context"></span>
+                        </div>
+                        
+                        <input type="hidden" asp-for="Id" value="@postId"/>
+
+                        <button type="submit" class="btn btn-fill-out">Add Post</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- END SECTION BLOG -->

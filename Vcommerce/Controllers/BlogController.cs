@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Vcommerce.Services.BlogServices.Interfaces;
 using Vcommerce.Web.ViewModels.BlogPosts;
 
@@ -32,12 +33,44 @@ namespace Vcommerce.Web.Controllers
 
         [HttpPost]
 
-        public async Task<IActionResult> Add(AddOrEditBlogPostViewModel model)
+        public async Task<IActionResult> Add(AddBlogPostViewModel model)
         {
 
             await blogService.AddAsync(model);
 
             return RedirectToAction("ListAllBlogPosts", "Blog");
+        }
+
+
+        [HttpGet]
+
+        public async Task<IActionResult> Details(Guid postId)
+        {
+
+            var details = await blogService.GetPostDetailsByIdAsync(postId);
+
+
+            return View(details);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(Guid postId)
+        {
+
+            EditBlogPostViewModel model = await blogService.GetPostForEditView(postId);
+
+            return View(model);
+        }
+
+        [HttpPost]
+
+        public async Task<IActionResult> Edit(EditBlogPostViewModel model)
+        {
+
+            await blogService.EditAsync(model);
+
+            return RedirectToAction("Details", "Blog", new { postId = model.Id });
+
         }
     }
 }
