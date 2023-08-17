@@ -14,7 +14,10 @@ using Vcommerce.Web.ViewModels.Clothes;
 using Vcommerce.Web.ViewModels.Reviews;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Formatters;
+using Vcommerce.Services.ServiceModels.Product;
 using Vcommerce.Web.Infrastructures.Extensions;
+using Vcommerce.Web.ViewModels.Clothes.Enums;
 using static VCommerce.Common.ClothesFilters.ClothesFiltersConstants;
 
 namespace Vcommerce.Services.ProductServices
@@ -437,6 +440,82 @@ namespace Vcommerce.Services.ProductServices
             context.ClothingReviews.Remove(review);
 
             await context.SaveChangesAsync();
+        }
+
+        public async Task<ClothesFilteredAndPagedServiceModel> GetClothesFilteredAndPagedServiceModelAsync(ClothesQueryModel queryModel,Gender gender, Category? category=Category.NoCategory )
+        {
+            IQueryable<Clothes> clothes;
+
+            if (category == Category.NoCategory)
+            {
+                clothes =
+                    context.Clothes.Where(c => c.Gender == gender).Include(c => c.Brand).Include(c => c.Reviews);
+
+            }
+            else
+            {
+                clothes =
+                    context.Clothes.Where(c => c.Gender == gender && c.Category == category).Include(c => c.Brand).Include(c => c.Reviews);
+
+            }
+
+
+            if (!string.IsNullOrWhiteSpace(queryModel.Brand))
+            {
+                clothes = clothes.Where(c => c.Brand.Name == queryModel.Brand);
+            }
+
+            if (!string.IsNullOrWhiteSpace(queryModel.SearchString))
+            {
+                string wildCard = $"%{queryModel.SearchString.ToLower()}%";
+                clothes = clothes.Where(c => EF.Functions.Like(c.Name, wildCard) ||
+                                             EF.Functions.Like(c.Description, wildCard));
+            }
+
+            clothes = queryModel.ClothesSorting switch
+            {
+                ClothesSorting.Newest => clothes.OrderByDescending(c => c.DateCreated),
+                ClothesSorting.Oldest => clothes.OrderBy(c => c.DateCreated),
+                ClothesSorting.Default => clothes.OrderBy(c => c.Name),
+                ClothesSorting.PriceAscending => clothes.OrderBy(c =>
+                    c.IsOnSale ? c.Price - (c.Price * (c.SalePercentage / 100)) : c.Price),
+                ClothesSorting.PriceDescending => clothes.OrderByDescending(c =>
+                    c.IsOnSale ? c.Price - (c.Price * (c.SalePercentage / 100)) : c.Price),
+                ClothesSorting.Popularity => clothes.OrderBy(c => c.Reviews.Average(c => c.Rating)),
+                _ => clothes.OrderBy(c=>c.Name)
+            };
+
+
+            IEnumerable<ShopListClothingViewModel> shoppingListClothes = await clothes
+                .Skip((queryModel.CurrentPage - 1) * queryModel.ClothesPerPage).Take(queryModel.ClothesPerPage)
+                .Select(c => new ShopListClothingViewModel
+                {
+                    ClothingId = c.Id,
+                    Name = c.Name,
+                    Price = c.Price,
+                    SalesPercentage = c.SalePercentage,
+                    IsOnSale = c.IsOnSale,
+                    IsNew = c.DateCreated >= DateTime.UtcNow.AddDays(-14) ? true : false,
+                    IsHot = c.NumberOfSales >= NumberOfSalesRequiredToBeHot,
+                    Color = c.Color,
+                    Description = c.Description,
+                    Category = c.Category,
+                    Gender = c.Gender,
+                    Brand = c.Brand
+                }).ToArrayAsync();
+
+            foreach (var clothing in shoppingListClothes)
+            {
+                clothing.ImageUrls = await clothingRepo.GetImageUrlsForAProductById(clothing.ClothingId);
+            }
+
+            int totalClothes = clothes.Count();
+
+            return new ClothesFilteredAndPagedServiceModel()
+            {
+                TotalClothesCount = totalClothes,
+                Clothes = shoppingListClothes
+            };
         }
     }
 }

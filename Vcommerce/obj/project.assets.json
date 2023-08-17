@@ -5156,6 +5156,7 @@
           "Microsoft.Extensions.Configuration.UserSecrets": "6.0.1",
           "Vcommerce.Data": "1.0.0",
           "Vcommerce.Data.Models": "1.0.0",
+          "Vcommerce.Services.ServiceModels": "1.0.0",
           "Vcommerce.Web.Infrastructures": "1.0.0",
           "Vcommerce.Web.ViewModels": "1.0.0"
         },
@@ -5164,6 +5165,21 @@
         },
         "runtime": {
           "bin/placeholder/Vcommerce.Services.dll": {}
+        }
+      },
+      "Vcommerce.Services.ServiceModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "Vcommerce.Data.Models": "1.0.0",
+          "Vcommerce.Web.ViewModels": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Vcommerce.Services.ServiceModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Vcommerce.Services.ServiceModels.dll": {}
         }
       },
       "Vcommerce.Web.Infrastructures/1.0.0": {
@@ -13610,6 +13626,11 @@
       "path": "../Vcommerce.Services/Vcommerce.Services.csproj",
       "msbuildProject": "../Vcommerce.Services/Vcommerce.Services.csproj"
     },
+    "Vcommerce.Services.ServiceModels/1.0.0": {
+      "type": "project",
+      "path": "../Vcommerce.Services.ServiceModels/Vcommerce.Services.ServiceModels.csproj",
+      "msbuildProject": "../Vcommerce.Services.ServiceModels/Vcommerce.Services.ServiceModels.csproj"
+    },
     "Vcommerce.Web.Infrastructures/1.0.0": {
       "type": "project",
       "path": "../Vcommerce.Web.Infrastructures/Vcommerce.Web.Infrastructures.csproj",
@@ -13633,6 +13654,7 @@
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.16",
       "Vcommerce.Data >= 1.0.0",
       "Vcommerce.Services >= 1.0.0",
+      "Vcommerce.Services.ServiceModels >= 1.0.0",
       "Vcommerce.Web.Infrastructures >= 1.0.0",
       "Vcommerce.Web.ViewModels >= 1.0.0"
     ]
@@ -13672,6 +13694,9 @@
             },
             "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce.Data\\Vcommerce.Data.csproj": {
               "projectPath": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce.Data\\Vcommerce.Data.csproj"
+            },
+            "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce.Services.ServiceModels\\Vcommerce.Services.ServiceModels.csproj": {
+              "projectPath": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce.Services.ServiceModels\\Vcommerce.Services.ServiceModels.csproj"
             },
             "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce.Services\\Vcommerce.Services.csproj": {
               "projectPath": "C:\\Users\\User\\OneDrive\\Работен плот\\Vcommerce\\Vcommerce.Services\\Vcommerce.Services.csproj"

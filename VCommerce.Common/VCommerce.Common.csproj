@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <Folder Include="ClothesFilters\" />
+    <Folder Include="GeneralApplicationConstants\" />
   </ItemGroup>
 
 </Project>

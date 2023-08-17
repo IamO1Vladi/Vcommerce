@@ -54,8 +54,6 @@ namespace Vcommerce.Web.ViewModels.Clothes
 
         public ICollection<string> ImageUrls { get; set; }
 
-
-
         public Brand Brand { get; set; }=null!;
 
 

@@ -8,6 +8,7 @@ namespace Vcommerce.Data.Models.Enums
 {
     public enum Category
     {
+        NoCategory=0,
         TShirts=1,
         DressShirts=2,
         Jeans=3,

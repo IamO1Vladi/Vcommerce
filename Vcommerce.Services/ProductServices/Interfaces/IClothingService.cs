@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
 using Vcommerce.Data.Models;
 using Vcommerce.Data.Models.Enums;
+using Vcommerce.Services.ServiceModels.Product;
 using Vcommerce.Web.ViewModels.Clothes;
 using Vcommerce.Web.ViewModels.Reviews;
 
@@ -43,5 +44,7 @@ public interface IClothingService
     public Task<ReviewViewModelForList> GetClothingReviewByIdAsync(Guid reviewId);
 
     public Task DeleteReviewByIdAsync(Guid reviewId);
+
+    public Task<ClothesFilteredAndPagedServiceModel> GetClothesFilteredAndPagedServiceModelAsync(ClothesQueryModel queryModel, Gender gender, Category? category = Category.TShirts);
 
 }

@@ -20,6 +20,7 @@
     <ProjectReference Include="..\BlogRepository\BlogRepository.csproj" />
     <ProjectReference Include="..\ClothingRepository\ClothingRepository.csproj" />
     <ProjectReference Include="..\Vcommerce.Data\Vcommerce.Data.csproj" />
+    <ProjectReference Include="..\Vcommerce.Services.ServiceModels\Vcommerce.Services.ServiceModels.csproj" />
     <ProjectReference Include="..\Vcommerce.Services\Vcommerce.Services.csproj" />
     <ProjectReference Include="..\Vcommerce.Web.Infrastructures\Vcommerce.Web.Infrastructures.csproj" />
     <ProjectReference Include="..\Vcommerce.Web.ViewModels\Vcommerce.Web.ViewModels.csproj" />

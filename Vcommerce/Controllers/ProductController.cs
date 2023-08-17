@@ -1,9 +1,13 @@
 ﻿using ClothingRepository.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Vcommerce.Data.Models;
 using Vcommerce.Data.Models.Enums;
 using Vcommerce.Services.ProductServices.Interfaces;
+using Vcommerce.Services.ServiceModels.Filtering;
+using Vcommerce.Services.ServiceModels.Product;
 using Vcommerce.Web.ViewModels.Clothes;
 using Vcommerce.Web.ViewModels.Reviews;
 
@@ -27,12 +31,17 @@ namespace Vcommerce.Web.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> ProductsByCategoryAndGender(Category category , Gender gender)
+        public async Task<IActionResult> ProductsByCategoryAndGender([FromQuery] ClothesQueryModel queryModel)
         {
 
-            var products = await clothingService.GetClothesForShoppingList(gender, category);
+            ClothesFilteredAndPagedServiceModel products =
+                await clothingService.GetClothesFilteredAndPagedServiceModelAsync(queryModel, queryModel.Gender, queryModel.Category);
+
+            queryModel.TotalClothes = products.TotalClothesCount;
+            queryModel.Clothes=products.Clothes;
+            queryModel.Brands=products.Clothes.Select(c=>c.Brand.Name).ToList();
             
-            return View(products);
+            return View(queryModel);
         }
 
         [HttpGet]
@@ -135,5 +144,36 @@ namespace Vcommerce.Web.Controllers
 
             return Ok(new { message = "Review deleted successfully" });
         }
+
+
+        //[HttpPost]
+        //public async  Task<IActionResult> GetFilteredClothes([FromBody] ShopListFilteringServiceModel model)
+        //{
+
+        //    var clothing = await clothingService.GetClothesForShoppingList(model.Gender, model.Category);
+
+        //    ICollection<ShopListClothingViewModel> filteredClothing = new List<ShopListClothingViewModel>();
+
+            
+
+        //    foreach (var guid in model.BrandId)
+        //    {
+        //        foreach (var clothingItem in clothing)
+        //        {
+        //            if (clothingItem.Brand.Id == Guid.Parse(guid))
+        //            {
+        //                filteredClothing.Add(clothingItem);
+        //            }
+        //        }
+        //    }
+
+        //    if (model.BrandId.Any())
+        //    {
+        //        return PartialView("PartialViews/_ProductsList", filteredClothing.ToArray());
+        //    }
+
+        //    return PartialView("PartialViews/_ProductsList", clothing);
+
+        //}
     }
 }

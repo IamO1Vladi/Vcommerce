@@ -4,10 +4,17 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>10b91017-7506-4826-9783-af815e915aef</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Vcommerce.Services.ServiceModels\Vcommerce.Services.ServiceModels.csproj" />
+    <ProjectReference Include="..\Vcommerce.Services\Vcommerce.Services.csproj" />
+    <ProjectReference Include="..\Vcommerce.Web.Infrastructures\Vcommerce.Web.Infrastructures.csproj" />
   </ItemGroup>
 
 </Project>

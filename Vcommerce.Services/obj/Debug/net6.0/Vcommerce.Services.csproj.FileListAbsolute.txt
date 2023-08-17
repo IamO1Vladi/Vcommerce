@@ -25,3 +25,5 @@ C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Services\bin\
 C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Services\bin\Debug\net6.0\BlogRepository.pdb
 C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Services\bin\Debug\net6.0\Vcommerce.Web.Infrastructures.dll
 C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Services\bin\Debug\net6.0\Vcommerce.Web.Infrastructures.pdb
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Services\bin\Debug\net6.0\Vcommerce.Services.ServiceModels.dll
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Services\bin\Debug\net6.0\Vcommerce.Services.ServiceModels.pdb
