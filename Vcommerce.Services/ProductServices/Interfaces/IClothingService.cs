@@ -42,5 +42,6 @@ public interface IClothingService
 
     public Task<ReviewViewModelForList> GetClothingReviewByIdAsync(Guid reviewId);
 
+    public Task DeleteReviewByIdAsync(Guid reviewId);
 
 }

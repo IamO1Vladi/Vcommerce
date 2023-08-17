@@ -4,6 +4,8 @@ namespace Vcommerce.Web.ViewModels.Reviews;
 
 public class ReviewViewModelForList
 {
+ 
+    public Guid ReviewId { get; set; }
     
     public string Description { get; set; } = null!;
 

@@ -44,7 +44,7 @@
     <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
         <div class="product-image">
             <div class="product_img_box">
-                            <img id="product_img" src='@Model.ImageUrls.FirstOrDefault()' data-zoom-image="@Model.ImageUrls.FirstOrDefault()" alt="product_img1" /> <!--Create script to change zoom-->
+                <img id="product_img" src='@Model.ImageUrls.FirstOrDefault()' data-zoom-image="@Model.ImageUrls.FirstOrDefault()" alt="product_img1" /> <!--Create script to change zoom-->
                 <a href="#" class="product_img_zoom" title="Zoom">
                     <span class="linearicons-zoom-in"></span>
                 </a>
@@ -58,7 +58,7 @@
                         foreach (var imageUrl in Model.ImageUrls)
                         {
                             <div class="item">
-                                            <a class="product_gallery_item active" data-image="@imageUrl" data-zoom-image="@imageUrl">
+                                <a class="product_gallery_item active" data-image="@imageUrl" data-zoom-image="@imageUrl">
                                     <img src="@imageUrl" alt="product_small_img1"/>
                                 </a>
                             </div>
@@ -122,7 +122,7 @@
                     @{
                         Color color = Color.FromName(@Model.Color);
                     }
-                                <span data-color="@ColorTranslator.ToHtml(color)"></span>
+                    <span data-color="@ColorTranslator.ToHtml(color)"></span>
 
                    
                 </div>
@@ -258,7 +258,7 @@
                                 }
                                 else
                                 {
-                            <h2 class="text-center"> Be the first to write a review!</h2>
+                                    <h2 class="text-center"> Be the first to write a review!</h2>
                                 }
                             }
                         
@@ -300,6 +300,36 @@
 </div>
 </div>
 </div>
+
+
+
+<script>
+    $(".delete-review-btn").each(function () {
+        $(this).click(function () {
+            var reviewId = $(this).data("review-id");
+            var $liElement = $(this).closest("li")
+
+            // Send AJAX request to delete the review
+            $.ajax({
+                type: "DELETE",
+                url: "@Url.Action("DeleteReview", "Product")",
+                data: { reviewId: reviewId },
+                success: function (response) {
+                    // Handle success response, update the page if needed
+                    console.log(response);
+
+                    // Remove the deleted review item from the list
+                    $liElement.remove();
+                },
+                error: function (error) {
+                    // Handle error response
+                    console.error(error);
+                }
+            });
+        });
+    });
+</script>
+
 
 
 <script>

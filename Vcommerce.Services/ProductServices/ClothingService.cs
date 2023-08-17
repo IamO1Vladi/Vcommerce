@@ -379,7 +379,8 @@ namespace Vcommerce.Services.ProductServices
                     Rating = review.Rating,
                     DateCreated = review.DatePosted,
                     AvatarUrl = "/assets/images/user2.jpg", // fix later
-                    Name = review.UserPosted.UserName
+                    Name = review.UserPosted.UserName,
+                    ReviewId = review.Id
                 };
 
                 reviewViewModel.Add(viewModel);
@@ -421,11 +422,21 @@ namespace Vcommerce.Services.ProductServices
                 Rating = review.Rating,
                 DateCreated = review.DatePosted,
                 AvatarUrl = "/assets/images/user2.jpg", // fux later
-                Name = review.UserPosted.UserName
+                Name = review.UserPosted.UserName,
+                ReviewId = reviewId
             };
 
 
             return viewModel;
+        }
+
+        public async Task DeleteReviewByIdAsync(Guid reviewId)
+        {
+            Review? review = await context.ClothingReviews.FindAsync(reviewId);
+
+            context.ClothingReviews.Remove(review);
+
+            await context.SaveChangesAsync();
         }
     }
 }

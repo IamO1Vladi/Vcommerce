@@ -125,5 +125,15 @@ namespace Vcommerce.Web.Controllers
 
             return BadRequest(ModelState);
         }
+
+        [HttpDelete]
+
+        public async Task<IActionResult> DeleteReview(Guid reviewId)
+        {
+
+            await clothingService.DeleteReviewByIdAsync(reviewId);
+
+            return Ok(new { message = "Review deleted successfully" });
+        }
     }
 }
