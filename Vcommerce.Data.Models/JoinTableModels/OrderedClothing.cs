@@ -20,6 +20,9 @@ public class OrderedClothing
     public OrderStatus Status { get; set; }
 
     [Required]
+    public ClothesSizes Size { get; set; }
+
+    [Required]
     [ForeignKey(nameof(Clothing))]
     public Guid ClothingId { get; set; }
 

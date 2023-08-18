@@ -7,6 +7,9 @@ using Vcommerce.Data.Models;
 using Vcommerce.Data.Models.Blog;
 using Vcommerce.Data.Models.BrandInfo;
 using Vcommerce.Data.Models.Collections;
+using Vcommerce.Data.Models.JoinTableModels;
+using Vcommerce.Data.Models.Order;
+using Vcommerce.Data.Models.Shops;
 using Vcommerce.Data.Models.Users;
 
 namespace Vcommerce.Data
@@ -34,6 +37,12 @@ namespace Vcommerce.Data
         public DbSet<Brand> Brands { get; set; }=null!;
 
         public DbSet<Collection> Collections { get; set; } = null!;
+
+        public DbSet<Order> Orders { get; set; } = null!;
+
+        public DbSet<OrderedClothing> OrderedClothing { get; set; } = null!;
+
+        public DbSet<Shop> Shops { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

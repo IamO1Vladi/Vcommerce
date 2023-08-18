@@ -10,6 +10,7 @@
     <Folder Include="BrandInfo\" />
     <Folder Include="Collections\" />
     <Folder Include="JoinTableModels\" />
+    <Folder Include="Shops\" />
     <Folder Include="Order\" />
     <Folder Include="Users\" />
   </ItemGroup>

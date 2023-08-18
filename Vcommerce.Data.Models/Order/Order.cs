@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Vcommerce.Data.Models.Enums;
 using Vcommerce.Data.Models.JoinTableModels;
 using Vcommerce.Data.Models.Users;
 
@@ -13,7 +14,7 @@ public class Order
     public Order()
     {
         this.Id= Guid.NewGuid();
-        this.Clothes = new HashSet<OrderedClothing>();
+        this.OrderedClothes = new HashSet<OrderedClothing>();
     }
 
     [Key]
@@ -47,12 +48,23 @@ public class Order
     [Range(minimum:MinTotalPrice,maximum:MaxTotalPrice)]
     public decimal TotalPrice { get; set; }
 
-    public virtual ICollection<OrderedClothing> OrderedClothes { get; set; }
+    [Required]
+    [EmailAddress]
+    public string Email { get; set; }
 
     [Required]
-    [ForeignKey(nameof(ApplicationUser))]
-    public Guid UserId { get; set; }
+    [Phone]
+    public string PhoneNumber { get; set; }
 
-    public virtual ApplicationUser ApplicationUser { get; set; }
+    [Required]
+    public PaymentType PaymentType { get; set; }
+
+    public virtual ICollection<OrderedClothing> OrderedClothes { get; set; }
+
+    
+    [ForeignKey(nameof(ApplicationUser))]
+    public Guid? UserId { get; set; }
+
+    public virtual ApplicationUser? ApplicationUser { get; set; }
 
 }
