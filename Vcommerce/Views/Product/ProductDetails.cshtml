@@ -1,16 +1,26 @@
 ﻿
 @using System.Drawing
 @using System.Security.Claims
+
 @using Microsoft.AspNetCore.Mvc.TagHelpers
+@using Vcommerce.Data.Models.Users
 @using Vcommerce.Services.ProductServices.Interfaces
 @using Vcommerce.Web.Infrastructures.Extensions
 @model ClothingDetailsViewModel;
 
 @inject IClothingService Service
 
+
 @{
     var reviews = await Service.GetClothingReviewsByIdAsync(@Model.ClothingId);
-    var userId = ClaimsPrincipalExtensions.GetId(User);
+
+    var reviewInfo = await Service.GetReviewInfoByIdAsync(@Model.ClothingId);
+    string? userId = string.Empty;
+    if (User.Identity?.IsAuthenticated ?? false)
+    {
+       
+      userId = ClaimsPrincipalExtensions.GetId(User);
+    }
 }
 
 <div class="breadcrumb_section bg_gray page-title-mini">
@@ -102,9 +112,9 @@
                 </div>
                 <div class="rating_wrap">
                     <div class="rating">
-                        <div class="product_rate" style="width:80%"></div>
+                        <div class="product_rate" style="width:@reviewInfo.AverageRating%"></div>
                     </div>
-                    <span class="rating_num">(21)</span>
+                    <span class="rating_num">(@reviewInfo.TotalReviews)</span>
                 </div>
                 <div class="pr_desc">
                     <p>With each purchase we offer these benefits:</p>

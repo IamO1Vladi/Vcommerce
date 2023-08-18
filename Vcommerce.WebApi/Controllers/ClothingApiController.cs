@@ -9,6 +9,7 @@ using Vcommerce.Services.ProductServices.Interfaces;
 using Vcommerce.Web.ViewModels.Clothes;
 using Newtonsoft.Json.Serialization;
 using Vcommerce.Services.ServiceModels.Filtering;
+using Vcommerce.Services.ServiceModels.Product;
 
 namespace Vcommerce.WebApi.Controllers
 {
@@ -62,5 +63,50 @@ namespace Vcommerce.WebApi.Controllers
 
         }
 
+
+        [HttpGet("/reviewInfo")]
+        [Produces("application/json")]
+        [ProducesResponseType(200,Type= typeof(ReviewInfoServiceModel))]
+        [ProducesResponseType(400)]
+        public async Task<IActionResult> GetRatingInfoForClothingById([FromQuery] Guid clothingId)
+        {
+
+            try
+            {
+                var reviews = await clothingService.GetClothingReviewsByIdAsync(clothingId);
+
+                if (reviews.Any())
+                {
+
+                    int totalReviews = reviews.Count();
+
+                    int averageRating = (int)reviews.Average(r => r.Rating) * 20;
+
+                    ReviewInfoServiceModel reviewInfo = new ReviewInfoServiceModel()
+                    {
+                        AverageRating = averageRating,
+                        TotalReviews = totalReviews
+                    };
+
+                    return Ok(reviewInfo);
+                }
+                else
+                {
+                    ReviewInfoServiceModel reviewInfo = new ReviewInfoServiceModel()
+                    {
+                        AverageRating = 100,
+                        TotalReviews = 0
+                    };
+                    return Ok(reviewInfo);
+                }
+
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e);
+               
+            }
+           
+        }
     }
 }

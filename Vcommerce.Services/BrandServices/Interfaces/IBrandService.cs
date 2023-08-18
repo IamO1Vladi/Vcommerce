@@ -15,4 +15,5 @@ public interface IBrandService
 
     public Task DeleteBrandAsync(Guid brandId);
 
+
 }

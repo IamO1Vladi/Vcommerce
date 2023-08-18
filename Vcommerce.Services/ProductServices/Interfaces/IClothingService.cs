@@ -47,4 +47,7 @@ public interface IClothingService
 
     public Task<ClothesFilteredAndPagedServiceModel> GetClothesFilteredAndPagedServiceModelAsync(ClothesQueryModel queryModel, Gender gender, Category? category = Category.TShirts);
 
+
+    public Task<ReviewInfoServiceModel> GetReviewInfoByIdAsync(Guid clothingId);
+
 }

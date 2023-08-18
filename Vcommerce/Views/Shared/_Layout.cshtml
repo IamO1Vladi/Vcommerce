@@ -65,6 +65,11 @@
     <!-- Style CSS -->
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/responsive.css">
+    
+    
+   
+
+
 
 </head>
 <body>
@@ -103,7 +108,7 @@
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-body">
-                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <button type="button" id="subCloseButton" class="close" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true"><i class="ion-ios-close-empty"></i></span>
                     </button>
                     <div class="row g-0">
@@ -453,3 +458,52 @@
 @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+
+
+ 
+<script>
+        // Function to set a cookie
+        function setCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+
+        // Function to get a cookie value
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        // Check if the cookie is set and hide the popup if needed
+        $(document).ready(function () {
+            var popupCookie = getCookie('popupShown');
+            if (popupCookie === 'true') {
+                $('#onload-popup').remove();
+            }
+        });
+
+        // When the popup is closed, set the cookie
+        $('#subCloseButton').on('click', function () {
+            if ($('#exampleCheckbox3').prop('checked')) {
+                setCookie('popupShown', 'true', 30); // Set the cookie to expire in 30 days
+            }
+        });
+
+
+      $('#onload-popup').on('hidden.bs.modal', function () {
+        $(this).remove();
+     });
+
+
+    </script>

@@ -149,6 +149,9 @@ namespace Vcommerce.Web.Controllers
         }
 
 
+       
+
+
         //[HttpPost]
         //public async  Task<IActionResult> GetFilteredClothes([FromBody] ShopListFilteringServiceModel model)
         //{

@@ -517,5 +517,44 @@ namespace Vcommerce.Services.ProductServices
                 Clothes = shoppingListClothes
             };
         }
+
+        public async Task<ReviewInfoServiceModel> GetReviewInfoByIdAsync(Guid clothingId)
+        {
+            try
+            {
+                var reviews = await GetClothingReviewsByIdAsync(clothingId);
+
+                if (reviews.Any())
+                {
+
+                    int totalReviews = reviews.Count();
+
+                    int averageRating = (int)reviews.Average(r => r.Rating) * 20;
+
+                    ReviewInfoServiceModel reviewInfo = new ReviewInfoServiceModel()
+                    {
+                        AverageRating = averageRating,
+                        TotalReviews = totalReviews
+                    };
+
+                    return reviewInfo;
+                }
+                else
+                {
+                    ReviewInfoServiceModel reviewInfo = new ReviewInfoServiceModel()
+                    {
+                        AverageRating = 100,
+                        TotalReviews = 0
+                    };
+                    return reviewInfo;
+                }
+
+            }
+            catch (Exception e)
+            {
+
+                throw new Exception();
+            }
+        }
     }
 }
