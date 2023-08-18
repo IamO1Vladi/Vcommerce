@@ -446,7 +446,7 @@ namespace Vcommerce.Services.ProductServices
         {
             IQueryable<Clothes> clothes;
 
-            if (category == Category.NoCategory)
+            if (category == Category.NoCategory || category==null)
             {
                 clothes =
                     context.Clothes.Where(c => c.Gender == gender).Include(c => c.Brand).Include(c => c.Reviews);

@@ -104,38 +104,59 @@
                             <ul class="pagination mt-3 justify-content-center pagination_style1">
 
                                 @{
-                                    <li class="page-item @(Model.CurrentPage == 1 ? "active" : string.Empty)">
+                                    
 
-                                        <a class="page-link" asp-controller="Product"
-                                           asp-action="ProductsByCategoryAndGender"
-                                           asp-route-gender="@genderId"
-                                           asp-route-category="@categoryId"
-                                           asp-route-currentPage="1"
-                                           asp-route-searchTerm="@Model.SearchString"
-                                           asp-route-sorting="@((int?)Model.ClothesSorting)">1</a>
-                                    </li>
+                                        double pages = (double)Model.TotalClothes / (double)Model.ClothesPerPage;
+                                        int numberOfPages = (int)Math.Ceiling(pages);
 
-                                    int pages = Model.TotalClothes / Model.ClothesPerPage;
-                                    int numberOfPages = (int)Math.Ceiling((double)pages);
 
-                                    for (int i = Model.CurrentPage + 1; i < Model.CurrentPage + 3; i++)
-                                    {
-                                        if (i >= numberOfPages)
+                                        @if (numberOfPages > 1)
                                         {
-                                            break;
-                                        }
-                                        <li class="page-item">
-                                            <a class="page-link"
-                                               asp-controller="Product"
-                                               asp-action="ProductsByCategoryAndGender"
-                                               asp-route-gender="@genderId"
-                                               asp-route-category="@categoryId"
-                                               asp-route-currentPage="@i"
-                                               asp-route-searchTerm="@Model.SearchString"
-                                               asp-route-sorting="@((int?)Model.ClothesSorting)">@i</a>
-                                        </li>
+                                            int pagesToShow = 2;
+                                            int startPage = Model.CurrentPage - pagesToShow;
+                                            int endPage = Model.CurrentPage + pagesToShow;
 
-                                    }
+                                            if (startPage <= 0)
+                                            {
+                                                startPage = 1;
+                                                endPage = Math.Min(pagesToShow * 2 + 1, numberOfPages);
+                                            }
+                                            else if (endPage > numberOfPages)
+                                            {
+                                                endPage = numberOfPages;
+                                                startPage = Math.Max(numberOfPages - pagesToShow * 2, 1);
+                                            }
+
+                                            for (int i = startPage; i <= endPage; i++)
+                                            {
+                                                <li class="page-item @(Model.CurrentPage == i ? "active" : string.Empty)">
+                                                    <a class="page-link"
+                                           asp-controller="Product"
+                                           asp-action="ProductsByCategoryAndGender"
+                                           asp-route-gender="@Model.Gender"
+                                           asp-route-category="@Model.Category"
+                                           asp-route-clothesPerPage="@Model.ClothesPerPage"
+                                           asp-route-currentPage="@(i)"
+                                           asp-route-searchTerm="@Model.SearchString"
+                                           asp-route-sorting="@((int?)Model.ClothesSorting)">@i</a>
+                                                </li>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <li class="page-item @(Model.CurrentPage == 1 ? "active" : string.Empty)">
+                                                <a class="page-link"
+                                                   asp-controller="Product"
+                                                   asp-action="ProductsByCategoryAndGender"
+                                                   asp-route-gender="@Model.Gender"
+                                                   asp-route-category="@Model.Category"
+                                                   asp-route-clothesPerPage="@Model.ClothesPerPage"
+                                                   asp-route-currentPage="1"
+                                                   asp-route-searchTerm="@Model.SearchString"
+                                                   asp-route-sorting="@((int?)Model.ClothesSorting)">1</a>
+                                            </li>
+                                        }
+
                                 }
                             </ul>
                         </div>
@@ -201,20 +222,12 @@
                                 }
                             </select>
                         </div>
-                        <div class="input-group rounded mb-3">
-                            <input asp-for="SearchString" type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon"/>
-                            <span class="input-group-text border-0" id="search-addon">
-                                <a asp-controller="Product"
-                                   asp-action="ProductsByCategoryAndGender"
-                                   asp-route-gender="@genderId"
-                                   asp-route-category="@categoryId"
-                                   asp-route-currentPage="1"
-                                   asp-route-searchTerm="@Model.SearchString"
-                                   asp-route-sorting="@((int?)Model.ClothesSorting)">
-                                    <i class="fas fa-search"></i>
-                                </a>
-                            </span>
+                        
+                        <div class="input-group mb-3">
+                            <input asp-for="SearchString" type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                            <button type="submit" class="btn btn-outline-primary btn-sm">search</button>
                         </div>
+                        
 
                         <div class="widget">
                             <div class="shop_banner">

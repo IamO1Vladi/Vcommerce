@@ -57,13 +57,16 @@ namespace Vcommerce.Web.Controllers
 
         [HttpGet]
 
-        public async Task<IActionResult> ProductsByGender(Gender gender)
+        public async Task<IActionResult> ProductsByGender([FromQuery] ClothesQueryModel queryModel)
         {
-            var products = await clothingService.GetClothesForShoppingListByGender(gender);
-           
+            ClothesFilteredAndPagedServiceModel products =
+                await clothingService.GetClothesFilteredAndPagedServiceModelAsync(queryModel, queryModel.Gender, queryModel.Category);
 
+            queryModel.TotalClothes = products.TotalClothesCount;
+            queryModel.Clothes = products.Clothes;
+            queryModel.Brands = products.Clothes.Select(c => c.Brand.Name).ToList();
 
-            return View(products);
+            return View(queryModel);
 
         }
 
