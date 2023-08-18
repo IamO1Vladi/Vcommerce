@@ -97,7 +97,7 @@ namespace Vcommerce
             app.UseAuthentication();
             app.UseAuthorization();
 
-
+            
 
             app.MapControllerRoute(
                 name: "default",

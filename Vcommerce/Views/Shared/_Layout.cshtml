@@ -282,27 +282,9 @@
                                 </ul>
                             </div>
                             <ul class="navbar-nav attr-nav align-items-center">
-                              
-                                <li class="dropdown cart_dropdown">
-                                    <a class="nav-link cart_trigger" href="#" data-bs-toggle="dropdown"><i class="linearicons-cart"></i><span class="cart_count">2</span></a>
-                                    <div class="cart_box dropdown-menu dropdown-menu-right">
-                                        <ul class="cart_list">
-                                            <li>
-                                                <a href="#" class="item_remove"><i class="ion-close"></i></a>
-                                                <a href="#"><img src="/assets/images/cart_thamb1.jpg" alt="cart_thumb1">Variable product 001</a>
-                                                <span class="cart_quantity"> 1 x <span class="cart_amount"> <span class="price_symbole">$</span></span>78.00</span>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="item_remove"><i class="ion-close"></i></a>
-                                                <a href="#"><img src="/assets/images/cart_thamb2.jpg" alt="cart_thumb2">Ornare sed consequat</a>
-                                                <span class="cart_quantity"> 1 x <span class="cart_amount"> <span class="price_symbole">$</span></span>81.00</span>
-                                            </li>
-                                        </ul>
-                                        <div class="cart_footer">
-                                            <p class="cart_total"><strong>Subtotal:</strong> <span class="cart_price"> <span class="price_symbole">$</span></span>159.00</p>
-                                            <p class="cart_buttons"><a href="#" class="btn btn-fill-line rounded-0 view-cart">View Cart</a><a href="#" class="btn btn-fill-out rounded-0 checkout">Checkout</a></p>
-                                        </div>
-                                    </div>
+                                <li id="partialViewContainer" class="dropdown cart_dropdown">
+                                    
+                                    
                                 </li>
                                 
                             </ul>
@@ -460,6 +442,52 @@
 </html>
 
 
+<script>
+
+
+    function removeCartItem(productId) {
+        var cartItems = JSON.parse(localStorage.getItem('cartItems'));
+
+        // Find the index of the cart item to remove
+        var index = cartItems.findIndex(item => item.id === productId);
+
+        if (index !== -1) {
+            cartItems.splice(index, 1); // Remove the item from the array
+            localStorage.setItem('cartItems', JSON.stringify(cartItems)); // Update the session storage
+
+            // Remove the corresponding <li> element from the cart list
+            
+            
+            loadPartialView();
+        }
+    }
+
+    // Add click event listener to the "Remove" button
+    $('#partialViewContainer').on('click', '.item_remove', function () {
+        var productId = $(this).attr("id"); // Get the product ID from the data attribute
+        removeCartItem(productId);
+    });
+
+    function loadPartialView() {
+        var cartItemsJson = localStorage.getItem('cartItems');
+        $.ajax({
+            url: "/Product/GetCartPartialView",
+            type: "GET",
+            data: { cartItemsJson: cartItemsJson },
+            success: function (result) {
+                $("#partialViewContainer").html(result);
+            },
+            error: function (error) {
+                console.error(error);
+            }
+        });
+    }
+    
+    $()
+    // Call the function to load the partial view
+    loadPartialView();
+
+</script>
  
 <script>
         // Function to set a cookie

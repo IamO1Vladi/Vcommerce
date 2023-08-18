@@ -13,12 +13,15 @@ using Vcommerce.Services.ProductServices.Interfaces;
 using Vcommerce.Web.ViewModels.Clothes;
 using Vcommerce.Web.ViewModels.Reviews;
 using System.Security.Claims;
+using System.Security.Policy;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Vcommerce.Services.ServiceModels.Product;
 using Vcommerce.Web.Infrastructures.Extensions;
 using Vcommerce.Web.ViewModels.Clothes.Enums;
 using static VCommerce.Common.ClothesFilters.ClothesFiltersConstants;
+using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 
 namespace Vcommerce.Services.ProductServices
 {
@@ -556,5 +559,40 @@ namespace Vcommerce.Services.ProductServices
                 throw new Exception();
             }
         }
+
+        public async Task<ClothingForLayoutCartViewModel[]> GetClothingForLayoutCartAsync(string cartItemJson)
+        {
+             // Adjust this based on how you access session in your application
+
+            
+            var cartItems = JsonConvert.DeserializeObject<ClothingFromSessionStorageServiceModel[]>(cartItemJson);
+
+            ICollection<ClothingForLayoutCartViewModel> clothingItems = new List<ClothingForLayoutCartViewModel>();
+
+            if (!string.IsNullOrEmpty(cartItemJson))
+            {
+                ClothingForLayoutCartViewModel model;
+                foreach (var clothing in cartItems!)
+                {
+                    model = new ClothingForLayoutCartViewModel
+                    {
+                        ClothingId = clothing.ClothingId,
+                        Name = System.Web.HttpUtility.HtmlDecode((clothing.Name)),
+                        ImageUrl = clothing.ImageUrl,
+                        Price = decimal.Parse(clothing.Price),
+                        Quantity = clothing.Quantity,
+                        Size = clothing.Size,
+                    };
+
+                    clothingItems.Add(model);
+                }
+
+                return clothingItems.ToArray();
+            }
+
+            return clothingItems.ToArray();
+        }
     }
-}
+
+    }
+

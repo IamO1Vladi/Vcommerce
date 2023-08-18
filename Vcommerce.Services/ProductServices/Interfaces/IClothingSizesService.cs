@@ -14,4 +14,5 @@ public interface IClothingSizesService
     public Task EditSizesForClothing(ClothingSizesViewModel[] model);
 
     public Task<ClothingSizeServiceModel[]> GetAvailableClothingSizesByIdAsync(Guid clothingId);
+
 }

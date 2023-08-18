@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 using Vcommerce.Data.Models;
 using Vcommerce.Data.Models.Enums;
 using Vcommerce.Services.ServiceModels.Product;
@@ -50,4 +51,6 @@ public interface IClothingService
 
     public Task<ReviewInfoServiceModel> GetReviewInfoByIdAsync(Guid clothingId);
 
+
+    public Task<ClothingForLayoutCartViewModel[]> GetClothingForLayoutCartAsync(string cardItemsJson);
 }

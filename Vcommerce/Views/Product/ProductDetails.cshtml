@@ -22,6 +22,20 @@
        
       userId = ClaimsPrincipalExtensions.GetId(User);
     }
+
+    var priceForSessionStorage = Model.Price;
+    if (Model.IsOnSale)
+    {
+        
+        decimal? priceAfterSale = (Model.Price - (Model.Price * (Model.SalesPercentage / 100)));
+        var finalPrice = Math.Round(priceAfterSale.Value, 2);
+
+        priceForSessionStorage = finalPrice;
+
+
+    }
+  
+
 }
 
 <div class="breadcrumb_section bg_gray page-title-mini">
@@ -377,7 +391,7 @@
         var cartItem = {
             id: '@Model.ClothingId',
             name: '@Model.Name',
-            price: parseFloat('@Model.Price').toFixed(2),
+            price: '@priceForSessionStorage'.toString(),
             quantity: quantity,
             imageUrl: `@firstImage`,
             size:size
@@ -389,14 +403,14 @@
 
        
         // Retrieve existing cart items from sessionStorage
-        var existingCartItems = sessionStorage.getItem('cartItems');
+        var existingCartItems = localStorage.getItem('cartItems');
         var cartItems = existingCartItems ? JSON.parse(existingCartItems) : [];
 
         // Add the new cart item to the array
         cartItems.push(cartItem);
 
         // Store the updated cart items array in sessionStorage
-        sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
 
         $('#addToCartModal').modal('show');
         });

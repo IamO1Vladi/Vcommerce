@@ -15,8 +15,4 @@
     <ProjectReference Include="..\Vcommerce.Web.ViewModels\Vcommerce.Web.ViewModels.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Product\" />
-  </ItemGroup>
-
 </Project>

@@ -149,7 +149,24 @@ namespace Vcommerce.Web.Controllers
         }
 
 
-       
+
+
+        [HttpGet]
+
+        public async Task<IActionResult> GetCartPartialView(string? cartItemsJson)
+        {
+
+            
+
+            if(string.IsNullOrWhiteSpace(cartItemsJson))
+            {
+                cartItemsJson = "";
+            }
+
+            var clothingItems = await clothingService.GetClothingForLayoutCartAsync(cartItemsJson);
+
+            return PartialView("_CartItemForLayourPartialView", clothingItems);
+        }
 
 
         //[HttpPost]

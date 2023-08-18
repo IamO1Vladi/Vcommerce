@@ -5200,6 +5200,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
           "VCommerce.Common": "1.0.0",
           "Vcommerce.Data.Models": "1.0.0"
         },

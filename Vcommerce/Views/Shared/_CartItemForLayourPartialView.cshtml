@@ -1,0 +1,30 @@
+﻿@using Vcommerce.Services.ProductServices.Interfaces
+
+@model ClothingForLayoutCartViewModel[];
+
+<a class="nav-link cart_trigger" href="#" data-bs-toggle="dropdown"><i class="linearicons-cart"></i><span class="cart_count">@Model.Length</span></a>
+
+<div  class="cart_box dropdown-menu dropdown-menu-right">
+                                      
+
+    <ul class="cart_list">
+        
+        @{
+            foreach (var clothing in Model)
+            {
+                <li>
+                    <a id="@clothing.ClothingId" href="#" class="item_remove"><i class="ion-close"></i></a>
+                 <a asp-controller="Product" asp-action="ProductDetails" asp-route-productId="@clothing.ClothingId" ><img src="@clothing.ImageUrl" alt="cart_thumb1">@clothing.Name</a>
+                    <span class="cart_quantity"> @clothing.Quantity x <span class="cart_amount"> <span class="price_symbole">$</span></span>@clothing.Price</span>
+                </li>
+            }
+        }
+       
+
+    </ul>
+    <div class="cart_footer">
+        <p class="cart_total"><strong>Subtotal:</strong> <span class="cart_price"> <span class="price_symbole">$</span></span>@Model.Sum(c=>c.Price)</p>
+        <p class="cart_buttons"><a href="#" class="btn btn-fill-line rounded-0 view-cart">View Cart</a><a href="#" class="btn btn-fill-out rounded-0 checkout">Checkout</a></p>
+    </div>
+    
+</div>
