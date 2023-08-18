@@ -9,6 +9,8 @@
   <ItemGroup>
     <Folder Include="BrandInfo\" />
     <Folder Include="Collections\" />
+    <Folder Include="JoinTableModels\" />
+    <Folder Include="Order\" />
     <Folder Include="Users\" />
   </ItemGroup>
 

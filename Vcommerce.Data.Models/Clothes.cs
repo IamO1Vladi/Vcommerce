@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using Vcommerce.Data.Models.BrandInfo;
 using Vcommerce.Data.Models.Collections;
 using Vcommerce.Data.Models.Enums;
+using Vcommerce.Data.Models.JoinTableModels;
 using static VCommerce.Common.DataBaseValidations.ClothesValidations;
 
 namespace Vcommerce.Data.Models;
@@ -16,6 +17,7 @@ public class Clothes:Product
         this.DateCreated= DateTime.UtcNow;
         this.Reviews= new HashSet<Review>();
         this.Sizes = new HashSet<ClothingSizes>();
+        this.Orders = new HashSet<OrderedClothing>();
     }
 
     [Required]
@@ -45,6 +47,8 @@ public class Clothes:Product
 
     public virtual ICollection<ClothingSizes> Sizes { get; set; }
 
-    
+    public virtual ICollection<OrderedClothing> Orders { get; set; }
+
+
 
 }
