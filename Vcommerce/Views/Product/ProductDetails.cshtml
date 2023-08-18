@@ -9,11 +9,12 @@
 @model ClothingDetailsViewModel;
 
 @inject IClothingService Service
-
+@inject IClothingSizesService SizesService
 
 @{
+    string? firstImage = @Model.ImageUrls.FirstOrDefault();
     var reviews = await Service.GetClothingReviewsByIdAsync(@Model.ClothingId);
-
+    var sizes = await SizesService.GetAvailableClothingSizesByIdAsync(Model.ClothingId);
     var reviewInfo = await Service.GetReviewInfoByIdAsync(@Model.ClothingId);
     string? userId = string.Empty;
     if (User.Identity?.IsAuthenticated ?? false)
@@ -139,11 +140,12 @@
                 <div class="pr_switch_wrap">
                     <span class="switch_lable">Size</span>
                     <div class="product_size_switch">
-                        <span>xs</span>
-                        <span>s</span>
-                        <span>m</span>
-                        <span>l</span>
-                        <span>xl</span>
+                        @{
+                            foreach (var clothingSizeServiceModel in sizes)
+                            {
+                                <span class="size-option" data-max-quantity="@clothingSizeServiceModel.AvailableQuantity">@clothingSizeServiceModel.Size.ToString().ToLower()</span>
+                            }
+                        }
                     </div>
                 </div>
             </div>
@@ -152,12 +154,12 @@
                 <div class="cart-product-quantity">
                     <div class="quantity">
                         <input type="button" value="-" class="minus">
-                        <input type="text" name="quantity" value="1" title="Qty" class="qty" size="4">
+                        <input id="quantityForClothing" type="text" name="quantity" value="1" title="Qty" class="qty" size="4">
                         <input type="button" value="+" class="plus">
                     </div>
                 </div>
                 <div class="cart_btn">
-                    <button class="btn btn-fill-out btn-addtocart" type="button"><i class="icon-basket-loaded"></i> Add to cart</button>
+                    <button id="addToCartButton" class="btn btn-fill-out btn-addtocart" type="button"><i class="icon-basket-loaded"></i> Add to cart</button>
                     <a class="add_compare" href="#"><i class="icon-shuffle"></i></a>
                     <a class="add_wishlist" href="#"><i class="icon-heart"></i></a>
                 </div>
@@ -312,6 +314,151 @@
 </div>
 
 
+<!-- Add the Bootstrap modal HTML structure -->
+<div class="modal fade" id="addToCartModal" tabindex="-1" role="dialog" aria-labelledby="addToCartModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addToCartModalLabel">Item Added to Cart</h5>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+                                
+                </button>
+               
+            </div>
+            <div class="modal-body">
+                <p>Your item has been added to the cart.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Continue Shopping</button>
+                <a href="/Cart" class="btn btn-primary">View Cart</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    $('#addToCartModal .btn-close').click(function () {
+        // Hide the modal
+        $('#addToCartModal').modal('hide');
+    });
+    
+    
+    
+    $('#addToCartModal .btn-secondary').click(function () {
+        // Hide the modal
+      
+        // Construct the URL with the category and gender parameters
+        var url = '/Product/ProductsByCategoryAndGender?gender=@Model.Gender&category=@Model.Category';
+      
+
+        // Redirect to the constructed URL
+        window.location.href = url;
+    });
+    
+    $('#addToCartButton').click(function () {
+
+        var quantity = parseInt($('#quantityForClothing').val());
+        
+        var size = $(".size-option.active").text();
+
+        if (size.trim()==='') {
+            alert('Please enter a valid size.');
+            return;
+        }
+
+        // Validate the quantity
+        if (isNaN(quantity) || quantity <= 0) {
+            alert('Please enter a valid quantity.');
+            return;
+        }
+
+        // Create an object to store relevant data from the view model
+        var cartItem = {
+            id: '@Model.ClothingId',
+            name: '@Model.Name',
+            price: parseFloat('@Model.Price').toFixed(2),
+            quantity: quantity,
+            imageUrl: `@firstImage`,
+            size:size
+            // Add other properties as needed
+        };
+
+        // Convert the object to a JSON string
+        var cartItemJson = JSON.stringify(cartItem);
+
+       
+        // Retrieve existing cart items from sessionStorage
+        var existingCartItems = sessionStorage.getItem('cartItems');
+        var cartItems = existingCartItems ? JSON.parse(existingCartItems) : [];
+
+        // Add the new cart item to the array
+        cartItems.push(cartItem);
+
+        // Store the updated cart items array in sessionStorage
+        sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+        $('#addToCartModal').modal('show');
+        });
+</script>
+
+<script>
+    const sizeOptions = document.querySelectorAll('.size-option');
+    const quantityInput = document.getElementById('quantityForClothing');
+    const plusButton = document.getElementsByClassName('plus')[0];
+    const minusButton = document.getElementsByClassName('minus')[0];
+
+    plusButton.addEventListener('click', disablePLusButton);
+    minusButton.addEventListener('click', enablePlusButton);
+        
+    function disablePLusButton(e){
+        e.preventDefault();
+        let value = parseInt(quantityInput.value) + parseInt(1);
+        if (value==parseInt(quantityInput.max)){
+            e.target.disabled=true;
+        };
+    }
+    
+    function enablePlusButton(e) {
+        e.preventDefault();
+        let value = parseInt(quantityInput.value) + parseInt(1);
+        if (value != parseInt(quantityInput.max)) {
+            plusButton.disabled = false;
+        };
+    }
+
+    // Function to update the max value of the input based on the selected size option
+    function updateMaxQuantity() {
+        const selectedSizeOption = document.querySelector('.size-option.active');
+        if (selectedSizeOption) {
+            const maxQuantity = selectedSizeOption.dataset.maxQuantity;
+            quantityInput.max = maxQuantity;
+            let value = parseInt(quantityInput.value) + parseInt(1);
+            if (value != parseInt(quantityInput.max)) {
+                plusButton.disabled = false;
+            };
+            quantityInput.value=1;
+        }
+    }
+
+    // Attach a click event listener to each size option
+    sizeOptions.forEach(sizeOption => {
+        sizeOption.addEventListener('click', () => {
+            // Remove 'active' class from all size options
+            sizeOptions.forEach(option => option.classList.remove('active'));
+            // Add 'active' class to the clicked size option
+            sizeOption.classList.add('active');
+            // Update the max value of the input
+            updateMaxQuantity();
+        });
+    });
+    
+
+    // Call the updateMaxQuantity function initially to set the default max value
+    updateMaxQuantity();
+</script>
+
+
 
 <script>
     $(".delete-review-btn").each(function () {
@@ -387,7 +534,6 @@
 
 
 
-            
 <script>
     $(document).ready(function () {
         var deleteConfirmed = false;

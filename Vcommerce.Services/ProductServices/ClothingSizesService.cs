@@ -1,7 +1,10 @@
 ﻿using ClothingRepository.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using Vcommerce.Data;
 using Vcommerce.Data.Models;
+using Vcommerce.Data.Models.Enums;
 using Vcommerce.Services.ProductServices.Interfaces;
+using Vcommerce.Services.ServiceModels.Product;
 using Vcommerce.Web.ViewModels.ClothingSizes;
 
 namespace Vcommerce.Services.ProductServices;
@@ -84,5 +87,19 @@ public class ClothingSizesService:IClothingSizesService
         }
 
         await dbContext.SaveChangesAsync();
+    }
+
+    public async Task<ClothingSizeServiceModel[]> GetAvailableClothingSizesByIdAsync(Guid clothingId)
+    {
+        ClothingSizeServiceModel[] sizes = await dbContext.ClothingSizes.Where(c => c.ClothingId == clothingId && c.SizeQuantity>0).Select(
+            c => new ClothingSizeServiceModel()
+            {
+                AvailableQuantity = c.SizeQuantity,
+                Size = c.Size
+            })
+            .OrderBy(c=>c.Size)
+            .ToArrayAsync();
+
+        return sizes;
     }
 }
