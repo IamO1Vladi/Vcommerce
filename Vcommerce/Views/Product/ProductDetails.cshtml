@@ -343,8 +343,7 @@
                 <p>Your item has been added to the cart.</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Continue Shopping</button>
-                <a href="/Cart" class="btn btn-primary">View Cart</a>
+                <button type="button" class="btn btn-secondary mx-auto" data-dismiss="modal">Continue Shopping</button>
             </div>
         </div>
     </div>
@@ -355,6 +354,7 @@
     $('#addToCartModal .btn-close').click(function () {
         // Hide the modal
         $('#addToCartModal').modal('hide');
+        location.reload();
     });
     
     
@@ -403,14 +403,14 @@
 
        
         // Retrieve existing cart items from sessionStorage
-        var existingCartItems = localStorage.getItem('cartItems');
+        var existingCartItems = sessionStorage.getItem('cartItems');
         var cartItems = existingCartItems ? JSON.parse(existingCartItems) : [];
 
         // Add the new cart item to the array
         cartItems.push(cartItem);
 
         // Store the updated cart items array in sessionStorage
-        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
 
         $('#addToCartModal').modal('show');
         });

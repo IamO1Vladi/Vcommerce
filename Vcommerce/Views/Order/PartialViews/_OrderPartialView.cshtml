@@ -1,0 +1,50 @@
+﻿@model ClothingForLayoutCartViewModel[];
+
+@{
+    decimal price = 0m;
+
+    if (Model.Any())
+    {
+        price = Model.Sum(c => c.Price * (decimal)c.Quantity);
+    }
+
+
+}
+
+
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Product</th>
+        <th>Total</th>
+    </tr>
+    </thead>
+    <tbody>
+    @{
+        foreach (var clothing in Model)
+        {
+            <tr>
+                <td>@clothing.Name <span class="product-qty">x 2</span></td>
+                <td>$@clothing.Price</td>
+            </tr>
+           
+        }
+    }
+   
+    </tbody>
+    <tfoot>
+    <tr>
+        <th>SubTotal</th>
+        <td class="product-subtotal">$@price</td>
+    </tr>
+    <tr>
+        <th>Shipping</th>
+        <td>Free Shipping</td>
+    </tr>
+    <tr>
+        <th>Total</th>
+        <td class="product-subtotal">$@price</td>
+    </tr>
+    </tfoot>
+</table>

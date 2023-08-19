@@ -14,7 +14,7 @@
             {
                 <li>
                     <a id="@clothing.ClothingId" href="#" class="item_remove"><i class="ion-close"></i></a>
-                 <a asp-controller="Product" asp-action="ProductDetails" asp-route-productId="@clothing.ClothingId" ><img src="@clothing.ImageUrl" alt="cart_thumb1">@clothing.Name</a>
+                    <a asp-controller="Product" asp-action="ProductDetails" asp-route-productId="@clothing.ClothingId" ><img src="@clothing.ImageUrl" alt="cart_thumb1">@clothing.Name</a>
                     <span class="cart_quantity"> @clothing.Quantity x <span class="cart_amount"> <span class="price_symbole">$</span></span>@clothing.Price</span>
                 </li>
             }
@@ -22,9 +22,16 @@
        
 
     </ul>
+    
     <div class="cart_footer">
-        <p class="cart_total"><strong>Subtotal:</strong> <span class="cart_price"> <span class="price_symbole">$</span></span>@Model.Sum(c=>c.Price)</p>
-        <p class="cart_buttons"><a href="#" class="btn btn-fill-line rounded-0 view-cart">View Cart</a><a href="#" class="btn btn-fill-out rounded-0 checkout">Checkout</a></p>
+        <p class="cart_total"><strong>Subtotal:</strong> <span class="cart_price"> <span class="price_symbole">$</span></span>@Model.Sum(c=>c.Price*(decimal)c.Quantity)</p>
+        <p class="cart_buttons">
+            <a asp-controller="Order" asp-action="ShoppingCart" class="btn btn-fill-line rounded-0 view-cart">View Cart</a><a asp-controller="Order" asp-action="Checkout" class="btn btn-fill-out rounded-0 checkout">Checkout</a>
+        </p>
     </div>
     
 </div>
+
+
+
+                    

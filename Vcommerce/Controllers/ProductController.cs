@@ -165,6 +165,10 @@ namespace Vcommerce.Web.Controllers
 
             var clothingItems = await clothingService.GetClothingForLayoutCartAsync(cartItemsJson);
 
+            this.HttpContext.Session.SetString("cartItems",cartItemsJson);
+
+            
+
             return PartialView("_CartItemForLayourPartialView", clothingItems);
         }
 

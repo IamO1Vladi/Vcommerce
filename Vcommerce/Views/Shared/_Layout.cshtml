@@ -68,7 +68,7 @@
     
     
    
-
+    
 
 
 </head>
@@ -293,9 +293,8 @@
                 </div>
             </header>
     <!-- END HEADER -->
-    
 
-   
+
             @RenderBody()
        
 
@@ -441,23 +440,21 @@
 </body>
 </html>
 
-
 <script>
 
-
     function removeCartItem(productId) {
-        var cartItems = JSON.parse(localStorage.getItem('cartItems'));
+        var cartItems = JSON.parse(sessionStorage.getItem('cartItems'));
 
         // Find the index of the cart item to remove
         var index = cartItems.findIndex(item => item.id === productId);
 
         if (index !== -1) {
             cartItems.splice(index, 1); // Remove the item from the array
-            localStorage.setItem('cartItems', JSON.stringify(cartItems)); // Update the session storage
+            sessionStorage.setItem('cartItems', JSON.stringify(cartItems)); // Update the session storage
 
             // Remove the corresponding <li> element from the cart list
-            
-            
+
+
             loadPartialView();
         }
     }
@@ -469,7 +466,7 @@
     });
 
     function loadPartialView() {
-        var cartItemsJson = localStorage.getItem('cartItems');
+        var cartItemsJson = sessionStorage.getItem('cartItems');
         $.ajax({
             url: "/Product/GetCartPartialView",
             type: "GET",
@@ -482,12 +479,13 @@
             }
         });
     }
-    
+
     $()
     // Call the function to load the partial view
     loadPartialView();
 
 </script>
+
  
 <script>
         // Function to set a cookie

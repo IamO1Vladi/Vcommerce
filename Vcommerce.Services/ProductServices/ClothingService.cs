@@ -29,11 +29,13 @@ namespace Vcommerce.Services.ProductServices
     {
         private VcommerceDbContext context;
         private IClothingRepo clothingRepo;
+        private readonly IClothingSizesRepo clothingSizesRepo;
 
-        public ClothingService(VcommerceDbContext dbContext,IClothingRepo repo)
+        public ClothingService(VcommerceDbContext dbContext,IClothingRepo repo, IClothingSizesRepo clothingSizesRepo)
         {
-            this.context=dbContext;
-            this.clothingRepo=repo;
+            this.context = dbContext;
+            this.clothingRepo = repo;
+            this.clothingSizesRepo = clothingSizesRepo;
         }
 
         public async Task<ShopListClothingViewModel[]> GetClothesForShoppingList(Gender gender, Category category)
@@ -564,6 +566,7 @@ namespace Vcommerce.Services.ProductServices
         {
              // Adjust this based on how you access session in your application
 
+
             
             var cartItems = JsonConvert.DeserializeObject<ClothingFromSessionStorageServiceModel[]>(cartItemJson);
 
@@ -576,7 +579,7 @@ namespace Vcommerce.Services.ProductServices
                 {
                     model = new ClothingForLayoutCartViewModel
                     {
-                        ClothingId = clothing.ClothingId,
+                        ClothingId = Guid.Parse(clothing.ClothingId),
                         Name = System.Web.HttpUtility.HtmlDecode((clothing.Name)),
                         ImageUrl = clothing.ImageUrl,
                         Price = decimal.Parse(clothing.Price),
@@ -591,6 +594,18 @@ namespace Vcommerce.Services.ProductServices
             }
 
             return clothingItems.ToArray();
+        }
+
+        public async Task ReduceQuantity(Guid productId,int quantity,ClothesSizes size)
+        {
+            var clothing = await clothingRepo.GetClothingById(productId);
+
+            clothing.Quantity -= quantity;
+
+            ClothingSizes currentSize = await clothingSizesRepo.GetSizeAsync(productId, size);
+
+            await clothingSizesRepo.ReduceQuantity(currentSize.Id, quantity);
+
         }
     }
 

@@ -48,13 +48,11 @@ public class Order
     [Range(minimum:MinTotalPrice,maximum:MaxTotalPrice)]
     public decimal TotalPrice { get; set; }
 
-    [Required]
-    [EmailAddress]
-    public string Email { get; set; }
+    [Required][EmailAddress] 
+    public string Email { get; set; } = null!;
 
-    [Required]
-    [Phone]
-    public string PhoneNumber { get; set; }
+    [Required][Phone] 
+    public string PhoneNumber { get; set; } = null!;
 
     [Required]
     public PaymentType PaymentType { get; set; }

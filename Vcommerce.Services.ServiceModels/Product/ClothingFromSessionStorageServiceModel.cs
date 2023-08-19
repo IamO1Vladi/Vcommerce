@@ -4,8 +4,8 @@ namespace Vcommerce.Services.ServiceModels.Product;
 
 public class ClothingFromSessionStorageServiceModel
 {
-    [JsonProperty("id")]
-    public Guid ClothingId { get; set; }
+    [JsonProperty("id")] 
+    public string ClothingId { get; set; } = null!;
 
     [JsonProperty("name")]
     public string Name { get; set; } = null!;

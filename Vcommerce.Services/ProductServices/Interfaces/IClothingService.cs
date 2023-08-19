@@ -53,4 +53,6 @@ public interface IClothingService
 
 
     public Task<ClothingForLayoutCartViewModel[]> GetClothingForLayoutCartAsync(string cardItemsJson);
+
+    public Task ReduceQuantity(Guid productId,int quantity,ClothesSizes size);
 }

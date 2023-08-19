@@ -14,6 +14,7 @@
   <ItemGroup>
     <Folder Include="Brands\" />
     <Folder Include="Clothes\Enums\" />
+    <Folder Include="Orders\" />
     <Folder Include="Reviews\" />
     <Folder Include="Users\" />
   </ItemGroup>

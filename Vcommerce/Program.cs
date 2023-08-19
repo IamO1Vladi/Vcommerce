@@ -74,6 +74,16 @@ namespace Vcommerce
                     options.ModelBinderProviders.Insert(0,new DecimalModelBinderProvider());
                 });
 
+            builder.Services.AddDistributedMemoryCache();
+            builder.Services.AddSession(options =>
+            {
+                // Set a short timeout for easy testing
+                options.IdleTimeout = TimeSpan.FromDays(7);
+                // XSS security
+                options.Cookie.HttpOnly = true;
+            });
+            builder.Services.AddControllersWithViews();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -92,10 +102,15 @@ namespace Vcommerce
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+
+            // UseSession() Middleware must be called before UseMvc()
+            app.UseSession();
+
             app.UseRouting();
 
             app.UseAuthentication();
             app.UseAuthorization();
+
 
             
 

@@ -1,5 +1,171 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model ClothingForLayoutCartViewModel[];
+
 @{
+    decimal price = 0m;
+
+    if (Model.Any())
+    {
+        price = Model.Sum(c => c.Price*(decimal)c.Quantity);
+    }
+
+   
 }
+<!-- START MAIN CONTENT -->
+
+
+    
+    <!-- START SECTION SHOP -->
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="table-responsive shop_cart_table">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th class="product-thumbnail">&nbsp;</th>
+                                <th class="product-name">Product</th>
+                                <th class="product-price">Price</th>
+                                <th class="product-quantity">Quantity</th>
+                                <th class="product-subtotal">Total</th>
+                                <th class="product-remove">Remove</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @{
+                                if (Model.Any())
+                                {
+                                    foreach (var clothing in Model)
+                                    {
+                                        decimal totalClothingPrice = (decimal)clothing.Quantity * clothing.Price;
+                                        string? imageUrl = string.IsNullOrWhiteSpace(clothing.ImageUrl) ? "/assets/images/product_img1.jpg" : clothing.ImageUrl;
+                                        <tr>
+                                            <td class="product-thumbnail"><a href="#"><img src="@imageUrl" alt="product1"></a></td>
+                                            <td class="product-name" data-title="Product"><a asp-controller="Product" asp-action="ProductDetails" asp-route-productId="@clothing.ClothingId">@clothing.Name</a></td>
+                                            <td class="product-price" data-title="Price">$@clothing.Price</td>
+                                            <td class="product-quantity" data-title="Quantity">
+                                                <div class="quantity">
+                                                    <label>@clothing.Quantity</label>
+                                                </div>
+                                            </td>
+                                            <td class="product-subtotal" data-title="Total">$@totalClothingPrice</td>
+                                            <td id="@clothing.ClothingId" class="product-remove" data-title="Remove"><a href="#"><i class="ti-close"></i></a></td>
+                                        </tr>
+                                    }
+                                }
+                                else
+                                {
+                            <h2 class="text-center">You haven't added any products to your cart</h2>
+                                }
+                            }
+                            </tbody>
+                          
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="medium_divider"></div>
+                    <div class="divider center_icon"><i class="ti-shopping-cart-full"></i></div>
+                    <div class="medium_divider"></div>
+                </div>
+            </div>
+            <div class="row">
+              
+                <div class="col-md-6 mx-auto">
+                    <div class="border p-3 p-md-4">
+                        <div class="heading_s1 mb-3">
+                            <h6>Cart Totals</h6>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tbody>
+                                <tr>
+                                    <td class="cart_total_label">Cart Subtotal</td>
+                                    <td class="cart_total_amount">$@price</td>
+                                </tr>
+                                <tr>
+                                    <td class="cart_total_label">Shipping</td>
+                                    
+                                    <td class="cart_total_amount">Free Shipping</td>
+                                        
+                                    
+                                </tr>
+                                <tr>
+                                    <td class="cart_total_label">Total</td>
+                                    <td class="cart_total_amount"><strong>$@price</strong></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <form method="post" asp-controller="Order" asp-action="Checkout">
+                            @{
+                                for (int i =0; i < Model.Length; i++)
+                                {
+                                    <input type="hidden" asp-for="@Model[i].ClothingId" name="ClothingId" value="@Model[i].ClothingId"/>
+                                    <input type="hidden" asp-for="@Model[i].Name" name="Name" value="@Model[i].Name"/>
+                                    <input type="hidden" asp-for="@Model[i].Price" name="Price" value="@Model[i].Price"/>
+                                    <input type="hidden" asp-for="@Model[i].Quantity" name="Quantity" value="@Model[i].Quantity"/>
+                                    <input type="hidden" asp-for="@Model[i].Size" name="Size" value="@Model[i].Size"/>
+                                }
+                            }
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-fill-out mx-auto">Proceed To CheckOut</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- END SECTION SHOP -->
+    <!-- START SECTION SUBSCRIBE NEWSLETTER -->
+    <div class="section bg_default small_pt small_pb">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="heading_s1 mb-md-0 heading_light">
+                        <h3>Subscribe Our Newsletter</h3>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="newsletter_form">
+                        <form>
+                            <input type="text" required="" class="form-control rounded-0" placeholder="Enter Email Address">
+                            <button type="submit" class="btn btn-dark rounded-0" name="submit" value="Submit">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- START SECTION SUBSCRIBE NEWSLETTER -->
+
+<script>
+
+    function removeCartItem(productId) {
+        var cartItems = JSON.parse(sessionStorage.getItem('cartItems'));
+
+        // Find the index of the cart item to remove
+        var index = cartItems.findIndex(item => item.id === productId);
+
+        if (index !== -1) {
+            cartItems.splice(index, 1); // Remove the item from the array
+            sessionStorage.setItem('cartItems', JSON.stringify(cartItems)); // Update the session storage
+
+            // Remove the corresponding <li> element from the cart list
+
+
+            loadPartialView();
+        }
+    }
+
+    // Add click event listener to the "Remove" button
+    $('.product-remove').on('click', function () {
+        var productId = $(this).attr("id"); // Get the product ID from the data attribute
+        removeCartItem(productId);
+        $(this).closest('tr').remove();
+    });
+</script>
