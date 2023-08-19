@@ -418,6 +418,13 @@
             }
         });
     }
+    
+    
+    document.getElementsByClassName('btn btn-fill-out btn-block')[0].addEventListener(`click`, clearStorage);
+    
+    function clearStorage(e){
+      sessionStorage.clear();
+    }
 
 </script>
 

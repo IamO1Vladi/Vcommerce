@@ -99,21 +99,11 @@
                                 </tbody>
                             </table>
                         </div>
-                        <form method="post" asp-controller="Order" asp-action="Checkout">
-                            @{
-                                for (int i =0; i < Model.Length; i++)
-                                {
-                                    <input type="hidden" asp-for="@Model[i].ClothingId" name="ClothingId" value="@Model[i].ClothingId"/>
-                                    <input type="hidden" asp-for="@Model[i].Name" name="Name" value="@Model[i].Name"/>
-                                    <input type="hidden" asp-for="@Model[i].Price" name="Price" value="@Model[i].Price"/>
-                                    <input type="hidden" asp-for="@Model[i].Quantity" name="Quantity" value="@Model[i].Quantity"/>
-                                    <input type="hidden" asp-for="@Model[i].Size" name="Size" value="@Model[i].Size"/>
-                                }
-                            }
+                        
                             <div class="text-center">
-                                <button type="submit" class="btn btn-fill-out mx-auto">Proceed To CheckOut</button>
+                                <a asp-controller="Order" asp-action="Checkout" class="btn btn-fill-out mx-auto">Proceed To CheckOut</a>
                             </div>
-                        </form>
+                        
                     </div>
                 </div>
             </div>

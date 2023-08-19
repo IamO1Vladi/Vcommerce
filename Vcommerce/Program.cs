@@ -4,6 +4,7 @@ using ClothingRepository.Interfaces;
 using FirebaseAdmin;
 using Google.Apis.Auth.OAuth2;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using Vcommerce.Data;
@@ -68,12 +69,6 @@ namespace Vcommerce
                 cfg.AccessDeniedPath = "/User/Login";
             });
 
-            builder.Services.AddControllersWithViews()
-                .AddMvcOptions(options =>
-                {
-                    options.ModelBinderProviders.Insert(0,new DecimalModelBinderProvider());
-                });
-
             builder.Services.AddDistributedMemoryCache();
             builder.Services.AddSession(options =>
             {
@@ -82,6 +77,15 @@ namespace Vcommerce
                 // XSS security
                 options.Cookie.HttpOnly = true;
             });
+
+            builder.Services.AddControllersWithViews()
+                .AddMvcOptions(options =>
+                {
+                    options.ModelBinderProviders.Insert(0,new DecimalModelBinderProvider());
+                    options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
+                });
+
+          
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
