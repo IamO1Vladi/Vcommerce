@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using BlogRepository.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Vcommerce.Data.Models.Blog;
 using Vcommerce.Services.BlogServices.Interfaces;
 using Vcommerce.Web.ViewModels.BlogPosts;
 
@@ -10,10 +12,12 @@ namespace Vcommerce.Web.Controllers
     {
 
         private readonly IBlogService blogService;
+       
 
-        public BlogController(IBlogService serice)
+        public BlogController(IBlogService serice,IBlogRepo repo)
         {
             this.blogService = serice;
+            
         }
 
         [AllowAnonymous]
@@ -73,6 +77,17 @@ namespace Vcommerce.Web.Controllers
             await blogService.EditAsync(model);
 
             return RedirectToAction("Details", "Blog", new { postId = model.Id });
+
+        }
+
+        [HttpDelete]
+        [Authorize]
+        public async Task<IActionResult> Delete(Guid blogId)
+        {
+            
+            await blogService.DeleteAsync(blogId);
+            
+            return Ok(new { message = "Post deleted successfully" });
 
         }
     }

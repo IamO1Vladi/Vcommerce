@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="ApiServices\QuickBaseApiService\Interfaces\" />
     <Folder Include="BrandServices\Interfaces\" />
     <Folder Include="CollectionServices\Interfaces\" />
     <Folder Include="OrderServices\Interfaces\" />

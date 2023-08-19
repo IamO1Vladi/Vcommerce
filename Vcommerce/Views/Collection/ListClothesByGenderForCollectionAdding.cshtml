@@ -1,7 +1,7 @@
 ﻿@model ListClothesByGenderForCollection[]
 
 
-
+@Html.AntiForgeryToken()
 <div class="main_content">
 
   
@@ -96,18 +96,21 @@
             var url = "/Collection/AddClothesToCollection?collectionId=" + `@ViewData["collectionId"]` + `&clothingId=`+clothingId;
             
                 var row = $(this).closest("tr");
-
+                const csrfToken = $('[name=__RequestVerificationToken]').val();
         // Make an AJAX POST request
         $.ajax({
             type: "POST",
             url: url, // Replace with your controller and action
+            headers: {
+                        'RequestVerificationToken': csrfToken, // Include the CSRF token here
+                    },
             success: function (response) {
                 if (response.success) {
                     row.remove();
                 }
             },
             error: function (xhr, status, error) {
-                console.error(error);
+                console.error(error);                      
             }
         });
     });

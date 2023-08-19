@@ -126,4 +126,14 @@ public class BlogService:IBlogService
 
 
     }
+
+    public async Task DeleteAsync(Guid postId)
+    {
+
+        BlogPost post = await blogRepo.GetByIdAsync(postId);
+
+        await blogRepo.DeleteAsync(post);
+
+    }
+       
 }

@@ -54,7 +54,7 @@
 
 </style>
 
-
+@Html.AntiForgeryToken();
 <!-- START SECTION BLOG -->
 <div class="section">
 <div class="container">
@@ -68,10 +68,10 @@
         @{
             if (User?.Identity!.IsAuthenticated ?? false)
             {
-                if (Guid.Parse(ClaimsPrincipalExtensions.GetId(User)) == Model.Author.Id)
+                if (Guid.Parse(ClaimsPrincipalExtensions.GetId(User)!) == Model.Author.Id)
                 {
                     <li class="add-to-cart-edit"><a asp-controller="Blog" asp-action="Edit" asp-route-postId="@Model.Id">Edit</a></li>
-                    <li class="add-to-cart-delete"><a asp-controller="Blog" asp-action="Delete">Delete</a></li>
+                    <li id="deleteButton" class="add-to-cart-delete"><a href="#" >Delete</a></li>
                 }
             }
 
@@ -225,3 +225,80 @@
 </div>
 </div>
 <!-- END SECTION BLOG -->
+
+                    
+<!-- Delete Confirmation Modal -->
+<div class="modal fade" id="confirmDeleteModal" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmDeleteModalLabel">Confirm Delete</h5>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+                                
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete this post?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <a id="confirmDelete" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+                
+                
+<script>
+
+    
+    
+
+    // Add an event listener to the delete button
+    $('#deleteButton').click(function () {
+        $('#confirmDeleteModal').modal('show');
+    });
+
+    // Event listener for the delete button in the modal
+    $('#confirmDelete').on('click', function () {
+       
+     
+            var itemId = "@Model.Id"; // Get the item ID
+            var url = "/Blog/Delete/?blogId=" + itemId; // Construct the URL for the DELETE request
+            const csrfToken = $('[name=__RequestVerificationToken]').val();
+       
+            // Send the DELETE request using Ajax
+            $.ajax({
+                url: url,
+                type: 'DELETE',
+            headers: {
+                'RequestVerificationToken': csrfToken, // Include the CSRF token here          
+            },
+                success: function (data) {
+                    if (data.success) {
+                        
+                    window.location.href = '@Url.Action("ListAllBlogPosts", "Blog")';
+                    } else {
+                    window.location.href = '@Url.Action("ListAllBlogPosts", "Blog")';
+                        console.error(data.message);
+                    }
+                }
+            });
+    });
+
+    // Event listener for the cancel button
+    $('#confirmDeleteModal .btn-secondary').click(function () {
+        // Hide the modal
+        $('#confirmDeleteModal').modal('hide');
+    });
+
+    // Event listener for the close button
+    $('#confirmDeleteModal .btn-close').click(function () {
+        // Hide the modal
+        $('#confirmDeleteModal').modal('hide');
+    });
+      
+
+
+</script>

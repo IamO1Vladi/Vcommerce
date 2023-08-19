@@ -9,6 +9,7 @@
   <ItemGroup>
     <Folder Include="ClothesFilters\" />
     <Folder Include="GeneralApplicationConstants\" />
+    <Folder Include="EmailMessagesValidations\" />
   </ItemGroup>
 
 </Project>

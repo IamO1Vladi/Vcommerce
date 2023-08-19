@@ -16,4 +16,6 @@ public interface IBlogService
 
     public Task EditAsync(EditBlogPostViewModel blogPost);
 
+    public Task DeleteAsync(Guid postId);
+
 }

@@ -37,7 +37,7 @@
   
 
 }
-
+@Html.AntiForgeryToken()
 <div class="breadcrumb_section bg_gray page-title-mini">
     <div class="container">
         <!-- STRART CONTAINER -->
@@ -489,12 +489,15 @@
         $(this).click(function () {
             var reviewId = $(this).data("review-id");
             var $liElement = $(this).closest("li")
-
+            const csrfToken = $('[name=__RequestVerificationToken]').val();
             // Send AJAX request to delete the review
             $.ajax({
                 type: "DELETE",
                 url: "@Url.Action("DeleteReview", "Product")",
                 data: { reviewId: reviewId },
+                headers: {
+                    'RequestVerificationToken': csrfToken, // Include the CSRF token here
+                },
                 success: function (response) {
                     // Handle success response, update the page if needed
                     console.log(response);
@@ -525,13 +528,16 @@
                 userposted:'@userId'
                 // Add more data as needed
             };
-
+        const csrfToken = $('[name=__RequestVerificationToken]').val();
             // Send AJAX request
             $.ajax({
                 type: "POST",
                 url: "@Url.Action("SubmitReview", "Product")",
                 data: JSON.stringify(formData),
                 contentType: "application/json",
+            headers: {
+                'RequestVerificationToken': csrfToken, // Include the CSRF token here
+            },
                 success: function (response) {
                     // Handle success response, update the page if needed
                 $("#reviewForm textarea[name = 'message']").val('');
@@ -542,8 +548,6 @@
                 },
                 error: function (error) {
                     // Handle error response
-                    console.error(error);
-                }
             });
         });
 
@@ -574,11 +578,14 @@
             if (deleteConfirmed) {
                 var itemId = "@Model.ClothingId"; // Get the item ID
                 var url = "/Product/Delete/?productId=" + itemId; // Construct the URL for the DELETE request
-
+                const csrfToken = $('[name=__RequestVerificationToken]').val();
                 // Send the DELETE request using Ajax
                 $.ajax({
                     url: url,
                     type: 'DELETE',
+                    headers: {
+                        'RequestVerificationToken': csrfToken, // Include the CSRF token here
+                    },
                     success: function (data) {
                         if (data.success) {
                             // Handle success response
@@ -588,6 +595,7 @@
                         } else {
                             // Handle failure response
                             console.error(data.message);
+                        
                         }
                     }
                 });
