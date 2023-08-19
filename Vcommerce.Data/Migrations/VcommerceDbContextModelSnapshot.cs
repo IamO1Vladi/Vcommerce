@@ -407,13 +407,13 @@ namespace Vcommerce.Data.Migrations
                             BrandId = new Guid("d6a153bf-fb89-45be-8e1c-e33adc7766ff"),
                             Category = 1,
                             Color = "Black",
-                            DateCreated = new DateTime(2023, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateCreated = new DateTime(2023, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Cool graphic print t-shirt for stylish men.",
                             Gender = 1,
                             IsOnSale = true,
                             Material = "Cotton",
                             Name = "Men's Graphic Print Tee",
-                            NumberOfSales = 82,
+                            NumberOfSales = 85,
                             Price = 24.95m,
                             Quantity = 0,
                             SalePercentage = 20m
@@ -424,13 +424,13 @@ namespace Vcommerce.Data.Migrations
                             BrandId = new Guid("d6a153bf-fb89-45be-8e1c-e33adc7766ff"),
                             Category = 1,
                             Color = "White",
-                            DateCreated = new DateTime(2023, 9, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateCreated = new DateTime(2023, 3, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Essential V-neck basic t-shirt for men.",
                             Gender = 1,
                             IsOnSale = false,
                             Material = "Cotton",
                             Name = "Men's V-Neck Basic Tee",
-                            NumberOfSales = 46,
+                            NumberOfSales = 84,
                             Price = 19.99m,
                             Quantity = 0
                         },
@@ -440,13 +440,13 @@ namespace Vcommerce.Data.Migrations
                             BrandId = new Guid("d6a153bf-fb89-45be-8e1c-e33adc7766ff"),
                             Category = 4,
                             Color = "Blue",
-                            DateCreated = new DateTime(2023, 11, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateCreated = new DateTime(2023, 9, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Classic striped polo shirt for men.",
                             Gender = 1,
                             IsOnSale = false,
                             Material = "Cotton",
                             Name = "Men's Striped Polo Shirt",
-                            NumberOfSales = 29,
+                            NumberOfSales = 3,
                             Price = 29.99m,
                             Quantity = 0
                         },
@@ -456,13 +456,13 @@ namespace Vcommerce.Data.Migrations
                             BrandId = new Guid("c7b6a459-6ce9-4f6f-ac0f-f92d61f17a1b"),
                             Category = 1,
                             Color = "Gray",
-                            DateCreated = new DateTime(2023, 10, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateCreated = new DateTime(2023, 6, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Versatile crew neck t-shirt for men.",
                             Gender = 1,
                             IsOnSale = true,
                             Material = "Cotton",
                             Name = "Men's Crew Neck Tee",
-                            NumberOfSales = 76,
+                            NumberOfSales = 86,
                             Price = 21.95m,
                             Quantity = 0,
                             SalePercentage = 15m
@@ -473,13 +473,13 @@ namespace Vcommerce.Data.Migrations
                             BrandId = new Guid("c7b6a459-6ce9-4f6f-ac0f-f92d61f17a1b"),
                             Category = 1,
                             Color = "Navy",
-                            DateCreated = new DateTime(2023, 10, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateCreated = new DateTime(2023, 7, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Stylish and comfortable Henley shirt for men.",
                             Gender = 1,
                             IsOnSale = true,
                             Material = "Cotton",
                             Name = "Men's Henley Shirt",
-                            NumberOfSales = 15,
+                            NumberOfSales = 2,
                             Price = 26.99m,
                             Quantity = 0,
                             SalePercentage = 10m
@@ -490,13 +490,13 @@ namespace Vcommerce.Data.Migrations
                             BrandId = new Guid("c7b6a459-6ce9-4f6f-ac0f-f92d61f17a1b"),
                             Category = 1,
                             Color = "Black",
-                            DateCreated = new DateTime(2023, 1, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateCreated = new DateTime(2023, 8, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A comfortable casual t-shirt for men.",
                             Gender = 1,
                             IsOnSale = false,
                             Material = "Cotton",
                             Name = "Men's Casual T-Shirt",
-                            NumberOfSales = 83,
+                            NumberOfSales = 92,
                             Price = 29.99m,
                             Quantity = 0
                         },
@@ -506,13 +506,13 @@ namespace Vcommerce.Data.Migrations
                             BrandId = new Guid("d6a153bf-fb89-45be-8e1c-e33adc7766ff"),
                             Category = 2,
                             Color = "White",
-                            DateCreated = new DateTime(2023, 2, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateCreated = new DateTime(2023, 3, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A formal dress shirt for men.",
                             Gender = 1,
                             IsOnSale = true,
                             Material = "Cotton",
                             Name = "Men's Formal Dress Shirt",
-                            NumberOfSales = 22,
+                            NumberOfSales = 39,
                             Price = 49.99m,
                             Quantity = 0,
                             SalePercentage = 20m
@@ -523,13 +523,13 @@ namespace Vcommerce.Data.Migrations
                             BrandId = new Guid("e9089772-5892-4f5b-8e3d-82ef55d1e4a3"),
                             Category = 3,
                             Color = "Blue",
-                            DateCreated = new DateTime(2023, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateCreated = new DateTime(2023, 7, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Stylish slim-fit jeans for men.",
                             Gender = 1,
                             IsOnSale = false,
                             Material = "Denim",
                             Name = "Men's Slim-Fit Jeans",
-                            NumberOfSales = 62,
+                            NumberOfSales = 81,
                             Price = 69.99m,
                             Quantity = 0
                         },
@@ -539,13 +539,13 @@ namespace Vcommerce.Data.Migrations
                             BrandId = new Guid("e9089772-5892-4f5b-8e3d-82ef55d1e4a3"),
                             Category = 4,
                             Color = "Navy",
-                            DateCreated = new DateTime(2023, 7, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateCreated = new DateTime(2023, 5, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A classic polo shirt for men.",
                             Gender = 1,
                             IsOnSale = true,
                             Material = "Cotton",
                             Name = "Men's Polo Shirt",
-                            NumberOfSales = 57,
+                            NumberOfSales = 32,
                             Price = 34.99m,
                             Quantity = 0,
                             SalePercentage = 15m
@@ -556,13 +556,13 @@ namespace Vcommerce.Data.Migrations
                             BrandId = new Guid("f4eedcda-6b05-434e-b9f9-22f5a7df981e"),
                             Category = 5,
                             Color = "Brown",
-                            DateCreated = new DateTime(2023, 6, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateCreated = new DateTime(2023, 11, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A stylish leather jacket for men.",
                             Gender = 1,
                             IsOnSale = false,
                             Material = "Leather",
                             Name = "Men's Leather Jacket",
-                            NumberOfSales = 11,
+                            NumberOfSales = 83,
                             Price = 149.99m,
                             Quantity = 0
                         },
@@ -572,13 +572,13 @@ namespace Vcommerce.Data.Migrations
                             BrandId = new Guid("f4eedcda-6b05-434e-b9f9-22f5a7df981e"),
                             Category = 6,
                             Color = "Gray",
-                            DateCreated = new DateTime(2023, 10, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateCreated = new DateTime(2023, 3, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A comfortable hoodie for men.",
                             Gender = 1,
                             IsOnSale = true,
                             Material = "Cotton",
                             Name = "Men's Hoodie",
-                            NumberOfSales = 59,
+                            NumberOfSales = 38,
                             Price = 39.99m,
                             Quantity = 0,
                             SalePercentage = 10m
@@ -589,13 +589,13 @@ namespace Vcommerce.Data.Migrations
                             BrandId = new Guid("f4eedcda-6b05-434e-b9f9-22f5a7df981e"),
                             Category = 7,
                             Color = "Charcoal",
-                            DateCreated = new DateTime(2023, 1, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateCreated = new DateTime(2023, 10, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "An elegant formal suit for men.",
                             Gender = 1,
                             IsOnSale = false,
                             Material = "Wool",
                             Name = "Men's Formal Suit",
-                            NumberOfSales = 27,
+                            NumberOfSales = 33,
                             Price = 299.99m,
                             Quantity = 0
                         },
@@ -605,13 +605,13 @@ namespace Vcommerce.Data.Migrations
                             BrandId = new Guid("f4eedcda-6b05-434e-b9f9-22f5a7df981e"),
                             Category = 8,
                             Color = "Olive",
-                            DateCreated = new DateTime(2023, 5, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateCreated = new DateTime(2023, 4, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Durable cargo shorts for men.",
                             Gender = 1,
                             IsOnSale = false,
                             Material = "Cotton",
                             Name = "Men's Cargo Shorts",
-                            NumberOfSales = 80,
+                            NumberOfSales = 82,
                             Price = 44.99m,
                             Quantity = 0
                         },
@@ -621,13 +621,13 @@ namespace Vcommerce.Data.Migrations
                             BrandId = new Guid("af65433f-562e-4233-84fa-feac5b99c142"),
                             Category = 9,
                             Color = "Navy",
-                            DateCreated = new DateTime(2023, 5, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateCreated = new DateTime(2023, 12, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A cozy V-neck sweater for men.",
                             Gender = 1,
                             IsOnSale = true,
                             Material = "Wool",
                             Name = "Men's V-Neck Sweater",
-                            NumberOfSales = 54,
+                            NumberOfSales = 26,
                             Price = 54.99m,
                             Quantity = 0,
                             SalePercentage = 25m
@@ -638,13 +638,13 @@ namespace Vcommerce.Data.Migrations
                             BrandId = new Guid("af65433f-562e-4233-84fa-feac5b99c142"),
                             Category = 10,
                             Color = "Charcoal",
-                            DateCreated = new DateTime(2023, 12, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateCreated = new DateTime(2023, 3, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A versatile casual blazer for men.",
                             Gender = 1,
                             IsOnSale = false,
                             Material = "Cotton",
                             Name = "Men's Casual Blazer",
-                            NumberOfSales = 6,
+                            NumberOfSales = 13,
                             Price = 89.99m,
                             Quantity = 0
                         },
@@ -654,13 +654,13 @@ namespace Vcommerce.Data.Migrations
                             BrandId = new Guid("af65433f-562e-4233-84fa-feac5b99c142"),
                             Category = 11,
                             Color = "White",
-                            DateCreated = new DateTime(2023, 4, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateCreated = new DateTime(2023, 11, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A comfortable and chic blouse for women.",
                             Gender = 2,
                             IsOnSale = false,
                             Material = "Cotton",
                             Name = "Women's Casual Blouse",
-                            NumberOfSales = 24,
+                            NumberOfSales = 27,
                             Price = 39.99m,
                             Quantity = 0
                         },
@@ -670,13 +670,13 @@ namespace Vcommerce.Data.Migrations
                             BrandId = new Guid("af65433f-562e-4233-84fa-feac5b99c142"),
                             Category = 12,
                             Color = "Blue",
-                            DateCreated = new DateTime(2023, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateCreated = new DateTime(2023, 12, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A stylish floral sundress for women.",
                             Gender = 2,
                             IsOnSale = true,
                             Material = "Rayon",
                             Name = "Women's Floral Sundress",
-                            NumberOfSales = 29,
+                            NumberOfSales = 83,
                             Price = 69.95m,
                             Quantity = 0,
                             SalePercentage = 20m
@@ -687,13 +687,13 @@ namespace Vcommerce.Data.Migrations
                             BrandId = new Guid("8bdc7349-8182-4df5-9fd0-3a4770f3d1fc"),
                             Category = 3,
                             Color = "Black",
-                            DateCreated = new DateTime(2023, 7, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateCreated = new DateTime(2023, 12, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Trendy skinny jeans for women.",
                             Gender = 2,
                             IsOnSale = true,
                             Material = "Denim",
                             Name = "Women's Skinny Jeans",
-                            NumberOfSales = 38,
+                            NumberOfSales = 57,
                             Price = 79.99m,
                             Quantity = 0,
                             SalePercentage = 15m
@@ -704,13 +704,13 @@ namespace Vcommerce.Data.Migrations
                             BrandId = new Guid("8bdc7349-8182-4df5-9fd0-3a4770f3d1fc"),
                             Category = 9,
                             Color = "Gray",
-                            DateCreated = new DateTime(2023, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateCreated = new DateTime(2023, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A cozy knit sweater for women.",
                             Gender = 2,
                             IsOnSale = true,
                             Material = "Wool",
                             Name = "Women's Knit Sweater",
-                            NumberOfSales = 4,
+                            NumberOfSales = 64,
                             Price = 54.99m,
                             Quantity = 0,
                             SalePercentage = 25m
@@ -721,13 +721,13 @@ namespace Vcommerce.Data.Migrations
                             BrandId = new Guid("8bdc7349-8182-4df5-9fd0-3a4770f3d1fc"),
                             Category = 5,
                             Color = "Black",
-                            DateCreated = new DateTime(2023, 7, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateCreated = new DateTime(2023, 8, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A stylish faux leather jacket for women.",
                             Gender = 2,
                             IsOnSale = false,
                             Material = "Faux Leather",
                             Name = "Women's Faux Leather Jacket",
-                            NumberOfSales = 97,
+                            NumberOfSales = 76,
                             Price = 89.99m,
                             Quantity = 0
                         },
@@ -737,13 +737,13 @@ namespace Vcommerce.Data.Migrations
                             BrandId = new Guid("d6a153bf-fb89-45be-8e1c-e33adc7766ff"),
                             Category = 18,
                             Color = "Beige",
-                            DateCreated = new DateTime(2023, 2, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateCreated = new DateTime(2023, 1, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Fashionable wide-leg pants for women.",
                             Gender = 2,
                             IsOnSale = true,
                             Material = "Polyester",
                             Name = "Women's Wide-Leg Pants",
-                            NumberOfSales = 89,
+                            NumberOfSales = 23,
                             Price = 64.95m,
                             Quantity = 0,
                             SalePercentage = 10m
@@ -754,13 +754,13 @@ namespace Vcommerce.Data.Migrations
                             BrandId = new Guid("d6a153bf-fb89-45be-8e1c-e33adc7766ff"),
                             Category = 10,
                             Color = "Gray",
-                            DateCreated = new DateTime(2023, 11, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateCreated = new DateTime(2023, 8, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A sophisticated formal blazer for women.",
                             Gender = 2,
                             IsOnSale = false,
                             Material = "Polyester",
                             Name = "Women's Formal Blazer",
-                            NumberOfSales = 9,
+                            NumberOfSales = 79,
                             Price = 89.99m,
                             Quantity = 0
                         },
@@ -770,13 +770,13 @@ namespace Vcommerce.Data.Migrations
                             BrandId = new Guid("d6a153bf-fb89-45be-8e1c-e33adc7766ff"),
                             Category = 13,
                             Color = "Purple",
-                            DateCreated = new DateTime(2023, 12, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateCreated = new DateTime(2023, 12, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A boho-style maxi skirt for women.",
                             Gender = 2,
                             IsOnSale = true,
                             Material = "Rayon",
                             Name = "Women's Boho Maxi Skirt",
-                            NumberOfSales = 13,
+                            NumberOfSales = 52,
                             Price = 59.99m,
                             Quantity = 0,
                             SalePercentage = 20m
@@ -787,13 +787,13 @@ namespace Vcommerce.Data.Migrations
                             BrandId = new Guid("8bdc7349-8182-4df5-9fd0-3a4770f3d1fc"),
                             Category = 13,
                             Color = "Navy",
-                            DateCreated = new DateTime(2023, 6, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateCreated = new DateTime(2023, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A trendy A-line midi skirt for women.",
                             Gender = 2,
                             IsOnSale = true,
                             Material = "Cotton",
                             Name = "Women's A-Line Midi Skirt",
-                            NumberOfSales = 68,
+                            NumberOfSales = 31,
                             Price = 49.99m,
                             Quantity = 0,
                             SalePercentage = 15m
@@ -804,13 +804,13 @@ namespace Vcommerce.Data.Migrations
                             BrandId = new Guid("8bdc7349-8182-4df5-9fd0-3a4770f3d1fc"),
                             Category = 13,
                             Color = "Pink",
-                            DateCreated = new DateTime(2023, 8, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateCreated = new DateTime(2023, 5, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A graceful pleated maxi skirt for women.",
                             Gender = 2,
                             IsOnSale = false,
                             Material = "Chiffon",
                             Name = "Women's Pleated Maxi Skirt",
-                            NumberOfSales = 70,
+                            NumberOfSales = 16,
                             Price = 79.95m,
                             Quantity = 0
                         },
@@ -820,13 +820,13 @@ namespace Vcommerce.Data.Migrations
                             BrandId = new Guid("d6a153bf-fb89-45be-8e1c-e33adc7766ff"),
                             Category = 1,
                             Color = "Yellow",
-                            DateCreated = new DateTime(2023, 5, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateCreated = new DateTime(2023, 10, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A cute and colorful t-shirt for kids.",
                             Gender = 3,
                             IsOnSale = true,
                             Material = "Cotton",
                             Name = "Kids' Cute T-Shirt",
-                            NumberOfSales = 5,
+                            NumberOfSales = 43,
                             Price = 19.99m,
                             Quantity = 0,
                             SalePercentage = 10m
@@ -837,13 +837,13 @@ namespace Vcommerce.Data.Migrations
                             BrandId = new Guid("b89987d5-80b1-4b0e-afb5-48db1ebf76e2"),
                             Category = 18,
                             Color = "Blue",
-                            DateCreated = new DateTime(2023, 2, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateCreated = new DateTime(2023, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Adorable denim overalls for adventurous kids.",
                             Gender = 3,
                             IsOnSale = false,
                             Material = "Denim",
                             Name = "Kids' Denim Overalls",
-                            NumberOfSales = 54,
+                            NumberOfSales = 12,
                             Price = 34.95m,
                             Quantity = 0
                         },
@@ -853,13 +853,13 @@ namespace Vcommerce.Data.Migrations
                             BrandId = new Guid("b89987d5-80b1-4b0e-afb5-48db1ebf76e2"),
                             Category = 12,
                             Color = "Pink",
-                            DateCreated = new DateTime(2023, 12, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateCreated = new DateTime(2023, 10, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A beautiful princess dress for little girls.",
                             Gender = 3,
                             IsOnSale = false,
                             Material = "Satin",
                             Name = "Kids' Princess Dress",
-                            NumberOfSales = 16,
+                            NumberOfSales = 12,
                             Price = 49.99m,
                             Quantity = 0
                         },
@@ -869,13 +869,13 @@ namespace Vcommerce.Data.Migrations
                             BrandId = new Guid("b89987d5-80b1-4b0e-afb5-48db1ebf76e2"),
                             Category = 9,
                             Color = "Red",
-                            DateCreated = new DateTime(2023, 4, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateCreated = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A fun and cozy hoodie with cartoon characters for kids.",
                             Gender = 3,
                             IsOnSale = true,
                             Material = "Fleece",
                             Name = "Kids' Cartoon Hoodie",
-                            NumberOfSales = 39,
+                            NumberOfSales = 55,
                             Price = 29.95m,
                             Quantity = 0,
                             SalePercentage = 20m
@@ -886,13 +886,13 @@ namespace Vcommerce.Data.Migrations
                             BrandId = new Guid("b89987d5-80b1-4b0e-afb5-48db1ebf76e2"),
                             Category = 8,
                             Color = "Blue",
-                            DateCreated = new DateTime(2023, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateCreated = new DateTime(2023, 9, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Comfortable sporty shorts for active kids.",
                             Gender = 3,
                             IsOnSale = false,
                             Material = "Polyester",
                             Name = "Kids' Sporty Shorts",
-                            NumberOfSales = 9,
+                            NumberOfSales = 99,
                             Price = 24.99m,
                             Quantity = 0
                         },
@@ -902,13 +902,13 @@ namespace Vcommerce.Data.Migrations
                             BrandId = new Guid("b89987d5-80b1-4b0e-afb5-48db1ebf76e2"),
                             Category = 1,
                             Color = "Green",
-                            DateCreated = new DateTime(2023, 2, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateCreated = new DateTime(2023, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Cool graphic print t-shirt for stylish kids.",
                             Gender = 3,
                             IsOnSale = true,
                             Material = "Cotton",
                             Name = "Kids' Graphic Print Tee",
-                            NumberOfSales = 23,
+                            NumberOfSales = 1,
                             Price = 17.95m,
                             Quantity = 0,
                             SalePercentage = 25m
@@ -919,13 +919,13 @@ namespace Vcommerce.Data.Migrations
                             BrandId = new Guid("b89987d5-80b1-4b0e-afb5-48db1ebf76e2"),
                             Category = 4,
                             Color = "Blue",
-                            DateCreated = new DateTime(2023, 5, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateCreated = new DateTime(2023, 4, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Classic striped polo shirt for little preppy kids.",
                             Gender = 3,
                             IsOnSale = false,
                             Material = "Cotton",
                             Name = "Kids' Striped Polo Shirt",
-                            NumberOfSales = 72,
+                            NumberOfSales = 14,
                             Price = 27.99m,
                             Quantity = 0
                         },
@@ -935,13 +935,13 @@ namespace Vcommerce.Data.Migrations
                             BrandId = new Guid("b89987d5-80b1-4b0e-afb5-48db1ebf76e2"),
                             Category = 13,
                             Color = "Pink",
-                            DateCreated = new DateTime(2023, 12, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateCreated = new DateTime(2023, 1, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A cute and frilly ruffled skirt for little girls.",
                             Gender = 3,
                             IsOnSale = true,
                             Material = "Cotton",
                             Name = "Kids' Ruffled Skirt",
-                            NumberOfSales = 72,
+                            NumberOfSales = 87,
                             Price = 22.95m,
                             Quantity = 0,
                             SalePercentage = 10m
@@ -952,13 +952,13 @@ namespace Vcommerce.Data.Migrations
                             BrandId = new Guid("b89987d5-80b1-4b0e-afb5-48db1ebf76e2"),
                             Category = 18,
                             Color = "Khaki",
-                            DateCreated = new DateTime(2023, 8, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateCreated = new DateTime(2023, 9, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Sturdy cargo pants for adventurous kids.",
                             Gender = 3,
                             IsOnSale = false,
                             Material = "Cotton",
                             Name = "Kids' Cargo Pants",
-                            NumberOfSales = 7,
+                            NumberOfSales = 5,
                             Price = 34.99m,
                             Quantity = 0
                         },
@@ -968,13 +968,13 @@ namespace Vcommerce.Data.Migrations
                             BrandId = new Guid("b89987d5-80b1-4b0e-afb5-48db1ebf76e2"),
                             Category = 1,
                             Color = "Green",
-                            DateCreated = new DateTime(2023, 12, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateCreated = new DateTime(2023, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "A fun and colorful cartoon printed shirt for kids.",
                             Gender = 3,
                             IsOnSale = false,
                             Material = "Cotton",
                             Name = "Kids' Cartoon Printed Shirt",
-                            NumberOfSales = 87,
+                            NumberOfSales = 16,
                             Price = 19.95m,
                             Quantity = 0
                         });
@@ -1003,121 +1003,121 @@ namespace Vcommerce.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("b49496a1-9989-4194-9930-8fec2a6a9499"),
+                            Id = new Guid("23514c13-3f5e-471d-9428-8249391a1008"),
                             ClothingGuid = new Guid("283b533b-7ed3-4187-aa7f-cd8a52ed51a5"),
                             ImageUrl = "https://firebasestorage.googleapis.com/v0/b/craftdemo-78c02.appspot.com/o/male-black-oversized-basketball-graphic-print-t-shirt.jpg?alt=media&token=b6f87596-658f-40e6-82be-6c7d9c2fb0bc"
                         },
                         new
                         {
-                            Id = new Guid("926c5340-169a-4de4-bfc1-d65ab4f1a095"),
+                            Id = new Guid("74ebe299-db63-41c3-9b6b-38c2fd6e6165"),
                             ClothingGuid = new Guid("283b533b-7ed3-4187-aa7f-cd8a52ed51a5"),
                             ImageUrl = "https://firebasestorage.googleapis.com/v0/b/craftdemo-78c02.appspot.com/o/tball-graphic-print-t-shirt.jpg?alt=media&token=0cd8cb68-f961-47e1-ab6a-20bf875c3533"
                         },
                         new
                         {
-                            Id = new Guid("b85ddea3-343b-4872-a56d-0439e4ce4542"),
+                            Id = new Guid("03c98237-8203-4b6e-82d8-a1b772992ef2"),
                             ClothingGuid = new Guid("283b533b-7ed3-4187-aa7f-cd8a52ed51a5"),
                             ImageUrl = "https://firebasestorage.googleapis.com/v0/b/craftdemo-78c02.appspot.com/o/tball-graphic-print-t-shirt.jpg?alt=media&token=0cd8cb68-f961-47e1-ab6a-20bf875c3533"
                         },
                         new
                         {
-                            Id = new Guid("4e4ab0be-f37f-4c4f-9a73-e000f2f81201"),
+                            Id = new Guid("8a48659b-d6d8-43a3-8467-618c126da42e"),
                             ClothingGuid = new Guid("94c233fa-0a62-4a3e-9140-f3010efedee2"),
                             ImageUrl = "https://firebasestorage.googleapis.com/v0/b/craftdemo-78c02.appspot.com/o/4.jpg?alt=media&token=302976de-afcf-4890-820b-e779a301b097"
                         },
                         new
                         {
-                            Id = new Guid("9cc0055b-5a2d-4514-81f4-461fdd79703d"),
+                            Id = new Guid("fced57a5-7645-448e-8a78-5e2b02c0c9dd"),
                             ClothingGuid = new Guid("fe367f15-2491-4b35-b956-8b05b7ac7eda"),
                             ImageUrl = "https://firebasestorage.googleapis.com/v0/b/craftdemo-78c02.appspot.com/o/EACHIN-Boys-Pants-Boys-Pants-Solid-Cargo-Pants-Teenage-Boy-Multi-Pocket-Trousers-Kids-Spring-Autumn.jpg?alt=media&token=c893e73d-39e5-4aa5-9d59-7b6dc656d53a"
                         },
                         new
                         {
-                            Id = new Guid("09d8fd9a-ddfa-4e04-9c1c-22e43c3076f8"),
+                            Id = new Guid("3ce85013-5f4f-4254-93d8-c923054fa585"),
                             ClothingGuid = new Guid("4df2f27b-788a-4eb4-8c1a-30b397d4a1aa"),
                             ImageUrl = "https://firebasestorage.googleapis.com/v0/b/craftdemo-78c02.appspot.com/o/Untitled.jpg?alt=media&token=3cc125cf-3a85-4cfc-9129-a2ebaf5f4cd4"
                         },
                         new
                         {
-                            Id = new Guid("55ebeecf-1043-4bc9-873f-aa87cca652f6"),
+                            Id = new Guid("a706dd84-3d6e-4b51-9229-a636ea6c8530"),
                             ClothingGuid = new Guid("8ec859e8-597e-463b-8a4b-a485d4be7200"),
                             ImageUrl = "https://firebasestorage.googleapis.com/v0/b/craftdemo-78c02.appspot.com/o/lacoste-teen-boys-striped-polo-shirt-386596-2ecde85e16638564ddf8022cb8e3b7e992190f33.jpg?alt=media&token=0c0fbedd-181e-48d0-b37d-50ae7f9fee5f"
                         },
                         new
                         {
-                            Id = new Guid("fdd170a0-b9e9-4e11-b0c6-f4057745d77f"),
+                            Id = new Guid("6428598d-dfc9-4019-ada1-20edbff8c5f3"),
                             ClothingGuid = new Guid("3b86cd7f-c0b6-487f-be42-a6f61f05b456"),
                             ImageUrl = "https://firebasestorage.googleapis.com/v0/b/craftdemo-78c02.appspot.com/o/images.jpg?alt=media&token=b65a904a-0be8-464b-b6df-3f1e3dd24f4a"
                         },
                         new
                         {
-                            Id = new Guid("9f85a42c-6620-4ffe-a4b8-f34f296d9d71"),
+                            Id = new Guid("7f09736e-d5d4-454c-ba6a-fdc9f6a19dcb"),
                             ClothingGuid = new Guid("8ec859e8-597e-463b-8a4b-a485d4be7200"),
                             ImageUrl = "https://firebasestorage.googleapis.com/v0/b/craftdemo-78c02.appspot.com/o/GUEST_de1d201a-9f6a-45c0-a832-c0d0176c03a7.jpg?alt=media&token=51bb66e9-cbaf-45d0-8149-2c473c858d18"
                         },
                         new
                         {
-                            Id = new Guid("6df030a8-2320-4306-ade4-bbfa598be962"),
+                            Id = new Guid("c3af78b9-e120-412e-a3e5-7011dd085603"),
                             ClothingGuid = new Guid("3b86cd7f-c0b6-487f-be42-a6f61f05b456"),
                             ImageUrl = "https://firebasestorage.googleapis.com/v0/b/craftdemo-78c02.appspot.com/o/Kids'%20Graphic%20Print%20Tee.jpg?alt=media&token=ed6e6aa4-d1fd-463c-aa14-4ebdd3f190ca"
                         },
                         new
                         {
-                            Id = new Guid("678fa88e-9383-4dac-9fbb-69799f67705c"),
+                            Id = new Guid("cf4d75a7-49c6-415f-9477-3b3ca2df5f33"),
                             ClothingGuid = new Guid("206bdf4e-8a81-4b28-bcf8-68e9ed167209"),
                             ImageUrl = "https://firebasestorage.googleapis.com/v0/b/craftdemo-78c02.appspot.com/o/711CPySZUIL._AC_UY1000_.jpg?alt=media&token=1a95a798-6212-4d38-a2c8-4b3eb04ccf74"
                         },
                         new
                         {
-                            Id = new Guid("814b4c48-7876-45c1-9f8f-22f141aaec63"),
+                            Id = new Guid("f182931a-93de-4534-8dfe-5f50a1c0688b"),
                             ClothingGuid = new Guid("82bbe618-2b7e-4027-a83a-bfd55d85a3b5"),
                             ImageUrl = "https://firebasestorage.googleapis.com/v0/b/craftdemo-78c02.appspot.com/o/GUEST_7c2c7453-493c-4794-8653-7de130c53eb9.jpg?alt=media&token=6f341a35-5fc4-46c9-aab8-8d03a42906c0"
                         },
                         new
                         {
-                            Id = new Guid("cda866e8-113b-4a9c-b893-31c00bb3d4a0"),
+                            Id = new Guid("e9b4ee61-84ef-4636-b49c-bb5d1144e35b"),
                             ClothingGuid = new Guid("36e19d2c-825b-431f-9390-5ab3ec07fb2f"),
                             ImageUrl = "https://firebasestorage.googleapis.com/v0/b/craftdemo-78c02.appspot.com/o/474305ef653fc6da70213cb4650f37e9.jpg?alt=media&token=f6efc379-f291-4d5e-a330-3f066b96d655"
                         },
                         new
                         {
-                            Id = new Guid("9bbeea18-6277-4fb0-afae-28d96b4082e1"),
+                            Id = new Guid("7a54a491-563b-48f7-a96c-2b7bd46a92ba"),
                             ClothingGuid = new Guid("feec2a48-71cb-4377-93e1-c879d659698c"),
                             ImageUrl = "https://firebasestorage.googleapis.com/v0/b/craftdemo-78c02.appspot.com/o/A1.jpg?alt=media&token=8125f07a-62e1-40a7-8f25-aec9be4fdfa0"
                         },
                         new
                         {
-                            Id = new Guid("5fbd7d6d-b02d-49e6-b3cf-7c0c8aa9321a"),
+                            Id = new Guid("4414e695-9e15-4d86-b207-6ac0a07707dd"),
                             ClothingGuid = new Guid("1234180a-cae7-4cf6-b237-a0d443b9c963"),
                             ImageUrl = "https://firebasestorage.googleapis.com/v0/b/craftdemo-78c02.appspot.com/o/A2.jpg?alt=media&token=b4ad3f80-55ae-4b1f-999b-a4458c8c806f"
                         },
                         new
                         {
-                            Id = new Guid("40203383-73c3-4d45-b40c-0fd2277f436b"),
+                            Id = new Guid("8fc654a4-f2bc-4739-b261-0dade5d816d9"),
                             ClothingGuid = new Guid("2ba9a727-d0c6-4a41-ae5b-3e8575ce6ef0"),
                             ImageUrl = "https://firebasestorage.googleapis.com/v0/b/craftdemo-78c02.appspot.com/o/A3.jpg?alt=media&token=097fb988-3822-441f-93af-498f169a8c96"
                         },
                         new
                         {
-                            Id = new Guid("cf333773-af36-4c00-8e19-971230d74187"),
+                            Id = new Guid("3929d384-b3f1-47d0-9c22-5077b1df8fb2"),
                             ClothingGuid = new Guid("6e7438c2-245e-42ef-86dd-43280eeee071"),
                             ImageUrl = "https://firebasestorage.googleapis.com/v0/b/craftdemo-78c02.appspot.com/o/A4.jpg?alt=media&token=8a04e1b2-bbc1-4e2f-805f-c0deba5bceb9"
                         },
                         new
                         {
-                            Id = new Guid("fef6af7c-a7a0-4890-bb4a-1da6b58b5036"),
+                            Id = new Guid("6761c0a1-0f49-4f28-8fe9-3fa3be984f40"),
                             ClothingGuid = new Guid("2d7a7984-dfb6-4c94-aff4-71047f676f96"),
                             ImageUrl = "https://firebasestorage.googleapis.com/v0/b/craftdemo-78c02.appspot.com/o/A5.jpg?alt=media&token=875083db-6b93-47c6-a14d-b8c009c7017c"
                         },
                         new
                         {
-                            Id = new Guid("5b35d555-e503-43bb-8686-485e303319dc"),
+                            Id = new Guid("550f86da-4754-4aad-bf90-dd22d2ed1fe2"),
                             ClothingGuid = new Guid("902c1a00-502c-40ab-8bbb-5a93d54674a2"),
                             ImageUrl = "https://firebasestorage.googleapis.com/v0/b/craftdemo-78c02.appspot.com/o/A6.jpg?alt=media&token=a0bc4a08-bf49-4414-929e-aae4ffbe888a"
                         },
                         new
                         {
-                            Id = new Guid("95d7beca-f9b5-43f7-a73b-b458a0602ea8"),
+                            Id = new Guid("f3bcd4fa-f1ce-4d6e-be0d-061ae92f6cd2"),
                             ClothingGuid = new Guid("32d319e0-c6a4-46b1-82d9-240d7de9ad2c"),
                             ImageUrl = "https://firebasestorage.googleapis.com/v0/b/craftdemo-78c02.appspot.com/o/A7.jpg?alt=media&token=af0ea87a-9947-429f-878e-1c135f2b2132"
                         });
@@ -1147,119 +1147,119 @@ namespace Vcommerce.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("79dd5139-f31b-4243-b901-faba1dbd2786"),
+                            Id = new Guid("3d7e47d1-5615-43e9-8147-261640b76c29"),
                             ClothingId = new Guid("283b533b-7ed3-4187-aa7f-cd8a52ed51a5"),
                             Size = 5,
                             SizeQuantity = 40
                         },
                         new
                         {
-                            Id = new Guid("edf4bce1-5329-40f1-82b4-4b1fea9347ef"),
+                            Id = new Guid("717b4920-61c5-4191-8c09-b27d39c6a25d"),
                             ClothingId = new Guid("283b533b-7ed3-4187-aa7f-cd8a52ed51a5"),
                             Size = 4,
                             SizeQuantity = 40
                         },
                         new
                         {
-                            Id = new Guid("88685c86-460d-4a85-88fb-53cec0b78939"),
+                            Id = new Guid("6e3b8f4b-109b-4cd9-9140-0598d74c15f2"),
                             ClothingId = new Guid("283b533b-7ed3-4187-aa7f-cd8a52ed51a5"),
                             Size = 3,
                             SizeQuantity = 40
                         },
                         new
                         {
-                            Id = new Guid("9d307e19-cba4-4e82-ac58-9654524b795a"),
+                            Id = new Guid("900679b9-2f45-4e43-b3a0-7a56e8c7723b"),
                             ClothingId = new Guid("283b533b-7ed3-4187-aa7f-cd8a52ed51a5"),
                             Size = 2,
                             SizeQuantity = 40
                         },
                         new
                         {
-                            Id = new Guid("7e3069eb-f805-4523-814c-bdd38c44b221"),
+                            Id = new Guid("56ef3fae-df40-479c-b924-ad30c52f0355"),
                             ClothingId = new Guid("283b533b-7ed3-4187-aa7f-cd8a52ed51a5"),
                             Size = 7,
                             SizeQuantity = 40
                         },
                         new
                         {
-                            Id = new Guid("2066d29e-6651-4154-8f48-9c6f243a87be"),
+                            Id = new Guid("734e23ac-e0ad-450f-a140-c771721430c0"),
                             ClothingId = new Guid("9f984cb7-39a8-4003-b9f2-b27ecd32842f"),
                             Size = 5,
                             SizeQuantity = 40
                         },
                         new
                         {
-                            Id = new Guid("3421a6f8-8e32-4b5c-ac21-214e1300151a"),
+                            Id = new Guid("5bf7218e-4b36-4cb6-8bf5-b9c12fd542af"),
                             ClothingId = new Guid("9f984cb7-39a8-4003-b9f2-b27ecd32842f"),
                             Size = 4,
                             SizeQuantity = 20
                         },
                         new
                         {
-                            Id = new Guid("6fc33ab2-c10c-43bc-b9e3-f1d668072f9a"),
+                            Id = new Guid("515e7a75-60ac-4623-a0c1-e0635fba8133"),
                             ClothingId = new Guid("9f984cb7-39a8-4003-b9f2-b27ecd32842f"),
                             Size = 6,
                             SizeQuantity = 15
                         },
                         new
                         {
-                            Id = new Guid("4a161e44-b66d-42a7-a4b2-4185bae95f66"),
+                            Id = new Guid("7c0b1139-5236-45a7-91d0-81eaf6ba0853"),
                             ClothingId = new Guid("9f984cb7-39a8-4003-b9f2-b27ecd32842f"),
                             Size = 3,
                             SizeQuantity = 30
                         },
                         new
                         {
-                            Id = new Guid("e77592d0-54c8-4caa-9bfc-45f5dad28901"),
+                            Id = new Guid("2bea00c2-f930-435b-a8bd-35842ec01a90"),
                             ClothingId = new Guid("0bbb0ce2-68f3-4cb1-b3a6-de68c6ad1fcd"),
                             Size = 3,
                             SizeQuantity = 30
                         },
                         new
                         {
-                            Id = new Guid("fd885567-9f45-4cf3-aa2d-ea9abb1fc1f5"),
+                            Id = new Guid("7ef14641-26d6-4f46-b89a-5f70621c739d"),
                             ClothingId = new Guid("0bbb0ce2-68f3-4cb1-b3a6-de68c6ad1fcd"),
                             Size = 4,
                             SizeQuantity = 25
                         },
                         new
                         {
-                            Id = new Guid("bec3a710-4c56-49d5-a7ae-79804080e3d3"),
+                            Id = new Guid("c87c7946-22b2-48f9-bfce-214248364203"),
                             ClothingId = new Guid("0bbb0ce2-68f3-4cb1-b3a6-de68c6ad1fcd"),
                             Size = 5,
                             SizeQuantity = 35
                         },
                         new
                         {
-                            Id = new Guid("ae6492b1-1d6d-4f0e-a26d-87812b2a69d4"),
+                            Id = new Guid("5c40ca1a-d583-45b5-8176-a8415aec1293"),
                             ClothingId = new Guid("0bbb0ce2-68f3-4cb1-b3a6-de68c6ad1fcd"),
                             Size = 6,
                             SizeQuantity = 20
                         },
                         new
                         {
-                            Id = new Guid("02a40ef3-8e2d-4944-a34f-2953c96f4190"),
+                            Id = new Guid("dcc9c4c7-2405-4963-8154-db6c201cdc85"),
                             ClothingId = new Guid("47b74821-1dd5-4aac-868a-aed6661017f6"),
                             Size = 6,
                             SizeQuantity = 20
                         },
                         new
                         {
-                            Id = new Guid("bcab7ac2-fda9-4fd1-9d88-679789903837"),
+                            Id = new Guid("29f498f7-67ea-44d7-a5bd-e19507d08737"),
                             ClothingId = new Guid("47b74821-1dd5-4aac-868a-aed6661017f6"),
                             Size = 3,
                             SizeQuantity = 10
                         },
                         new
                         {
-                            Id = new Guid("d213417a-8c86-462c-9403-23d6754980a6"),
+                            Id = new Guid("f8dbc18b-76cc-4e56-a74c-23c78c8687d3"),
                             ClothingId = new Guid("47b74821-1dd5-4aac-868a-aed6661017f6"),
                             Size = 4,
                             SizeQuantity = 15
                         },
                         new
                         {
-                            Id = new Guid("97396d43-c741-4d2e-8d5d-94c7519bf45c"),
+                            Id = new Guid("f1f5b917-5b7d-4942-92f7-fae67fb2dcd9"),
                             ClothingId = new Guid("47b74821-1dd5-4aac-868a-aed6661017f6"),
                             Size = 7,
                             SizeQuantity = 25

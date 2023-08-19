@@ -1,6 +1,8 @@
 ﻿@using ClothingRepository
 @using ClothingRepository.Interfaces
 @using Vcommerce.Data.Models.Enums
+@using System.Security.Claims
+@using Vcommerce.Web.Infrastructures.Extensions
 
 @inject IClothingRepo ClothingRepo;
 
@@ -160,10 +162,20 @@
 
                                 if (User?.Identity!.IsAuthenticated ?? false)
                                 {
-                                    <li><a asp-controller="Blog" asp-action="Add"><span>Add Blog Post</span></a></li>
-                                    <li><a asp-controller="Collection" asp-action="Add"><span>Add Clothing Collection</span></a></li>
-                                    <li><a asp-controller="Brand" asp-action="Add"><span>Add Clothing Brand</span></a></li>
-                                    <li><a asp-controller="Product" asp-action="Add"><span>Add Clothing Product</span></a></li>
+                                    if (ClaimsPrincipalExtensions.IsAdmin(User))
+                                    {
+                                        <li><a asp-controller="Blog" asp-action="Add"><span>Add Blog Post</span></a></li>
+                                        <li><a asp-controller="Collection" asp-action="Add"><span>Add Clothing Collection</span></a></li>
+                                        <li><a asp-controller="Brand" asp-action="Add"><span>Add Clothing Brand</span></a></li>
+                                        <li><a asp-controller="Product" asp-action="Add"><span>Add Clothing Product</span></a></li>
+                                    }
+                                    if (User.IsInRole("Moderator"))
+                                    {
+                                        <li><a asp-controller="Product" asp-action="Add"><span>Add Clothing Product</span></a></li>
+                                        <li><a asp-controller="Blog" asp-action="Add"><span>Add Blog Post</span></a></li>
+
+                                    }
+                                   
                                 }
 
                             }
@@ -445,56 +457,13 @@
 
 @await RenderSectionAsync("Scripts", required: false)
 
-!-- Modal -->
-<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="successModalLabel">Thank You for Subscribing!</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p>Thank you for subscribing! You will receive our updates and offers in your inbox.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
+
 
 </body>
 </html>
 
 
-<script>
 
-    $("#subscribeBtn").click(function () {
-        var email = $("#subscriptionEmail").val();
-        const csrfToken = $('[name=__RequestVerificationToken]').val();
-        if (email) {
-            $.ajax({
-                type: "POST",
-                url: "/Home/SaveSubscription", // Replace with your controller and action
-                data: {email:email},
-                headers: {
-                    'RequestVerificationToken': csrfToken, // Include the CSRF token here
-                },
-                success: function (response) {
-                    // Clear the form
-                    $("#subscriptionEmail").val("");
-                    // Show the success modal
-                    $("#successModal").modal("show");
-                },
-                error: function (error) {
-                    // Handle error response if needed
-                    console.error("Request failed:", error);
-                }
-            });
-        }
-    });
-
-</script>
 
 <script>
 

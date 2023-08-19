@@ -1984,8 +1984,10 @@
       },
       "Vcommerce.Web.Infrastructures/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.15",
           "Microsoft.AspNetCore.Mvc": "2.2.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
+          "Vcommerce.Data.Models": "1.0.0"
         },
         "runtime": {
           "Vcommerce.Web.Infrastructures.dll": {}

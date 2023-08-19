@@ -23,6 +23,12 @@
         <div class="description">
             <p>@Model.Description</p>
         </div>
-        <button class="delete-review-btn btn btn-sm btn-danger" data-review-id="@Model.ReviewId">Delete</button>
+        @{
+            if (User.IsInRole("Administrator"))
+            {
+                <button class="delete-review-btn btn btn-sm btn-danger" data-review-id="@Model.ReviewId">Delete</button>
+            }
+            }
+       
     </div>
 </li>

@@ -10,3 +10,8 @@ C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Web.Infrastru
 C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Web.Infrastructures\obj\Debug\net6.0\refint\Vcommerce.Web.Infrastructures.dll
 C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Web.Infrastructures\obj\Debug\net6.0\Vcommerce.Web.Infrastructures.pdb
 C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Web.Infrastructures\obj\Debug\net6.0\ref\Vcommerce.Web.Infrastructures.dll
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Web.Infrastructures\bin\Debug\net6.0\VCommerce.Common.dll
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Web.Infrastructures\bin\Debug\net6.0\Vcommerce.Data.Models.dll
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Web.Infrastructures\bin\Debug\net6.0\Vcommerce.Data.Models.pdb
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Web.Infrastructures\bin\Debug\net6.0\VCommerce.Common.pdb
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.Web.Infrastructures\obj\Debug\net6.0\Vcommerce.Web.Infrastructures.csproj.CopyComplete

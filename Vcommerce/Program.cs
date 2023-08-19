@@ -47,6 +47,7 @@ namespace Vcommerce
                     options.Password.RequiredLength =
                         builder.Configuration.GetValue<int>("Identity:Password:RequiredLength");
                 })
+                .AddRoles<IdentityRole<Guid>>()
                 .AddEntityFrameworkStores<VcommerceDbContext>();
 
 
@@ -121,13 +122,26 @@ namespace Vcommerce
             app.UseAuthentication();
             app.UseAuthorization();
 
+            app.SeedAdministrator();
 
-            
+            app.UseEndpoints(config =>
+            {
 
-            app.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
-            app.MapRazorPages();
+                config.MapControllerRoute(
+                    name: "areas",
+                    pattern: "/{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                );
+
+                config.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                config.MapRazorPages();
+
+            });
+
+
+           
 
             await app.RunAsync();
         }

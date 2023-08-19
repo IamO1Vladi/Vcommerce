@@ -68,10 +68,14 @@
         @{
             if (User?.Identity!.IsAuthenticated ?? false)
             {
-                if (Guid.Parse(ClaimsPrincipalExtensions.GetId(User)!) == Model.Author.Id)
+                if (Guid.Parse(ClaimsPrincipalExtensions.GetId(User)!) == Model.Author.Id || User.IsInRole("Administrator"))
                 {
                     <li class="add-to-cart-edit"><a asp-controller="Blog" asp-action="Edit" asp-route-postId="@Model.Id">Edit</a></li>
                     <li id="deleteButton" class="add-to-cart-delete"><a href="#" >Delete</a></li>
+                }
+                if (User.IsInRole("Moderator"))
+                {
+                    <li class="add-to-cart-edit"><a asp-controller="Blog" asp-action="Edit" asp-route-postId="@Model.Id">Edit</a></li>
                 }
             }
 

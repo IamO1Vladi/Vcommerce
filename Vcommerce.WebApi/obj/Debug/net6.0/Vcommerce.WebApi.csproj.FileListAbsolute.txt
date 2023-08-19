@@ -113,3 +113,7 @@ C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.WebApi\bin\De
 C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.WebApi\bin\Debug\net6.0\Vcommerce.Web.ViewModels.pdb
 C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.WebApi\bin\Debug\net6.0\Vcommerce.Services.ServiceModels.dll
 C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.WebApi\bin\Debug\net6.0\Vcommerce.Services.ServiceModels.pdb
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.WebApi\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.WebApi\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.WebApi\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\Users\User\OneDrive\Работен плот\Vcommerce\Vcommerce.WebApi\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
