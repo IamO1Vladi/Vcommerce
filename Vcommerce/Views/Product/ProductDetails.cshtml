@@ -194,10 +194,15 @@
                 </ul>
             </div>
 
-            
-            <button class="btn btn-danger" id="deleteButton">
-                Delete Item
-            </button>
+            @{
+                if (User?.Identity!.IsAuthenticated ?? false)
+                {
+                    <button class="btn btn-danger" id="deleteButton">
+                        Delete Item
+                    </button>
+                }
+            }
+           
             
             
             <!-- Delete Confirmation Modal -->
@@ -221,10 +226,15 @@
                 </div>
             </div>
             
+            @{
+                if (User?.Identity!.IsAuthenticated ?? false)
+                {
+                    <a asp-controller="Product" asp-action="Edit" asp-route-productId="@Model.ClothingId" class="btn btn-primary" id="editButton">
+                        Edit Item
+                    </a>
+                }
+            }
             
-            <a asp-controller="Product" asp-action="Edit" asp-route-productId="@Model.ClothingId" class="btn btn-primary" id="editButton">
-                Edit Item
-            </a>
 
            
             

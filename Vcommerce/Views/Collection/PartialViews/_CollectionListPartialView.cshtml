@@ -121,9 +121,15 @@
                     </div>
                     <div class="list_product_action_box">
                         <ul class="list_none pr_action_btn">
-                            <li class="add-to-cart-add"><a asp-controller="Collection" asp-action="AddClothesToCollection" asp-route-collectionId="@collection.CollectionId" asp-route-gender="@collection.Gender"> Add Clothes To Collection</a></li>
-                            <li class="add-to-cart-edit"><a asp-controller="Collection" asp-action="Edit" asp-route-collectionId="@collection.CollectionId"> Edit</a></li>
-                            <li class="add-to-cart-delete"><a  id="@collection.CollectionId">Delete</a></li>
+                            @{
+                                if (User?.Identity!.IsAuthenticated ?? false)
+                                {
+                                    <li class="add-to-cart-add"><a asp-controller="Collection" asp-action="AddClothesToCollection" asp-route-collectionId="@collection.CollectionId" asp-route-gender="@collection.Gender"> Add Clothes To Collection</a></li>
+                                    <li class="add-to-cart-edit"><a asp-controller="Collection" asp-action="Edit" asp-route-collectionId="@collection.CollectionId"> Edit</a></li>
+                                    <li class="add-to-cart-delete"><a id="@collection.CollectionId">Delete</a></li>
+                                }
+                            }
+                           
                         </ul>
                     </div>
                 </div>

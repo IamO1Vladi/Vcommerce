@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Vcommerce.Services.BrandServices.Interfaces;
 using Vcommerce.Services.ProductServices.Interfaces;
 using Vcommerce.Web.ViewModels.Brands;
@@ -19,6 +20,7 @@ namespace Vcommerce.Web.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public IActionResult Add()
         {
 
@@ -27,7 +29,7 @@ namespace Vcommerce.Web.Controllers
         }
 
         [HttpPost]
-
+        [Authorize]
         public async Task<IActionResult> Add(AddOrEditBrandViewModel model)
         {
 
@@ -37,7 +39,7 @@ namespace Vcommerce.Web.Controllers
         }
 
         [HttpGet]
-
+        [AllowAnonymous]
         public async Task<IActionResult> BrandsList()
         {
 
@@ -48,7 +50,7 @@ namespace Vcommerce.Web.Controllers
         }
 
         [HttpGet]
-
+        [Authorize]
         public async Task<IActionResult> Edit(Guid brandId)
         {
 
@@ -58,7 +60,7 @@ namespace Vcommerce.Web.Controllers
         }
 
         [HttpPost]
-
+        [Authorize]
         public async Task<IActionResult> Edit(Guid brandId,AddOrEditBrandViewModel model)
         {
 
@@ -68,7 +70,7 @@ namespace Vcommerce.Web.Controllers
         }
 
         [HttpGet]
-
+        [Authorize]
         public async Task<IActionResult> Delete(Guid brandId)
         {
 
@@ -81,7 +83,7 @@ namespace Vcommerce.Web.Controllers
 
 
         [HttpPost]
-
+        [Authorize]
         public async Task<IActionResult> DeleteBrand(Guid brandId)
         {
 

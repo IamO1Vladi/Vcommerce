@@ -68,8 +68,14 @@
                     </a>
                     <div class="product_action_box">
                         <ul class="list_none pr_action_btn">
-                            <li class="add-to-cart-edit"><a asp-controller="Brand" asp-action="Edit" asp-route-brandId="@brand.BrandId">Edit</a></li>
-                            <li class="add-to-cart-delete"><a asp-controller="Brand" asp-action="Delete" asp-route-brandId="@brand.BrandId">Delete</a></li>
+                            @{
+                                if (User?.Identity!.IsAuthenticated ?? false)
+                                {
+                                    <li class="add-to-cart-edit"><a asp-controller="Brand" asp-action="Edit" asp-route-brandId="@brand.BrandId">Edit</a></li>
+                                    <li class="add-to-cart-delete"><a asp-controller="Brand" asp-action="Delete" asp-route-brandId="@brand.BrandId">Delete</a></li>
+                                }
+                            }
+                            
                         </ul>
 
 

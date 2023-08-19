@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Vcommerce.Data.Models.Enums;
 using Vcommerce.Services.CollectionServices.Interfaces;
 using Vcommerce.Web.ViewModels.Collections;
@@ -15,6 +16,7 @@ namespace Vcommerce.Web.Controllers
             this.collectionService = service;
         }
 
+        [AllowAnonymous]
         public async Task<IActionResult> CollectionsList()
         {
 
@@ -24,13 +26,14 @@ namespace Vcommerce.Web.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public  IActionResult Add()
         {
             return View();
         }
 
         [HttpPost]
-
+        [Authorize]
         public async Task<IActionResult> Add(AddOrEditCollectionViewModel model)
         {
 
@@ -40,7 +43,7 @@ namespace Vcommerce.Web.Controllers
         }
 
         [HttpGet]
-
+        [Authorize]
         public async Task<IActionResult> Edit(Guid collectionId)
         {
 
@@ -51,7 +54,7 @@ namespace Vcommerce.Web.Controllers
         }
 
         [HttpPost]
-
+        [Authorize]
         public async Task<IActionResult> Edit(Guid collectionId, AddOrEditCollectionViewModel model)
         {
 
@@ -62,7 +65,7 @@ namespace Vcommerce.Web.Controllers
         }
 
         [HttpDelete]
-
+        [Authorize]
         public async Task<IActionResult> Delete(Guid collectionId)
         {
 
@@ -73,7 +76,7 @@ namespace Vcommerce.Web.Controllers
 
 
         [HttpPost]
-
+        [Authorize]
         public async Task<IActionResult> AddClothesToCollection(Guid clothingId, Guid collectionId)
         {
 
@@ -83,7 +86,7 @@ namespace Vcommerce.Web.Controllers
         }
 
         [HttpGet]
-
+        [Authorize]
         public async Task<IActionResult> AddClothesToCollection(Guid collectionId, Gender gender)
         {
 

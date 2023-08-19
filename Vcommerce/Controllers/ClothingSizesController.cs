@@ -1,4 +1,5 @@
 ﻿using FirebaseAdmin.Auth.Multitenancy;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Vcommerce.Data.Models;
 using Vcommerce.Services.ProductServices.Interfaces;
@@ -6,6 +7,8 @@ using Vcommerce.Web.ViewModels.ClothingSizes;
 
 namespace Vcommerce.Web.Controllers
 {
+
+    [Authorize]
     public class ClothingSizesController : Controller
     {
 

@@ -1,4 +1,5 @@
 ﻿using ClothingRepository.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
@@ -31,6 +32,7 @@ namespace Vcommerce.Web.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> ProductsByCategoryAndGender([FromQuery] ClothesQueryModel queryModel)
         {
 
@@ -45,7 +47,7 @@ namespace Vcommerce.Web.Controllers
         }
 
         [HttpGet]
-
+        [AllowAnonymous]
         public async Task<IActionResult> ProductDetails(Guid productId)
         {
 
@@ -56,7 +58,7 @@ namespace Vcommerce.Web.Controllers
         }
 
         [HttpGet]
-
+        [AllowAnonymous]
         public async Task<IActionResult> ProductsByGender([FromQuery] ClothesQueryModel queryModel)
         {
             ClothesFilteredAndPagedServiceModel products =
@@ -71,7 +73,7 @@ namespace Vcommerce.Web.Controllers
         }
 
         [HttpGet]
-
+        [Authorize]
         public async Task<IActionResult> Add()
         {
             ViewData["Brands"] = await brandRepo.GetAllBrandsAsync();
@@ -79,7 +81,7 @@ namespace Vcommerce.Web.Controllers
         }
 
         [HttpPost]
-
+        [Authorize]
         public async Task<IActionResult> Add(AddOrEditClothingViewModel model)
         {
 
@@ -91,7 +93,7 @@ namespace Vcommerce.Web.Controllers
         }
 
         [HttpDelete]
-
+        [Authorize]
         public async Task<IActionResult> Delete(Guid productId)
         {
             await clothingService.DeleteClothing(productId);
@@ -101,7 +103,7 @@ namespace Vcommerce.Web.Controllers
 
 
         [HttpGet]
-
+        [Authorize]
         public async Task<IActionResult> Edit(Guid productId)
         {
             ViewData["Brands"] = await brandRepo.GetAllBrandsAsync();
@@ -111,7 +113,7 @@ namespace Vcommerce.Web.Controllers
         }
 
         [HttpPost]
-
+        [Authorize]
         public async Task<IActionResult> Edit(Guid productId,AddOrEditClothingViewModel model)
         {
          
@@ -122,7 +124,7 @@ namespace Vcommerce.Web.Controllers
 
 
         [HttpPost]
-
+        [Authorize]
         public async Task<IActionResult> SubmitReview([FromBody] AddReviewViewModel review)
         {
             if (ModelState.IsValid)
@@ -139,7 +141,7 @@ namespace Vcommerce.Web.Controllers
         }
 
         [HttpDelete]
-
+        [Authorize]
         public async Task<IActionResult> DeleteReview(Guid reviewId)
         {
 
@@ -152,7 +154,7 @@ namespace Vcommerce.Web.Controllers
 
 
         [HttpGet]
-
+        [AllowAnonymous]
         public async Task<IActionResult> GetCartPartialView(string? cartItemsJson)
         {
 

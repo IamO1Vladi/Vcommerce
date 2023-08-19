@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Vcommerce.Services.OrderServices.Interfaces;
 using Vcommerce.Services.ProductServices;
@@ -21,6 +22,7 @@ namespace Vcommerce.Web.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> ShoppingCart()
         {
 
@@ -37,7 +39,7 @@ namespace Vcommerce.Web.Controllers
         }
 
         [HttpGet]
-
+        [AllowAnonymous]
         public async Task<IActionResult> LoadOrderInfo()
         {
             string? cartItemsJson = this.HttpContext.Session.GetString("cartItems");
@@ -56,6 +58,7 @@ namespace Vcommerce.Web.Controllers
         
 
         [HttpPost]
+        [AllowAnonymous]
         public async Task<IActionResult> Checkout(NewOrderViewModel newOrder)
         {
 
@@ -70,6 +73,7 @@ namespace Vcommerce.Web.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public IActionResult Checkout()
         {
 

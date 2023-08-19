@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Vcommerce.Services.BlogServices.Interfaces;
 using Vcommerce.Web.ViewModels.BlogPosts;
@@ -15,6 +16,7 @@ namespace Vcommerce.Web.Controllers
             this.blogService = serice;
         }
 
+        [AllowAnonymous]
         public async Task<IActionResult> ListAllBlogPosts()
         {
 
@@ -24,7 +26,7 @@ namespace Vcommerce.Web.Controllers
         }
 
         [HttpGet]
-
+        [Authorize]
         public IActionResult Add()
         {
 
@@ -32,7 +34,7 @@ namespace Vcommerce.Web.Controllers
         }
 
         [HttpPost]
-
+        [Authorize]
         public async Task<IActionResult> Add(AddBlogPostViewModel model)
         {
 
@@ -43,7 +45,7 @@ namespace Vcommerce.Web.Controllers
 
 
         [HttpGet]
-
+        [AllowAnonymous]
         public async Task<IActionResult> Details(Guid postId)
         {
 
@@ -54,6 +56,7 @@ namespace Vcommerce.Web.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<IActionResult> Edit(Guid postId)
         {
 
@@ -63,7 +66,7 @@ namespace Vcommerce.Web.Controllers
         }
 
         [HttpPost]
-
+        [Authorize]
         public async Task<IActionResult> Edit(EditBlogPostViewModel model)
         {
 
