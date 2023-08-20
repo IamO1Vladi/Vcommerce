@@ -1,7 +1,10 @@
-﻿namespace Vcommerce.Data.Models.Users;
+﻿namespace Vcommerce.Areas.Admin;
 
-public class AdminUser
+public static class AdminConstants
 {
+
+    public const string AriaName = "Admin";
     public const string AdminRoleName = "Administrator";
     public const string AdminEmail = "administrator@gmail.com";
+
 }

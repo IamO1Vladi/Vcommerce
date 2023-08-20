@@ -1,5 +1,4 @@
-﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
-@using Vcommerce.Data.Models.Enums
+﻿
 @model Vcommerce.Web.ViewModels.Collections.AddOrEditCollectionViewModel
 
 
@@ -17,12 +16,14 @@
         <div class="mb-3">
             <label asp-for="Name" class="form-label">Name:</label>
             <input asp-for="Name" type="text" placeholder="Enter clothing name here" class="form-control" id="Name" name="Name">
+            <span asp-validation-for="Name"></span>
         </div>
 
 
         <div class="mb-3">
             <label asp-for="Description" class="form-label">Description:</label>
             <textarea asp-for="Description" placeholder="Enter description here:" class="form-control" id="Description" name="Description"></textarea>
+            <span asp-validation-for="Description"></span>
         </div>
 
 
@@ -57,3 +58,8 @@
         window.history.back(); // Navigate back to the previous page
     });
 </script>
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}

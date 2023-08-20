@@ -32,7 +32,6 @@ public class Clothes:Product
 
     public Collection? Collection { get; set; }
 
-
     [Required]
     [MaxLength(MaxMaterialNameLength)]
     public string Material { get; set; } = null!;

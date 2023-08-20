@@ -1,4 +1,4 @@
-﻿@using Vcommerce.Data.Models.Enums
+﻿
 @{
     ViewData["Title"] = "Add Clothing Sizes";
 }
@@ -14,3 +14,8 @@
     <partial name="PartialViews/_ClothingSizesFormPartial" model="@Model"/>
 
 </div>
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}

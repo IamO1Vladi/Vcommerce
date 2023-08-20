@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using Vcommerce.Data.Models.Users;
 
-using static Vcommerce.Data.Models.Users.AdminUser;
+using static Vcommerce.Web.Infrastructures.AdminConstraints.AdminUser;
 
 namespace Vcommerce.Web.Infrastructures.Extensions;
 

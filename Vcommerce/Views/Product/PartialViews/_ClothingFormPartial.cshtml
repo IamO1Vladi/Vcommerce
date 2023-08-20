@@ -1,6 +1,5 @@
-﻿@using Vcommerce.Data.Models.Enums
-@using System.Drawing
-@using Vcommerce.Data.Models.BrandInfo
+﻿
+
 @model AddOrEditClothingViewModel;
 
 @{
@@ -22,6 +21,7 @@
         <div class="mb-3">
             <label asp-for="Name" class="form-label">Name:</label>
             <input asp-for="Name" type="text" placeholder="Enter clothing name here" class="form-control" id="Name" name="Name">
+            <span asp-validation-for="Name"></span>
         </div>
 
         <div class="mb-3">
@@ -43,17 +43,20 @@
         <div class="mb-3">
             <label asp-for="Price" class="form-label">Price:</label>
             <input asp-for="Price" placeholder="Enter price here" class="form-control" id="Price" name="Price">
+            <span asp-validation-for="Price"></span>
         </div>
 
 
         <label asp-for="Color" class="form-label">Color:</label>
         <input asp-for="Color" type="color" class="form-control form-control-color" id="Color" name="Color"  title="Choose color" />
+        <span asp-validation-for="Color"></span>
 
 
 
         <div class="mb-3">
             <label asp-for="Description" class="form-label">Description:</label>
             <textarea asp-for="Description" placeholder="Enter description here:" class="form-control" id="Description" name="Description"></textarea>
+            <span asp-validation-for="Description"></span>
         </div>
 
 
@@ -61,11 +64,13 @@
         <div class="form-check">
             <input asp-for="IsOnSale" type="checkbox" class="form-check-input" id="IsOnSale" name="IsOnSale">
             <label class="form-check-label" asp-for="IsOnSale">Is On Sale</label>
+            <span asp-validation-for="IsOnSale"></span>
         </div>
 
         <div class="mb-3" id="salePercentageDiv" style="display:none">
             <label asp-for="SalePercentage" class="form-label">Sale Percentage:</label>
             <input asp-for="SalePercentage"  placeholder="Enter sale percentage here:" class="form-control" id="SalePercentage" name="SalePercentage">
+            <span asp-validation-for="SalePercentage"></span>
         </div>
 
 
@@ -74,6 +79,7 @@
         <div class="mb-3">
             <label asp-for="Material" class="form-label">Material:</label>
             <input asp-for="Material" type="text" placeholder="Enter clothing material here:" class="form-control" id="Material" name="Material">
+            <span asp-validation-for="Material"></span>
         </div>
 
 
@@ -156,3 +162,8 @@
         window.history.back(); // Navigate back to the previous page
     });
 </script>
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}

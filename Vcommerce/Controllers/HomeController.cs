@@ -5,6 +5,7 @@ using Vcommerce.Models;
 using Vcommerce.Services.ApiServices.QuickBaseApiService.Interfaces;
 using Vcommerce.Services.ProductServices.Interfaces;
 using Vcommerce.Services.ServiceModels.Email;
+using Vcommerce.Web.Infrastructures.Extensions;
 using Vcommerce.Web.ViewModels.Clothes;
 
 namespace Vcommerce.Controllers
@@ -26,6 +27,11 @@ namespace Vcommerce.Controllers
         
         public async Task<IActionResult> Index()
         {
+
+            if (User.IsAdmin())
+            {
+                return RedirectToAction("AdminView", "Home", new { area = "Admin" });
+            }
 
             var exclusiveClothes = await clothingService.GetAllExclusiveProducts();
 

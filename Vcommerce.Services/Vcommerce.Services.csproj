@@ -12,6 +12,7 @@
     <Folder Include="BrandServices\Interfaces\" />
     <Folder Include="CollectionServices\Interfaces\" />
     <Folder Include="OrderServices\Interfaces\" />
+    <Folder Include="UserServices\Interfaces\" />
   </ItemGroup>
 
   <ItemGroup>
