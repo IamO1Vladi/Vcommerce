@@ -1,3 +1,5 @@
+#New message -> Hello all, this project is a rough representation of what my skills was when i was rushing a project for an end date while handling perosonal stuff. For now it has not been optimzied to not have magic values around the code, missing enviromental variables, missing API and UI trytring logic which means each fail will lead into an error and inconsistent variable declaration. I have been working on a new project that is a private repositiory that I can show in any interview needed after which I will be coming back for this one to optise properly or build it from scratch using a combination with react instead of using Ajax requests with SignalR and vanilla JS
+
 # Vcommerce - Virtual Commerce Platform
 
 ![Vcommerce Logo](https://github.com/IamO1Vladi/Vcommerce/blob/main/assets/logo.png)
